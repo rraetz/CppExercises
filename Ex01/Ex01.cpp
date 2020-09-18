@@ -9,32 +9,29 @@
 
 int main() 
 {
-
 // Ex 2.1
-    // Create and fill vector
+    // Create and fill char vector
     std::vector<char> vec1(26);                 
     std::iota(vec1.begin(), vec1.end(), 'a');
 
     // Print it using ostream iterator and copy
     std::copy(vec1.begin(), vec1.end(), std::ostream_iterator<char>(std::cout, " "));
-    // std::ostream_iterator<char> outIter1(std::cout, " ");
-    // std::copy(vec1.begin(), vec1.end(), outIter1);
     std::cout  << "\n\n";
 
 
 
 // Ex 2.2
-    // Create vector and ifstream object
+    // Create string vector for cars and ifstream object
     std::vector<std::string> cars;
     std::ifstream inFile("cars.txt");
 
-    // Fill vector using copy, istream_iterators and back_inserter
+    // Fill cars vector using copy, istream_iterators and back_inserter
     std::copy(std::istream_iterator<std::string>(inFile), std::istream_iterator<std::string>(), std::back_inserter(cars));  
 
-    // Sort vector
+    // Sort cars
     std::sort(cars.begin(), cars.end());
 
-    // Print vector
+    // Print cars
     std::copy(cars.begin(), cars.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
     std::cout  << "\n\n";
 
@@ -64,23 +61,43 @@ int main()
 
 
 // Ex 2.4
+    // Define Predicate   
+    std::string predicate("ABC");
+
+    // Print if predicate fullfilled, using lambda function
+    std::copy_if(cars.begin(), cars.end(), std::ostream_iterator<std::string>(std::cout, "\n"), 
+        [&predicate](std::string car){return (predicate.find(car.at(0)) != std::string::npos);});
+    std::cout  << "\n\n";
+
+    // --> is this really more readable than a for-loop..?
 
 
+
+// Ex 3
+    // Create string vector for input text
+    std::vector<std::string> textVec;
+
+    // Copy from istream to the back of textVec
+    std::cout << "Please enter some text (terminate with Ctrl-z on Windows): " << std::endl;
+    std::istream_iterator<std::string> inIter(std::cin);
+    std::istream_iterator<std::string> endOfInStream;
+    std::copy(inIter, endOfInStream, std::back_inserter(textVec)); 
+
+    // Sort vector and print only unique words
+    std::sort(textVec.begin(), textVec.end());
+    std::cout << "\nThe unique word list contains: " << std::endl;
+    std::unique_copy(textVec.begin(), textVec.end(), std::ostream_iterator<std::string>(std::cout, " "));
+
+
+
+// Ex 4 - CODE PROJECT
+/*
+    My project will be to represent a robot arm in 3D. The goal is to display a simple robot arm (consisting 
+    of cylinders or other simple bodies) and to make the joints of the robot follow a given trajectory.
+    Depending on the progress during the project, it might even be possible to implement some inverse kinematics (given 
+    a target configuration, the robot finds the corresponding joint angles and moves accordingly).
+*/
 
     return 0;
 }
 
-
-
-/*
-
-CODE PROJECT
-- Roboter arm representation
-- Simple flight/drone
-- Path planning for robot
-- Simulator for dynamic system
-
-
-
-
-*/
