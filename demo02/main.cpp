@@ -40,7 +40,9 @@ int main()
 
     // 4) Mutliply each element with factor (transform), cout vector (copy)
     int factor = 10;
-    transform(vec.begin(), vec.end(), vec.begin(), [factor](int x){return x*factor; });
+    transform(vec.begin(), vec.end(), // Source
+              vec.begin(),            // Destination
+              [factor](int x){return x*factor; });
     copy(vec.begin(), vec.end(), ostream_iterator<int>(cout, " "));
     cout << "\n";
 
