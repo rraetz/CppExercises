@@ -16,7 +16,7 @@ add_executable(${PROJECT_NAME}
     )
 
 # Define required c++ standard to C++11
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
 
 # Set compile options, enable warnings
 target_compile_options(${PROJECT_NAME} PRIVATE
@@ -24,3 +24,6 @@ $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall -Wextra -pedantic
 $<$<CXX_COMPILER_ID:MSVC>: /W3 /WX>
 )
 
+# Copy file to binary directory
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Forbes2018.txt
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Forbes2018.txt)
