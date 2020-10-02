@@ -16,7 +16,7 @@ add_executable(${PROJECT_NAME}
     )
 
 # Define required c++ standard to C++11
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Set compile options, enable warnings
 target_compile_options(${PROJECT_NAME} PRIVATE
