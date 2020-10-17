@@ -12,18 +12,23 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Widget
 {
 public:
+    QCustomPlot *qcpwidget;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(800, 600);
+        qcpwidget = new QCustomPlot(Widget);
+        qcpwidget->setObjectName(QString::fromUtf8("qcpwidget"));
+        qcpwidget->setGeometry(QRect(80, 60, 651, 481));
 
         retranslateUi(Widget);
 
