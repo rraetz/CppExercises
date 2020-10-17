@@ -24,7 +24,7 @@ public:
     string m_name;
     string m_salary;
     string m_country;
-    friend istream &operator >> (istream &is, Billionaire  &billionaire) 
+    inline friend istream &operator >> (istream &is, Billionaire  &billionaire) 
     {
         if (is.peek() != is.eof())
         {
@@ -35,7 +35,7 @@ public:
         return is;
     }
 
-    friend ostream &operator << (ostream &os, const Billionaire  &billionaire) 
+    inline friend ostream &operator << (ostream &os, const Billionaire  &billionaire) 
     {
         os << "Name: " << billionaire.m_name << " Salary: " << billionaire.m_salary 
             << " Country:" << billionaire.m_country;
@@ -134,6 +134,10 @@ int main()
         " with " << e.second.first.m_salary << "$" << endl;
     }
 
+
+    // Sort the map
+    map<string, pair<const Billionaire, size_t>> billiMapTmp;
+    copy(billiMap.begin(), billiMap.end(), inserter(billiMapTmp), )
 
     return 0;
 }

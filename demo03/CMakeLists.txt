@@ -1,5 +1,5 @@
 # Set Name of project and language
-project(Ex LANGUAGES CXX)
+project(demo03 LANGUAGES CXX)
 
 # Set Path for the EXE file
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
@@ -7,27 +7,23 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 # Set cmake version
 cmake_minimum_required(VERSION 3.10)
 
-# set build type to Debug/Release
-set(CMAKE_BUILD_TYPE "Debug")
-
 # Require threads package
 find_package(Threads REQUIRED)
 
+# set build type to Debug/Release
+set(CMAKE_BUILD_TYPE "Debug")
+
 # Create executable using the specified source files
 add_executable(${PROJECT_NAME}
-    main.cpp
+    main_inclassExample.cpp
     )
 
 # Define required c++ standard to C++11
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
 
 # Set compile options, enable warnings
 target_compile_options(${PROJECT_NAME} PRIVATE
 $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall -Wextra -pedantic>
 $<$<CXX_COMPILER_ID:MSVC>: /W3 /WX>
 )
-
-# Copy file to binary directory
-#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/fileName.txt
-#       DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/fileName.txt)
 
