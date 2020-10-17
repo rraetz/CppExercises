@@ -11,8 +11,8 @@ set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/build-Ex03-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/Ex03_autogen")
 set(AM_INCLUDE_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/build-Ex03-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/Ex03_autogen/include")
 # Files
-set(AM_SOURCES "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/main.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/qcustomplot-source/qcustomplot.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/widget.cpp")
-set(AM_HEADERS "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/qcustomplot-source/qcustomplot.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/widget.h")
+set(AM_SOURCES "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/main.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/ekgwidget.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/qcustomplot-source/qcustomplot.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/widget.cpp")
+set(AM_HEADERS "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/ekgwidget.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/qcustomplot-source/qcustomplot.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/Ex03/src/ui/widget.h")
 set(AM_SETTINGS_FILE "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex03/build-Ex03-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/Ex03_autogen.dir/AutogenOldSettings.txt")
 # Qt
 set(AM_QT_VERSION_MAJOR 5)

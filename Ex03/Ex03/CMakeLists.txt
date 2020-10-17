@@ -11,6 +11,9 @@ set(APP_SOURCES
     src/ui/widget.ui
     src/ui/qcustomplot-source/qcustomplot.cpp
     src/ui/qcustomplot-source/qcustomplot.h
+    src/ui/ekgwidget.cpp
+    src/ui/ekgwidget.h
+    src/ui/ekgwidget.ui
     )
 
 # Define applicaiton include directories
