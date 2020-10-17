@@ -1,8 +1,5 @@
 # Set Name of project and language
-project(Ex LANGUAGES CXX)
-
-# Set Path for the EXE file
-set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+project(Ex04 LANGUAGES CXX)
 
 # Set cmake version
 cmake_minimum_required(VERSION 3.10)
@@ -21,13 +18,11 @@ add_executable(${PROJECT_NAME}
 # Define required c++ standard to C++11
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
 
+# Link threading library
+target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
+
 # Set compile options, enable warnings
 target_compile_options(${PROJECT_NAME} PRIVATE
 $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall>
 $<$<CXX_COMPILER_ID:MSVC>: /W3>
 )
-
-# Copy file to binary directory
-#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/fileName.txt
-#       DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/fileName.txt)
-
