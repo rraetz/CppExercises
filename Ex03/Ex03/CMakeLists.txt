@@ -71,3 +71,8 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall>
 $<$<CXX_COMPILER_ID:MSVC>: /W3>
 )
+
+# Copy file to binary directory
+file(COPY ${PROJECT_SOURCE_DIR}/ekg.txt
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
