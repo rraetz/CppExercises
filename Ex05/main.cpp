@@ -49,9 +49,6 @@ void consume()
 
 int main()
 {
-
-//    produce(10);
-
     // Producer
     thread pThread{produce, 25};
 
