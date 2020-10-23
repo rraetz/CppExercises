@@ -50,18 +50,18 @@ void consume()
 int main()
 {
 
-    produce(10);
+//    produce(10);
 
-//    // Producer
-//    thread pThread{produce, 25};
+    // Producer
+    thread pThread{produce, 25};
 
-//    // Consumer
-//    thread cThread{consume};
+    // Consumer
+    thread cThread{consume};
 
-//    pThread.join();
-//    finished = true;
-//    cThread.join();
+    pThread.join();
+    finished = true;
+    cThread.join();
 
-//    cout << "Finished!"<< endl;
+    cout << "Finished!"<< endl;
     return 0;
 }

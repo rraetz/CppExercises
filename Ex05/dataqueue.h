@@ -5,18 +5,25 @@
 #include <queue>
 #include <mutex>
 #include <iostream>
+#include <condition_variable>
+
 
 
 template<typename T>
 class DataQueue
 {
 private:
-    size_t m_bufferSize;
+    size_t m_bufferSize = 1000;
     std::queue<T> m_buffer;
     std::mutex m_mutex;
+    std::condition_variable m_condVar;
+//    std::lock_guard<std::mutex> m_locker;
 
 public:
-    DataQueue(size_t bufferSize) : m_bufferSize(bufferSize){}
+    DataQueue(size_t bufferSize) : m_bufferSize(bufferSize)
+    {
+        std::cout << "buffersize: " << m_bufferSize << std::endl;
+    }
 
     void add(T newElement)
     {
@@ -26,26 +33,42 @@ public:
         }
         else
         {
-            m_buffer.push(newElement);
-            std::cout << "New element added" << std::endl;
+//            std::cout << "New element added" << std::endl;
+            // notify consumer
+            {
+                std::lock_guard<std::mutex> locker(m_mutex);
+                m_buffer.push(newElement);
+            }
+            m_condVar.notify_one();
         }
     }
 
 
     T get()
     {
-        if (isEmpty())
-        {
-            std::cout << "Cannot get element, buffer is empty" << std::endl;
-            return 0;
-        }
-        else
-        {
-            T tmp = m_buffer.front();
-            m_buffer.pop();
-            return tmp;
-            std::cout << "Element retrieved" << std::endl;
-        }
+        std::unique_lock<std::mutex> locker(m_mutex);
+        m_condVar.wait(locker, [this]{return !isEmpty(); });
+
+        T tmp = m_buffer.front();
+        m_buffer.pop();
+        return tmp;
+        std::cout << "Element retrieved" << std::endl;
+        // notify producer
+
+
+//        if (isEmpty())
+//        {
+//            std::cout << "Cannot get element, buffer is empty" << std::endl;
+//            return 0;
+//        }
+//        else
+//        {
+//            T tmp = m_buffer.front();
+//            m_buffer.pop();
+//            return tmp;
+//            std::cout << "Element retrieved" << std::endl;
+//            // notify producer
+//        }
     }
 
     bool isFull()
@@ -59,12 +82,6 @@ public:
     }
 
 };
-
-/*
- * TODO:
- * - initialize buffer with bufferSize
- */
-
 
 
 #endif // DATAQUEUE_H
