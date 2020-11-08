@@ -26,17 +26,17 @@ The CXX compiler identification is MSVC, found in "D:/raphael.raetz/Documents/C+
 Determining if the CXX compiler works passed with the following output:
 Change Dir: D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex06/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_1bc9a 
-[1/2] Building CXX object CMakeFiles\cmTC_1bc9a.dir\testCXXCompiler.cxx.obj
-[2/2] Linking CXX executable cmTC_1bc9a.exe
+Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_ca0f7 
+[1/2] Building CXX object CMakeFiles\cmTC_ca0f7.dir\testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_ca0f7.exe
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex06/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_dc4fc 
-[1/2] Building CXX object CMakeFiles\cmTC_dc4fc.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_dc4fc.exe
+Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_39e74 
+[1/2] Building CXX object CMakeFiles\cmTC_39e74.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_39e74.exe
 
 
 
@@ -44,9 +44,9 @@ Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MIC
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex06/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_3f94d 
-[1/2] Building CXX object CMakeFiles\cmTC_3f94d.dir\feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_3f94d.exe
+Run Build Command(s):C:/PROGRA~2/MICROS~2/2019/BUILDT~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe cmTC_96cd9 
+[1/2] Building CXX object CMakeFiles\cmTC_96cd9.dir\feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_96cd9.exe
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers

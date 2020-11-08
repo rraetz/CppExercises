@@ -9,6 +9,7 @@
 
 #include <QWidget>
 #include <memory>
+#include "VCamera.h"
 
 // TODO: Remove compile time dependency with observer pattern
 // control should compile without including widget.h
@@ -19,7 +20,7 @@
 class VCamera;
 class DataBufferPool;
 
-class Control :  public QWidget
+class Control :  public QWidget, public IVCamera
 {
 
 public:
@@ -27,8 +28,9 @@ public:
     ~Control();
 
     // TODO: Move to interface
-    void displayMsg(const std::string &tag, const std::string &msg);
-    void setData(DataBufferPtr dataJunk);
+    // --> Pure virtual functions implemented
+    virtual void displayMsg(const std::string &tag, const std::string &msg) override;
+    virtual void setData(DataBufferPtr dataJunk) override;
     // ------------------------------------------------------------
 
     void init();

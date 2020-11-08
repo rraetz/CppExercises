@@ -5,7 +5,7 @@
 ** Contact:    Patrik Arnold ( patrik.arnold@bfh.ch )
 *****************************************************************************/
 #include "control.h"
-#include "VCamera.h"
+//#include "VCamera.h"
 #include "dataBufferPool.h"
 
 Control::Control(Widget *parent) :

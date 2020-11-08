@@ -29,6 +29,7 @@ add_executable(${PROJECT_NAME}
     src/app/common/dataBufferPool.h
     src/app/acquisition/VCamera.cpp
     src/app/acquisition/VCamera.h
+    src/app/acquisition/IVCamera.h
     src/app/visualisation/videoVisualizer.cpp
     src/app/visualisation/videoVisualizer.h
     src/app/visualisation/rOg_image.cpp

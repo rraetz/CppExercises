@@ -9,18 +9,16 @@
 #include "dataBufferPool.h"
 
 // TODO: Remove compile time dependency
-#include "control.h"
 // ------------------------------------------------------------
-
-VCamera::VCamera(Control *control, std::shared_ptr<DataBufferPool> dataPool) :
+VCamera::VCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool) :
     m_tag("Player"),
     m_play(false),
-    m_control(control),
+    m_IVCamera(host),
     m_playRate(33),
     m_dataPool(dataPool),
     offset(0)
 {
-    m_control->displayMsg(m_tag, "Player constructed");
+    m_IVCamera->displayMsg(m_tag, "Player constructed");
 }
 
 VCamera::~VCamera()
@@ -38,13 +36,13 @@ void VCamera::startPlayData()
 {
     m_play = true;
     m_acquireThread = std::thread(&VCamera::run, this);
-    m_control->displayMsg(m_tag, "Start Playing");
+    m_IVCamera->displayMsg(m_tag, "Start Playing");
 }
 
 void VCamera::stop()
 {
     m_play = false;
-    m_control->displayMsg(m_tag, "Stop playing");
+    m_IVCamera->displayMsg(m_tag, "Stop playing");
 }
 
 bool VCamera::isPlaying()
@@ -65,7 +63,7 @@ void VCamera::run()
         DataBufferPtr nextPtr = m_dataPool->getBuffer();
         if( readImage(nextPtr) )
         {
-            m_control->setData(nextPtr);
+            m_IVCamera->setData(nextPtr);
         }
         // Control frame rate
         int sleeptime = static_cast<int>( 1000.0f/m_playRate ) ;

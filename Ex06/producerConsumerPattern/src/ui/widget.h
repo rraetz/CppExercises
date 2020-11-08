@@ -39,6 +39,7 @@ private:
     void initGUI();
     void updateScanVis();
 
+// Slots are normal C++ functions and can be called normally; their only special feature is that signals can be connected to them.
 private slots:
     void updateGui();
     void updateFrameRate();

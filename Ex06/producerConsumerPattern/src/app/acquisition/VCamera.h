@@ -9,9 +9,10 @@
 
 #include <thread>
 #include "dataBuffer.h"
+#include "IVCamera.h"
 
 // Forward declarations
-class Control;
+//class Control;
 class DataBufferPool;
 
 /**
@@ -23,7 +24,7 @@ class VCamera final
 {
 
 public:
-     VCamera(Control* control, std::shared_ptr<DataBufferPool> dataPool);
+     VCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool);
      ~VCamera();
 
      void startPlayData();
@@ -40,7 +41,7 @@ private:
      bool m_play;
 
      // TODO: Remove compile time dependency
-     Control* m_control;
+     IVCamera* m_IVCamera;
      // ------------------------------------------------------------
 
      int m_playRate;

@@ -35,13 +35,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 40,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 51,
+				"line" : 52,
 				"parent" : 0
 			}
 		]
@@ -133,9 +133,9 @@
 				7,
 				9,
 				11,
-				13,
-				15,
-				18
+				14,
+				16,
+				19
 			]
 		}
 	],
@@ -186,9 +186,9 @@
 				7,
 				9,
 				11,
-				13,
-				15,
-				18
+				14,
+				16,
+				19
 			]
 		},
 		{
@@ -200,8 +200,9 @@
 				8,
 				10,
 				12,
-				14,
-				16
+				13,
+				15,
+				17
 			]
 		},
 		{
@@ -209,14 +210,14 @@
 			"sourceIndexes" : 
 			[
 				4,
-				17
+				18
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				19
+				20
 			]
 		}
 	],
@@ -293,6 +294,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/app/acquisition/VCamera.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/app/acquisition/IVCamera.h",
 			"sourceGroupIndex" : 1
 		},
 		{
