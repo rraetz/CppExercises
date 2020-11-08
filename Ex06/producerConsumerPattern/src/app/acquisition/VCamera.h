@@ -12,7 +12,6 @@
 #include "IVCamera.h"
 
 // Forward declarations
-//class Control;
 class DataBufferPool;
 
 /**

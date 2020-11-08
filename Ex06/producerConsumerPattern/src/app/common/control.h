@@ -10,10 +10,10 @@
 #include <QWidget>
 #include <memory>
 #include "VCamera.h"
+#include "Icontrol.h"
 
 // TODO: Remove compile time dependency with observer pattern
 // control should compile without including widget.h
-#include "widget.h"
 // ------------------------------------------------------------
 
 // Forward declarations
@@ -24,7 +24,7 @@ class Control :  public QWidget, public IVCamera
 {
 
 public:
-    Control(Widget *parent);
+    Control(IControl *parent);
     ~Control();
 
     // TODO: Move to interface
@@ -40,7 +40,7 @@ public:
     void setPlayRate(int playRate);
 
 private:
-    Widget* m_widget;
+    IControl* m_IControl;
     uint m_height;
     uint m_widht;
 

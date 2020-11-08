@@ -5,11 +5,11 @@
 ** Contact:    Patrik Arnold ( patrik.arnold@bfh.ch )
 *****************************************************************************/
 #include "control.h"
-//#include "VCamera.h"
 #include "dataBufferPool.h"
 
-Control::Control(Widget *parent) :
-    m_widget(parent),
+
+Control::Control(IControl *parent) :
+    m_IControl(parent),
     m_height(256),
     m_widht(256)
 {
@@ -32,7 +32,7 @@ void Control::init()
     m_player.reset( new VCamera( this, m_dataPool) );
 
     // Message
-    m_widget->displayMsg("Control", "Constructed");
+    m_IControl->displayMsg("Control", "Constructed");
 }
 
 // -----------------------------------------------------------------
@@ -40,12 +40,12 @@ void Control::init()
 // -----------------------------------------------------------------
 void Control::displayMsg(const std::string &tag, const std::string &msg)
 {    
-    m_widget->displayMsg(tag, msg);
+    m_IControl->displayMsg(tag, msg);
 }
 
 void Control::setData(DataBufferPtr dataJunk)
 {
-    m_widget->setData(dataJunk);
+    m_IControl->setData(dataJunk);
 }
 
 void Control::startPlaying()

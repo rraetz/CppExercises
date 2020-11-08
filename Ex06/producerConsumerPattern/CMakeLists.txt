@@ -23,6 +23,7 @@ add_executable(${PROJECT_NAME}
     src/ui/widget.ui
     src/app/common/control.cpp
     src/app/common/control.h
+    src/app/common/Icontrol.h
     src/app/common/dataBuffer.cpp
     src/app/common/dataBuffer.h
     src/app/common/dataBufferPool.cpp
