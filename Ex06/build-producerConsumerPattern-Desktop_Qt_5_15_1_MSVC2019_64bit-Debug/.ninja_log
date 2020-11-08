@@ -1,0 +1,15 @@
+# ninja log v5
+4	601	0	CMakeFiles/PCP_autogen	822e5cf6e4a19004
+4	601	0	PCP_autogen/mocs_compilation.cpp	822e5cf6e4a19004
+601	767	626554582	PCP_autogen/3YJK5W5UP7/qrc_res.cpp	1e2e1fef157a41c8
+951	1266	626554583	CMakeFiles/PCP.dir/PCP_autogen/3YJK5W5UP7/qrc_res.cpp.obj	3219c6a51eed47e6
+888	3596	626554585	CMakeFiles/PCP.dir/src/app/common/control.cpp.obj	7045a3afac41f7ec
+979	3806	626554585	CMakeFiles/PCP.dir/src/app/acquisition/VCamera.cpp.obj	ce2cb29c3d2cc854
+816	3972	626554585	CMakeFiles/PCP.dir/src/ui/widget.cpp.obj	914585d8ccb58d6c
+767	4095	626554586	CMakeFiles/PCP.dir/PCP_autogen/mocs_compilation.cpp.obj	3649ffb22a0e5d09
+837	4569	626554586	CMakeFiles/PCP.dir/src/app/common/dataBuffer.cpp.obj	9ef2abf7f63f328b
+867	4715	626554586	CMakeFiles/PCP.dir/src/app/common/dataBufferPool.cpp.obj	64baf279d325ae68
+788	5087	626554587	CMakeFiles/PCP.dir/src/main.cpp.obj	78d5e67c01b26179
+929	5346	626554587	CMakeFiles/PCP.dir/src/app/visualisation/rOg_image.cpp.obj	870fe42c38407ce4
+1001	5356	626554587	CMakeFiles/PCP.dir/src/app/visualisation/videoVisualizer.cpp.obj	7763470ea1f356fb
+5356	6262	626554588	PCP.exe	f73b78467f65e85e

@@ -1,8 +1,6 @@
 # Set Name of project and language
 project(Ex05 LANGUAGES CXX)
 
-# Set Path for the EXE file
-set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 # Set cmake version
 cmake_minimum_required(VERSION 3.10)
