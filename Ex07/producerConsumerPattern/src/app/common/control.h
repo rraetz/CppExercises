@@ -12,13 +12,15 @@
 #include "VCamera.h"
 #include "Icontrol.h"
 #include "IBaseCamera.h"
+#include "cameraFactory.h"
+
 
 // TODO: Remove compile time dependency with observer pattern
 // control should compile without including widget.h
 // ------------------------------------------------------------
 
 // Forward declarations
-class VCamera;
+//class VCamera;
 class DataBufferPool;
 
 
@@ -45,8 +47,8 @@ private:
     IControl* m_IControl;
     uint m_height;
     uint m_widht;
+    cameraType m_cameraType;
 
-//    std::unique_ptr<VCamera> m_player;
     std::unique_ptr<IBaseCamera> m_player;
     std::shared_ptr<DataBufferPool> m_dataPool;
 };

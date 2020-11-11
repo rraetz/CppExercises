@@ -6,12 +6,12 @@
 *****************************************************************************/
 #include "control.h"
 #include "dataBufferPool.h"
-#include "cameraFactory.h"
 
 Control::Control(IControl *parent) :
     m_IControl(parent),
     m_height(256),
-    m_widht(256)
+    m_widht(256),
+    m_cameraType(VCAMERA)
 {
     // init control handels
     init();
@@ -29,15 +29,7 @@ void Control::init()
     // init data pool
     m_dataPool.reset(new DataBufferPool(m_height, m_widht));
 
-    // Ptr to cameraFactory
-    std::unique_ptr<CameraFactory> cameraFactory = std::unique_ptr<CameraFactory>(new CameraFactory());
-    qDebug("Camera Factory created");
-    m_player = std::unique_ptr<VCamera>(cameraFactory->CreateCamera(this, m_dataPool, VCAMERA));
-
-//    // create file reader
-//    m_player.reset();
-
-//    m_player.reset( new VCamera( this, m_dataPool) );
+    m_player.reset( new VCamera( this, m_dataPool) );
 
     // Message
     m_IControl->displayMsg("Control", "Constructed");
@@ -58,15 +50,11 @@ void Control::setData(DataBufferPtr dataJunk)
 
 void Control::startPlaying()
 {
-    qDebug("start playing");
     init(); // reinit handlers
 
-
-
-    // Ptr to cameraFactory
+    // Create factory and generate player
     std::unique_ptr<CameraFactory> cameraFactory = std::unique_ptr<CameraFactory>(new CameraFactory());
-    qDebug("Camera Factory created");
-    m_player = std::unique_ptr<VCamera>(cameraFactory->CreateCamera(this, m_dataPool, VCAMERA));
+    m_player = std::unique_ptr<IBaseCamera>(cameraFactory->CreateCamera(this, m_dataPool, m_cameraType));
 
     m_player->startPlayData();
 }

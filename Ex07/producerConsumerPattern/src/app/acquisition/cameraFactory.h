@@ -14,12 +14,12 @@ class CameraFactory
 public:
     CameraFactory(){qDebug("Factory Created");}
 
-    std::unique_ptr<VCamera> CreateCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool, const cameraType& type)
+    std::unique_ptr<IBaseCamera> CreateCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool, const cameraType& type)
     {
         qDebug("Create Camera from Factory");
         switch(type)
         {
-            case VCAMERA: return std::unique_ptr<VCamera>(new VCamera(host, dataPool));
+            case VCAMERA: return std::unique_ptr<IBaseCamera>(new VCamera(host, dataPool));
             case VRGBCAMERA: return nullptr;
         }
         return nullptr;
