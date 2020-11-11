@@ -6,21 +6,28 @@
 
 #include <memory>
 
-enum cameraType{VCAMERA, VRGBCAMERA};
-
 
 class CameraFactory
 {
 public:
     CameraFactory(){qDebug("Factory Created");}
 
-    std::unique_ptr<IBaseCamera> CreateCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool, const cameraType& type)
+    std::unique_ptr<IBaseCamera> CreateCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool, const int type)
     {
         qDebug("Create Camera from Factory");
         switch(type)
         {
-            case VCAMERA: return std::unique_ptr<IBaseCamera>(new VCamera(host, dataPool));
-            case VRGBCAMERA: return nullptr;
+            case 0:
+            {
+                qDebug("VCamera selected");
+                return std::unique_ptr<IBaseCamera>(new VCamera(host, dataPool));
+            }
+            case 1:
+            {
+                qDebug("VRGBCamera selected");
+                return nullptr;
+            }
+
         }
         return nullptr;
     }

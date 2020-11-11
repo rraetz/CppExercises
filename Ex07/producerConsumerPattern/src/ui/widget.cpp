@@ -12,6 +12,7 @@
 #include "dataBuffer.h"
 #include "control.h"
 #include "videoVisualizer.h"
+#include "cameraFactory.h"
 
 
 Widget::Widget(QWidget *parent) :
@@ -32,6 +33,13 @@ Widget::Widget(QWidget *parent) :
 
     // setup GUI
     initGUI();
+
+    // ComboBox
+    ui->comboBox->addItem("VCamera");
+    ui->comboBox->addItem("VRGBCamera");
+
+    ui->comboBox->
+
 
     // Connect GUI
     connect(ui->play_pushButton, SIGNAL(clicked()), this, SLOT(playDataFromFile()));
@@ -100,6 +108,7 @@ void Widget::playDataFromFile()
     }
     else
     {
+        m_appCtrl->m_cameraType = ui->comboBox->currentIndex();
         m_appCtrl->startPlaying();
         ui->frameRateSlider->setValue(33);
         ui->play_pushButton->setText("Stop");
@@ -118,3 +127,5 @@ void Widget::updateFrameRate()
     ui->frameRate_label->setText("FPS: " + QString::number(fps));
     m_frameCount = 0;
 }
+
+

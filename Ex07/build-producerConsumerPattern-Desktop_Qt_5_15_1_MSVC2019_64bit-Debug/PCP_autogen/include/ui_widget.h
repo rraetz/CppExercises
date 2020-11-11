@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -28,6 +29,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QPushButton *play_pushButton;
+    QComboBox *comboBox;
     QSlider *frameRateSlider;
     QSpacerItem *verticalSpacer;
     QLabel *frameRate_label;
@@ -37,6 +39,7 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
+        Widget->setEnabled(true);
         Widget->resize(1104, 622);
         verticalLayout_2 = new QVBoxLayout(Widget);
         verticalLayout_2->setSpacing(6);
@@ -55,6 +58,12 @@ public:
         play_pushButton->setBaseSize(QSize(0, 0));
 
         verticalLayout->addWidget(play_pushButton);
+
+        comboBox = new QComboBox(Widget);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setEditable(false);
+
+        verticalLayout->addWidget(comboBox);
 
         frameRateSlider = new QSlider(Widget);
         frameRateSlider->setObjectName(QString::fromUtf8("frameRateSlider"));

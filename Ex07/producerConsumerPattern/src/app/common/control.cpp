@@ -9,9 +9,9 @@
 
 Control::Control(IControl *parent) :
     m_IControl(parent),
+    m_cameraType(0),
     m_height(256),
-    m_widht(256),
-    m_cameraType(VCAMERA)
+    m_widht(256)
 {
     // init control handels
     init();

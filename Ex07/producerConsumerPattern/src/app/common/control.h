@@ -43,11 +43,12 @@ public:
     bool isPlaying() const;
     void setPlayRate(int playRate);
 
+    int m_cameraType;
+
 private:
     IControl* m_IControl;
     uint m_height;
     uint m_widht;
-    cameraType m_cameraType;
 
     std::unique_ptr<IBaseCamera> m_player;
     std::shared_ptr<DataBufferPool> m_dataPool;
