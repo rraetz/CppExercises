@@ -1,0 +1,35 @@
+# Meta
+set(AM_MULTI_CONFIG "FALSE")
+set(AM_PARALLEL "4")
+set(AM_VERBOSITY "")
+# Directories
+set(AM_CMAKE_SOURCE_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern")
+set(AM_CMAKE_BINARY_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug")
+set(AM_CMAKE_CURRENT_SOURCE_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern")
+set(AM_CMAKE_CURRENT_BINARY_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug")
+set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
+set(AM_BUILD_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/PCP_autogen")
+set(AM_INCLUDE_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/PCP_autogen/include")
+# Files
+set(AM_SOURCES "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition/VCamera.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/control.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/dataBuffer.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/dataBufferPool.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/visualisation/rOg_image.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/visualisation/videoVisualizer.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/main.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/ui/widget.cpp")
+set(AM_HEADERS "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition/IBaseCamera.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition/IVCamera.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition/VCamera.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition/cameraFactory.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/IControl.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/control.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/dataBuffer.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common/dataBufferPool.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/visualisation/rOg_image.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/visualisation/videoVisualizer.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/ui/widget.h")
+set(AM_SETTINGS_FILE "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/PCP_autogen.dir/AutogenOldSettings.txt")
+# Qt
+set(AM_QT_VERSION_MAJOR 5)
+set(AM_QT_MOC_EXECUTABLE "C:/Qt/5.15.1/msvc2019_64/bin/moc.exe")
+set(AM_QT_UIC_EXECUTABLE "C:/Qt/5.15.1/msvc2019_64/bin/uic.exe")
+# MOC settings
+set(AM_MOC_SKIP "")
+set(AM_MOC_DEFINITIONS "QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;WIN32")
+set(AM_MOC_INCLUDES "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/ui;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/common;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/acquisition;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/producerConsumerPattern/src/app/visualisation;C:/Qt/5.15.1/msvc2019_64/include;C:/Qt/5.15.1/msvc2019_64/include/QtWidgets;C:/Qt/5.15.1/msvc2019_64/include/QtGui;C:/Qt/5.15.1/msvc2019_64/include/QtANGLE;C:/Qt/5.15.1/msvc2019_64/include/QtCore;C:/Qt/5.15.1/msvc2019_64/./mkspecs/win32-msvc")
+set(AM_MOC_OPTIONS "")
+set(AM_MOC_RELAXED_MODE "")
+set(AM_MOC_MACRO_NAMES "Q_OBJECT;Q_GADGET;Q_NAMESPACE;Q_NAMESPACE_EXPORT")
+set(AM_MOC_DEPEND_FILTERS "")
+set(AM_MOC_PREDEFS_CMD "")
+# UIC settings
+set(AM_UIC_SKIP "")
+set(AM_UIC_TARGET_OPTIONS "")
+set(AM_UIC_OPTIONS_FILES "")
+set(AM_UIC_OPTIONS_OPTIONS "")
+set(AM_UIC_SEARCH_PATHS "")
