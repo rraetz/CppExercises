@@ -30,8 +30,8 @@ add_executable(${PROJECT_NAME}
     src/app/common/dataBufferPool.h
     src/app/acquisition/VCamera.cpp
     src/app/acquisition/VCamera.h
-#    src/app/acquisition/VRgbCamera.cpp
-#    src/app/acquisition/VRgbCamera.h
+    src/app/acquisition/VRgbCamera.cpp
+    src/app/acquisition/VRgbCamera.h
     src/app/acquisition/IVCamera.h
     src/app/acquisition/IBaseCamera.h
     src/app/acquisition/cameraFactory.h

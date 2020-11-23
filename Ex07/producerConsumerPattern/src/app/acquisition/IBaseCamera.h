@@ -11,7 +11,7 @@ private:
 //    std::shared_ptr<DataBufferPool> m_dataPool;
 
 public:
-    IBaseCamera() {qDebug("IBaseCamera constructed"); }
+    IBaseCamera() {}
     virtual ~IBaseCamera() {}
 
     virtual void startPlayData() = 0;

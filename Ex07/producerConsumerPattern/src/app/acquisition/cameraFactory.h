@@ -3,29 +3,32 @@
 
 #include "IBaseCamera.h"
 #include "VCamera.h"
+#include "VRgbCamera.h"
 
 #include <memory>
+
 
 
 class CameraFactory
 {
 public:
-    CameraFactory(){qDebug("Factory Created");}
+    CameraFactory(){}
 
     std::unique_ptr<IBaseCamera> CreateCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool, const int type)
     {
-        qDebug("Create Camera from Factory");
         switch(type)
         {
             case 0:
             {
-                qDebug("VCamera selected");
-                return std::unique_ptr<IBaseCamera>(new VCamera(host, dataPool));
+                return nullptr;
             }
             case 1:
             {
-                qDebug("VRGBCamera selected");
-                return nullptr;
+                return std::unique_ptr<IBaseCamera>(new VCamera(host, dataPool));
+            }
+            case 2:
+            {
+                return std::unique_ptr<IBaseCamera>(new VRgbCamera(host, dataPool));
             }
 
         }

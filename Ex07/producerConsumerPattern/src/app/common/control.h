@@ -9,7 +9,6 @@
 
 #include <QWidget>
 #include <memory>
-#include "VCamera.h"
 #include "Icontrol.h"
 #include "IBaseCamera.h"
 #include "cameraFactory.h"
@@ -20,7 +19,6 @@
 // ------------------------------------------------------------
 
 // Forward declarations
-//class VCamera;
 class DataBufferPool;
 
 

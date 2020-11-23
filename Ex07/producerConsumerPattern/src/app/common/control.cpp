@@ -11,11 +11,11 @@ Control::Control(IControl *parent) :
     m_IControl(parent),
     m_cameraType(0),
     m_height(256),
-    m_widht(256)
+    m_widht(256),
+    m_player(nullptr)
 {
     // init control handels
     init();
-    qDebug("Control constructed");
 }
 
 Control::~Control()
@@ -28,8 +28,6 @@ void Control::init()
 {
     // init data pool
     m_dataPool.reset(new DataBufferPool(m_height, m_widht));
-
-    m_player.reset( new VCamera( this, m_dataPool) );
 
     // Message
     m_IControl->displayMsg("Control", "Constructed");
@@ -56,21 +54,21 @@ void Control::startPlaying()
     std::unique_ptr<CameraFactory> cameraFactory = std::unique_ptr<CameraFactory>(new CameraFactory());
     m_player = std::unique_ptr<IBaseCamera>(cameraFactory->CreateCamera(this, m_dataPool, m_cameraType));
 
-    m_player->startPlayData();
+    if (m_player) m_player->startPlayData();
 }
 
 void Control::stopPlaying()
 {
-    m_player->stop();
+    if (m_player) m_player->stop();
 }
 
 bool Control::isPlaying() const
-{
-    bool isPlaying = (m_player->isPlaying());
+{   
+    bool isPlaying = (m_player) ?  m_player->isPlaying() : false;
     return isPlaying;
 }
 
 void Control::setPlayRate(int playRate)
 {
-    m_player->setPlayRate(playRate);
+    if (m_player) m_player->setPlayRate(playRate);
 }

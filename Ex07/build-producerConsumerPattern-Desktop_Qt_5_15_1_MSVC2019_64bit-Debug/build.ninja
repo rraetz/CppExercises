@@ -93,6 +93,14 @@ build CMakeFiles\PCP.dir\src\app\acquisition\VCamera.cpp.obj: CXX_COMPILER__PCP 
   OBJECT_FILE_DIR = CMakeFiles\PCP.dir\src\app\acquisition
   TARGET_COMPILE_PDB = CMakeFiles\PCP.dir\
   TARGET_PDB = PCP.pdb
+build CMakeFiles\PCP.dir\src\app\acquisition\VRgbCamera.cpp.obj: CXX_COMPILER__PCP D$:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\app\acquisition\VRgbCamera.cpp || cmake_object_order_depends_target_PCP
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   /W3
+  INCLUDES = -IPCP_autogen\include -ID:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\ui -ID:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\app\common -ID:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\app\acquisition -ID:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\app\visualisation -IC:\Qt\5.15.1\msvc2019_64\include -IC:\Qt\5.15.1\msvc2019_64\include\QtWidgets -IC:\Qt\5.15.1\msvc2019_64\include\QtGui -IC:\Qt\5.15.1\msvc2019_64\include\QtANGLE -IC:\Qt\5.15.1\msvc2019_64\include\QtCore -IC:\Qt\5.15.1\msvc2019_64\.\mkspecs\win32-msvc
+  OBJECT_DIR = CMakeFiles\PCP.dir
+  OBJECT_FILE_DIR = CMakeFiles\PCP.dir\src\app\acquisition
+  TARGET_COMPILE_PDB = CMakeFiles\PCP.dir\
+  TARGET_PDB = PCP.pdb
 build CMakeFiles\PCP.dir\src\app\visualisation\videoVisualizer.cpp.obj: CXX_COMPILER__PCP D$:\raphael.raetz\Documents\C++Programming-II\CppExercises\Ex07\producerConsumerPattern\src\app\visualisation\videoVisualizer.cpp || cmake_object_order_depends_target_PCP
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   /W3
@@ -125,7 +133,7 @@ build CMakeFiles\PCP.dir\PCP_autogen\3YJK5W5UP7\qrc_res.cpp.obj: CXX_COMPILER__P
 #############################################
 # Link the executable PCP.exe
 
-build PCP.exe: CXX_EXECUTABLE_LINKER__PCP CMakeFiles\PCP.dir\PCP_autogen\mocs_compilation.cpp.obj CMakeFiles\PCP.dir\src\main.cpp.obj CMakeFiles\PCP.dir\src\ui\widget.cpp.obj CMakeFiles\PCP.dir\src\app\common\control.cpp.obj CMakeFiles\PCP.dir\src\app\common\dataBuffer.cpp.obj CMakeFiles\PCP.dir\src\app\common\dataBufferPool.cpp.obj CMakeFiles\PCP.dir\src\app\acquisition\VCamera.cpp.obj CMakeFiles\PCP.dir\src\app\visualisation\videoVisualizer.cpp.obj CMakeFiles\PCP.dir\src\app\visualisation\rOg_image.cpp.obj CMakeFiles\PCP.dir\PCP_autogen\3YJK5W5UP7\qrc_res.cpp.obj | C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Widgetsd.lib C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Guid.lib C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Cored.lib || PCP_autogen
+build PCP.exe: CXX_EXECUTABLE_LINKER__PCP CMakeFiles\PCP.dir\PCP_autogen\mocs_compilation.cpp.obj CMakeFiles\PCP.dir\src\main.cpp.obj CMakeFiles\PCP.dir\src\ui\widget.cpp.obj CMakeFiles\PCP.dir\src\app\common\control.cpp.obj CMakeFiles\PCP.dir\src\app\common\dataBuffer.cpp.obj CMakeFiles\PCP.dir\src\app\common\dataBufferPool.cpp.obj CMakeFiles\PCP.dir\src\app\acquisition\VCamera.cpp.obj CMakeFiles\PCP.dir\src\app\acquisition\VRgbCamera.cpp.obj CMakeFiles\PCP.dir\src\app\visualisation\videoVisualizer.cpp.obj CMakeFiles\PCP.dir\src\app\visualisation\rOg_image.cpp.obj CMakeFiles\PCP.dir\PCP_autogen\3YJK5W5UP7\qrc_res.cpp.obj | C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Widgetsd.lib C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Guid.lib C$:\Qt\5.15.1\msvc2019_64\lib\Qt5Cored.lib || PCP_autogen
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = C:\Qt\5.15.1\msvc2019_64\lib\Qt5Widgetsd.lib C:\Qt\5.15.1\msvc2019_64\lib\Qt5Guid.lib C:\Qt\5.15.1\msvc2019_64\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

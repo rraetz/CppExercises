@@ -8,7 +8,7 @@
 class IVCamera
 {
 public:
-    IVCamera(){qDebug("IVCamera constructed");};
+    IVCamera(){};
     virtual ~IVCamera(){};
 
     virtual void displayMsg(const std::string &tag, const std::string &msg) = 0;

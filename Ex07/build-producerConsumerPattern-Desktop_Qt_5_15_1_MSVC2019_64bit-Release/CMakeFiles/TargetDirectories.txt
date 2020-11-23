@@ -1,0 +1,4 @@
+D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Release/CMakeFiles/PCP.dir
+D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Release/CMakeFiles/edit_cache.dir
+D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Release/CMakeFiles/rebuild_cache.dir
+D:/raphael.raetz/Documents/C++Programming-II/CppExercises/Ex07/build-producerConsumerPattern-Desktop_Qt_5_15_1_MSVC2019_64bit-Release/CMakeFiles/PCP_autogen.dir

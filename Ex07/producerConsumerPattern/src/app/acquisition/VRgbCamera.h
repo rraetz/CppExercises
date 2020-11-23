@@ -4,8 +4,8 @@
 **
 ** Contact:    Patrik Arnold ( patrik.arnold@bfh.ch )
 *****************************************************************************/
-#ifndef VCAMERA_H
-#define VCAMERA_H
+#ifndef VRGCAMERA_H
+#define VRGBCAMERA_H
 
 #include <thread>
 #include "dataBuffer.h"
@@ -16,17 +16,18 @@
 class DataBufferPool;
 
 /**
- * @brief The VCamera class
+ * @brief The VRgbCamera class
  *
  * Note: Inheritating is not allowed since starting a thread in the constructor can be problematic for derived classes
  */
-class VCamera final : public IBaseCamera
+class VRgbCamera : public IBaseCamera
 {
 
 public:
-     VCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool);
-     ~VCamera();
+     VRgbCamera(IVCamera* host, std::shared_ptr<DataBufferPool> dataPool);
+     ~VRgbCamera();
 
+     // From IBaseCamera
      virtual void startPlayData() override;
      virtual void stop() override;
      virtual bool isPlaying() override;
@@ -47,6 +48,7 @@ private:
      int m_playRate;
      std::shared_ptr<DataBufferPool> m_dataPool;
      int offset;
+     int m_color;
 };
 
-#endif // VCAMERA_H
+#endif // VRGBCAMERA_H
