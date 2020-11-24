@@ -26,6 +26,7 @@ add_executable(robotProject
     src/widget.h
     src/widget.ui
     src/utils.h
+    src/spaceTransformations.h
     )
 
 

@@ -4,6 +4,10 @@
 #include <QDebug>
 #include <Geometry>
 #include "utils.h"
+#include "spaceTransformations.h"
+
+
+
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -13,45 +17,15 @@ Widget::Widget(QWidget *parent)
 
 //    https://stackoverflow.com/questions/28267104/using-eigen-lib-in-my-cmake-project
 
-    using namespace Eigen;
-//    Matrix3d m;
-//    m = AngleAxis(0.25*3.14, Vector3d::UnitX());
-//    Transform T01(AngleAxis(0.25*3.14, Vector3d::UnitX()));
-//    T01 = m;
-
-    Affine3d t1(Translation3d(Vector3d(1,1,2)));
-
-//    auto t2 = Vector3d::UnitX();
-    Affine3d t2(AngleAxisd(1.34, Vector3d::UnitX()));
-
-    Quaterniond q1(AngleAxisd(1.34, Vector3d::UnitX()));
 
 
-    printMatrix(t1);
-    printMatrix(t2);
+    Trans T01;
+    Trans T02(2, 3, 4.234);
+    Trans T03(2.54, 'e');
 
-    printMatrix(t1*q1);
-    printMatrix(t1*t2);
+    T02.rotX(0.56);
 
-    QString mat;
-    for (int i = 0; i<3; ++i)
-    {
-        for (int j = 0; j<3; ++j)
-        {
-            auto m = q1.toRotationMatrix();
-            mat.append(QString::number(m(i,j), 'g', 2) + "\t");
-        }
-        qDebug() << qPrintable(mat);
-        mat.clear();
-    }
-    qDebug("\t");
-
-
-
-    int a = 234;
-
-
-
+    printTransformation(T01*T02*T03);
 
 
 

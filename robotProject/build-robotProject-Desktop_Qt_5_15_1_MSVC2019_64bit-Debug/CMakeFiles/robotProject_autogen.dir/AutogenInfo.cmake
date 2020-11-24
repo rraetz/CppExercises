@@ -12,7 +12,7 @@ set(AM_BUILD_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robo
 set(AM_INCLUDE_DIR "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/robotProject_autogen/include")
 # Files
 set(AM_SOURCES "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/main.cpp;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/widget.cpp")
-set(AM_HEADERS "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/utils.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/widget.h")
+set(AM_HEADERS "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/spaceTransformations.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/utils.h;D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/robotProject/src/widget.h")
 set(AM_SETTINGS_FILE "D:/raphael.raetz/Documents/C++Programming-II/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug/CMakeFiles/robotProject_autogen.dir/AutogenOldSettings.txt")
 # Qt
 set(AM_QT_VERSION_MAJOR 5)
