@@ -95,10 +95,10 @@ SceneModifier::SceneModifier(Qt3DCore::QEntity *rootEntity)
     cylinder->setSlices(20);
 
     // CylinderMesh Transform
-    Qt3DCore::QTransform *cylinderTransform = new Qt3DCore::QTransform();
-    cylinderTransform->setScale(1.5f);
-    cylinderTransform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 45.0f));
-    cylinderTransform->setTranslation(QVector3D(-5.0f, 4.0f, -1.5));
+    Qt3DCore::QTransform *m_controller = new Qt3DCore::QTransform();
+    m_controller->setScale(1.5f);
+    m_controller->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 45.0f));
+    m_controller->setTranslation(QVector3D(-5.0f, 4.0f, -1.5));
 
     Qt3DExtras::QPhongMaterial *cylinderMaterial = new Qt3DExtras::QPhongMaterial();
     cylinderMaterial->setDiffuse(QColor(QRgb(0x928327)));
@@ -107,7 +107,7 @@ SceneModifier::SceneModifier(Qt3DCore::QEntity *rootEntity)
     m_cylinderEntity = new Qt3DCore::QEntity(m_rootEntity);
     m_cylinderEntity->addComponent(cylinder);
     m_cylinderEntity->addComponent(cylinderMaterial);
-    m_cylinderEntity->addComponent(cylinderTransform);
+    m_cylinderEntity->addComponent(m_controller);
 
 
 
@@ -129,4 +129,8 @@ void SceneModifier::enableCylinder(bool enabled)
     m_cylinderEntity->setEnabled(enabled);
 }
 
+void SceneModifier::updateCylinderPosition()
+{
+//    m_cylinderEntity
+}
 

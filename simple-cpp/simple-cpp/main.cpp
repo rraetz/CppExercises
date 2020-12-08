@@ -48,39 +48,62 @@
 **
 ****************************************************************************/
 
-#ifndef SCENEMODIFIER_H
-#define SCENEMODIFIER_H
 
-#include <QtCore/QObject>
+#include "main.h"
 
-#include <Qt3DCore/qentity.h>
-#include <Qt3DCore/qtransform.h>
 
-#include <Qt3DExtras/QTorusMesh>
-#include <Qt3DExtras/QCylinderMesh>
-#include <Qt3DExtras/QPhongMaterial>
 
-class SceneModifier : public QObject
+
+Qt3DCore::QEntity *createScene()
 {
-    Q_OBJECT
+    // Root entity
+    Qt3DCore::QEntity *scene = new Qt3DCore::QEntity;
 
-public:
-    explicit SceneModifier(Qt3DCore::QEntity *rootEntity);
-    ~SceneModifier();
+    // Material (independend of sphere)
+    Qt3DRender::QMaterial *material = new Qt3DExtras::QPhongMaterial(scene);
 
-public slots:
-    void enableTorus(bool enabled);
-    void enableCylinder(bool enabled);
-    void updateCylinderPosition();
+    // Sphere
+    Qt3DCore::QEntity *sphere = new Qt3DCore::QEntity(scene);
 
-private:
-    Qt3DCore::QEntity *m_rootEntity;
-    Qt3DExtras::QTorusMesh *m_torus;
-    Qt3DCore::QEntity *m_cylinderEntity;
-    Qt3DCore::QEntity *m_torusEntity;
-//    Qt3DCore::QTransform *m_controller;
+    // Sphere component: mesh
+    Qt3DExtras::QSphereMesh *sphereMesh = new Qt3DExtras::QSphereMesh;
+    sphereMesh->setRadius(3);
 
-};
+    // Sphere component: pose
+    Qt3DCore::QTransform *sphereTransform = new Qt3DCore::QTransform;
+    Controller *controller = new Controller(sphereTransform);
+    controller->m_target = sphereTransform;
+    controller->m_radius = 20.0f;
 
-#endif // SCENEMODIFIER_H
+    // Add compontents to sphere
+    sphere->addComponent(sphereMesh);
+    sphere->addComponent(sphereTransform);
+    sphere->addComponent(material);
 
+    return scene;
+}
+
+
+int main(int argc, char* argv[])
+{
+    // App, window and scene
+    QGuiApplication app(argc, argv);
+    Qt3DExtras::Qt3DWindow view;
+    Qt3DCore::QEntity *scene = createScene();
+
+    // Camera
+    Qt3DRender::QCamera *camera = view.camera();
+    camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 0.1f, 1000.0f);
+    camera->setPosition(QVector3D(0, 0, 40.0f));
+    camera->setViewCenter(QVector3D(0, 0, 0));
+
+    // Camera controls
+    Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
+    camController->setCamera(camera);
+
+    // Show it
+    view.setRootEntity(scene);
+    view.show();
+
+    return app.exec();
+}
