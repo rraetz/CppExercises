@@ -2,8 +2,9 @@
 #include <Qt3DCore/qtransform.h>
 
 
-Controller::Controller(Qt3DCore::QTransform *target)
-    : m_targetTransform(target)
+Controller::Controller(QObject *parent)
+    : QObject(parent)
+    , m_target(nullptr)
     , m_radius(0.3f)
     , m_angle(0.0f)
     , m_counter(0.0f)
@@ -11,6 +12,7 @@ Controller::Controller(Qt3DCore::QTransform *target)
     m_timer.setInterval(10);
     connect(&m_timer, &QTimer::timeout, this, &Controller::updatePosition);
     m_timer.start();
+
 }
 
 
@@ -20,8 +22,7 @@ void Controller::updateMatrix()
     T.setToIdentity();
     T.rotate(m_angle, QVector3D(0.0f, 5.0f, 0.0f));
     T.translate(m_radius, 0.0f, 0.0f);
-    m_targetTransform->setMatrix(T);
-//    setMatrix(T);
+    m_target->setMatrix(T);
 }
 
 

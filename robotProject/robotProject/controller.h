@@ -1,6 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+** Copyright (C) 2016 Klaralvdalens Datakonsult AB (KDAB).
+** Copyright (C) 2016 The Qt Company Ltd and/or its subsidiary(-ies).
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the Qt3D module of the Qt Toolkit.
@@ -48,39 +49,40 @@
 **
 ****************************************************************************/
 
-#ifndef SCENEMODIFIER_H
-#define SCENEMODIFIER_H
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
 
-#include <QtCore/QObject>
+#include <QObject>
+#include <QMatrix4x4>
+#include <QDebug>
+#include <QTimer>
 
-#include <Qt3DCore/qentity.h>
 #include <Qt3DCore/qtransform.h>
 
-#include <Qt3DExtras/QTorusMesh>
-#include <Qt3DExtras/QCylinderMesh>
-#include <Qt3DExtras/QPhongMaterial>
 
-class SceneModifier : public QObject
+
+class Controller : public QObject
 {
-    Q_OBJECT
 
 public:
-    explicit SceneModifier(Qt3DCore::QEntity *rootEntity);
-    ~SceneModifier();
+    Controller(QObject *parent = 0);
+    Qt3DCore::QTransform *m_target;
 
-public slots:
-    void enableTorus(bool enabled);
-    void enableCylinder(bool enabled);
-    void updateCylinderPosition();
+    QTimer m_timer;
+    float m_radius;
+    float m_angle;
+    float m_counter;
+
+
+signals:
+
+private slots:
+    void updatePosition();
+    void updateMatrix();
 
 private:
-    Qt3DCore::QEntity *m_rootEntity;
-    Qt3DExtras::QTorusMesh *m_torus;
-    Qt3DCore::QEntity *m_cylinderEntity;
-    Qt3DCore::QEntity *m_torusEntity;
-//    Qt3DCore::QTransform *m_controller;
 
 };
 
-#endif // SCENEMODIFIER_H
 
+#endif // ORBITTRANSFORMCONTROLLER_H

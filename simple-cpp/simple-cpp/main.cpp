@@ -72,8 +72,9 @@ Qt3DCore::QEntity *createScene()
     // Sphere component: pose
     Qt3DCore::QTransform *sphereTransform = new Qt3DCore::QTransform;
     Controller *controller = new Controller(sphereTransform);
-    controller->m_target = sphereTransform;
+//    controller->m_targetTransform = sphereTransform;
     controller->m_radius = 20.0f;
+
 
     // Add compontents to sphere
     sphere->addComponent(sphereMesh);
