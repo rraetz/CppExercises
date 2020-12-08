@@ -52,7 +52,6 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include <QObject>
 #include <QMatrix4x4>
 #include <QDebug>
 #include <QTimer>
@@ -60,12 +59,12 @@
 #include <Qt3DCore/qtransform.h>
 
 
-class Controller : public QObject
+class Controller : public Qt3DCore::QTransform
 {
 
 public:
     // Constructor
-    Controller(Qt3DCore::QTransform *target);
+    Controller();
 
     // Pointer to target transform
     Qt3DCore::QTransform *m_targetTransform;
@@ -73,6 +72,7 @@ public:
     // Other members...
     QTimer m_timer;
     float m_radius;
+    float m_period;
     float m_angle;
     float m_counter;
 
