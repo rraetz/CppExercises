@@ -1,34 +1,53 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.0)
 
-project(robotProject LANGUAGES CXX)
+# Set name, version and language of project
+project(robotProject VERSION 1.0.0 LANGUAGES CXX)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Declare dependencies
+find_package(Qt5 REQUIRED COMPONENTS Core 3DCore 3DRender 3DInput 3DExtras Widgets)
 
-set(CMAKE_AUTOUIC ON)
+# Qt Flags
+# Instruct CMake to run moc automatically when needed
 set(CMAKE_AUTOMOC ON)
+# Create code from a list of Qt designer ui files
+set(CMAKE_AUTOUIC ON)
+# Instruct CMake to get the resources
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Add target with sources
+add_executable(${PROJECT_NAME}
+	main.cpp
+	scenemodifier.cpp
+	scenemodifier.h
+        src/graphics.h
+        src/joint.h
+        src/robot.h
+        src/spaceTransformations.h
+        src/utils.h
+#        examples.pri
+    )
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+# link the qt3d libraries
+target_link_libraries(${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::3DCore
+    Qt5::3DExtras
+    Qt5::3DRender
+    Qt5::3DInput
+    )
 
-# Find package Eigen
-include_directories(libs/eigen-3.3.8/Eigen)
-#find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+# Link libs
+# if(UNIX)
+    # target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core PRIVATE Threads::Threads)
+# else(UNIX)
+    # target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core)
+# endif(UNIX)
 
-
-
-add_executable(robotProject
-    src/main.cpp
-    src/widget.cpp
-    src/widget.h
-    src/widget.ui
-    src/utils.h
-    src/spaceTransformations.h
+# Set compile options, enable warnings
+target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall>
+    $<$<CXX_COMPILER_ID:MSVC>: /W3>
     )
 
 
-target_link_libraries(robotProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-#target_link_libraries (robotProject PRIVATE Eigen3::Eigen)

@@ -103,6 +103,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=robotProject
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.0.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/rc.exe
 
@@ -174,20 +189,35 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//The directory containing a CMake configuration file for Eigen3.
-Eigen3_DIR:PATH=Eigen3_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for QT.
-QT_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5
-
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:STRING=C:/Qt/5.15.1/msvc2019_64/bin/qmake.exe
+
+//The directory containing a CMake configuration file for Qt53DCore.
+Qt53DCore_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt53DCore
+
+//The directory containing a CMake configuration file for Qt53DExtras.
+Qt53DExtras_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt53DExtras
+
+//The directory containing a CMake configuration file for Qt53DInput.
+Qt53DInput_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt53DInput
+
+//The directory containing a CMake configuration file for Qt53DLogic.
+Qt53DLogic_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt53DLogic
+
+//The directory containing a CMake configuration file for Qt53DRender.
+Qt53DRender_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt53DRender
 
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5Core
 
+//The directory containing a CMake configuration file for Qt5Gamepad.
+Qt5Gamepad_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5Gamepad
+
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5Network.
+Qt5Network_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5Network
 
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=C:/Qt/5.15.1/msvc2019_64/lib/cmake/Qt5Widgets

@@ -4,7 +4,7 @@
 #include <QDebug>
 #include "spaceTransformations.h"
 
-void printTransformation(Trans m)
+void printTransformation(SE3 m)
 {
     QString mat;
     for (int i = 0; i<4; ++i)
