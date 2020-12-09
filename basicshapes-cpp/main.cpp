@@ -82,6 +82,8 @@
 #include <Qt3DExtras/qt3dwindow.h>
 #include <Qt3DExtras/qfirstpersoncameracontroller.h>
 
+#include <memory>
+
 int main(int argc, char **argv)
 {
     // Create application and widgets

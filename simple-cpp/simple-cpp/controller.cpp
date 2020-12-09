@@ -29,7 +29,6 @@ void Controller::updatePosition()
     float angle = sin(m_counter/1000*m_period)*90;
     m_angle = angle;
     updateMatrix();
-    qDebug() << "Position updated, m_counter =" << m_counter;
-
+//    qDebug() << "Position updated, m_counter =" << m_counter;
 }
 

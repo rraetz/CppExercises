@@ -63,8 +63,9 @@ class Controller : public Qt3DCore::QTransform
 {
 
 public:
-    // Constructor
+    // Constructor / Destructor
     Controller();
+//    virtual ~Controller();
 
     // Pointer to target transform
     Qt3DCore::QTransform *m_targetTransform;

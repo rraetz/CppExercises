@@ -14,6 +14,7 @@
 //#include <Qt3DRender/QRenderAspect>
 //#include <Qt3DExtras/QForwardRenderer>
 #include <Qt3DExtras/QDiffuseSpecularMaterial>
+#include <Qt3DRender/qpointlight.h>
 
 #include <Qt3DExtras/QSphereMesh>
 
