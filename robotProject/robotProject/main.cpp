@@ -1,84 +1,64 @@
-/****************************************************************************
-**
-** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
-** Contact: https://www.qt.io/licensing/
-**
-** This file is part of the Qt3D module of the Qt Toolkit.
-**
-** $QT_BEGIN_LICENSE:BSD$
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see https://www.qt.io/terms-conditions. For further
-** information use the contact form at https://www.qt.io/contact-us.
-**
-** BSD License Usage
-** Alternatively, you may use this file under the terms of the BSD license
-** as follows:
-**
-** "Redistribution and use in source and binary forms, with or without
-** modification, are permitted provided that the following conditions are
-** met:
-**   * Redistributions of source code must retain the above copyright
-**     notice, this list of conditions and the following disclaimer.
-**   * Redistributions in binary form must reproduce the above copyright
-**     notice, this list of conditions and the following disclaimer in
-**     the documentation and/or other materials provided with the
-**     distribution.
-**   * Neither the name of The Qt Company Ltd nor the names of its
-**     contributors may be used to endorse or promote products derived
-**     from this software without specific prior written permission.
-**
-**
-** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-** "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-**
-** $QT_END_LICENSE$
-**
-****************************************************************************/
-
+#include <QDebug>
+#include <Geometry>
 
 #include "main.h"
+#include <vector>
+#include "spaceTransformations.h"
+#include "utils.h"
+#include "controller.h"
 
 
 
+/* class robot
+ * {
+ * public:
+ *      std::vector<Joint> m_joints
+ *
+ *      setTargetPose (set for trajectory planner)
+ *      void setPose(theta1, theta2, theta3,...)
+ *
+ *      void forwardKinematics
+ *      void inverseKinematics
+ *      void updateTrajectory
+ *
+ * }
+ */
 
-Qt3DCore::QEntity *createScene()
+Qt3DCore::QEntity* createScene()
 {
     // Root entity
     Qt3DCore::QEntity *scene = new Qt3DCore::QEntity;
 
     // Material (independend of sphere)
-    Qt3DRender::QMaterial *material = new Qt3DExtras::QPhongMaterial(scene);
+    Qt3DExtras::QDiffuseSpecularMaterial *material = new Qt3DExtras::QDiffuseSpecularMaterial();
+    material->setDiffuse(QColor("cornflowerblue"));
+//    material->setDiffuse(QColor("red"));
 
-    // Sphere
-    Qt3DCore::QEntity *sphere = new Qt3DCore::QEntity(scene);
+    // Spheres
+    std::vector<Qt3DCore::QEntity*> spheres;
+    std::vector<Qt3DExtras::QSphereMesh*> sphereMeshes;
+    std::vector<Controller*> sphereControllers;
 
-    // Sphere component: mesh
-    Qt3DExtras::QSphereMesh *sphereMesh = new Qt3DExtras::QSphereMesh;
-    sphereMesh->setRadius(3);
+    for (int i=0; i < 10; ++i)
+    {
+        // Create sphere entities
+        spheres.push_back(new Qt3DCore::QEntity(scene));
 
-    // Sphere component: pose
-    Qt3DCore::QTransform *sphereTransform = new Qt3DCore::QTransform;
-    Controller *controller = new Controller(sphereTransform);
-    controller->m_target = sphereTransform;
-    controller->m_radius = 20.0f;
+        // One mesh for each sphere
+        sphereMeshes.push_back(new Qt3DExtras::QSphereMesh);
+        sphereMeshes.at(i)->setRadius(i);
 
-    // Add compontents to sphere
-    sphere->addComponent(sphereMesh);
-    sphere->addComponent(sphereTransform);
-    sphere->addComponent(material);
+        // One controller for each sphere
+        sphereControllers.push_back(new Controller);
+        sphereControllers.at(i)->m_radius = i*10.0f;
+        sphereControllers.at(i)->m_period = 10+i*0.2f;
+
+        // assign mesh, controller and material to each sphere
+        spheres.at(i)->addComponent(sphereMeshes.at(i));
+        spheres.at(i)->addComponent(sphereControllers.at(i));
+        spheres.at(i)->addComponent(material);
+    }
+
 
     return scene;
 }
@@ -86,24 +66,80 @@ Qt3DCore::QEntity *createScene()
 
 int main(int argc, char* argv[])
 {
-    // App, window and scene
-    QGuiApplication app(argc, argv);
-    Qt3DExtras::Qt3DWindow view;
+    // BASIC SETUP ////////////////////////////////////////
+    // App, window
+    QApplication app(argc, argv);
+    Qt3DExtras::Qt3DWindow *view = new Qt3DExtras::Qt3DWindow();
+    view->defaultFrameGraph()->setClearColor(QColor("grey"));
+
+    // Main widgets
+    QWidget *container = QWidget::createWindowContainer(view);
+    QWidget *widget = new QWidget;
+    widget->setWindowTitle(QStringLiteral("My robot"));
+
+    // Box Layouts
+    QHBoxLayout *hLayout = new QHBoxLayout(widget);
+    QVBoxLayout *vLayout = new QVBoxLayout();
+    vLayout->setAlignment(Qt::AlignTop);
+    hLayout->addWidget(container, 1);
+    hLayout->addLayout(vLayout);
+
+
+
+    // INFOS & BUTTONS ////////////////////////////////////////
+    // Info Panel
+    QCommandLinkButton *info = new QCommandLinkButton();
+    info->setIconSize(QSize(0,0));
+    info->setText(QStringLiteral("Qt3D ready-made meshes"));
+    info->setDescription(QString::fromLatin1("Qt3D provides several ready-made meshes, like torus, cylinder, cone, "
+                                             "cube, plane and sphere."));
+    QLabel *label = new QLabel();
+    label->setText(QString("Hello there \nThis is a test"));
+
+    // Checkbox
+    QCheckBox *checkBox1 = new QCheckBox(widget);
+    checkBox1->setChecked(true);
+    checkBox1->setText(QStringLiteral("This is a checkbox"));
+    checkBox1->setChecked(true);
+
+    // Add everything to layout
+    vLayout->addWidget(info);
+    vLayout->addWidget(checkBox1);
+    vLayout->addWidget(label);
+
+
+
+    // ADD SCENE, CAMERA & LIGHT ///////////////////////////////
+    // Scene root entity
     Qt3DCore::QEntity *scene = createScene();
+    view->setRootEntity(scene);
 
-    // Camera
-    Qt3DRender::QCamera *camera = view.camera();
+    // Camera & Camera controls
+    Qt3DRender::QCamera *camera = view->camera();
     camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 0.1f, 1000.0f);
-    camera->setPosition(QVector3D(0, 0, 40.0f));
+    camera->setPosition(QVector3D(-100.0f, 100.0f, 200.0f));
     camera->setViewCenter(QVector3D(0, 0, 0));
-
-    // Camera controls
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
 
-    // Show it
-    view.setRootEntity(scene);
-    view.show();
+    // Light
+    Qt3DCore::QEntity *lightEntity = new Qt3DCore::QEntity(scene);
+    Qt3DRender::QPointLight *light = new Qt3DRender::QPointLight(lightEntity);
+    light->setColor("white");
+    light->setIntensity(1);
+    lightEntity->addComponent(light);
+    Qt3DCore::QTransform *lightTransform = new Qt3DCore::QTransform(lightEntity);
+    lightTransform->setTranslation(camera->position());
+    lightEntity->addComponent(lightTransform);
+
+
+    // Show window
+    widget->show();
+    widget->resize(1200, 800);
+
+
+    SE3 T(1,2,3,4);
+    printTransformation(T);
 
     return app.exec();
 }

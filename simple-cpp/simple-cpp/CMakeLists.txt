@@ -25,7 +25,7 @@ add_executable(${PROJECT_NAME}
     )
 
 # link the qt3d libraries
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt5::Core
     Qt5::Widgets
     Qt5::3DCore
@@ -35,11 +35,11 @@ target_link_libraries(${PROJECT_NAME}
     )
 
 # Link libs
-# if(UNIX)
-    # target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core PRIVATE Threads::Threads)
-# else(UNIX)
-    # target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core)
-# endif(UNIX)
+#if(UNIX)
+#    target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core PRIVATE Threads::Threads)
+#else(UNIX)
+#    target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Core)
+#endif(UNIX)
 
 #set(RunCMake_TEST_OPTIONS -Wdev -Wno-deprecated)
 
@@ -50,7 +50,7 @@ target_link_libraries(${PROJECT_NAME}
 
 # Set compile options, enable warnings
 target_compile_options(${PROJECT_NAME} PRIVATE
-    $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall -Wdev>
+    $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>: -Wall>
     $<$<CXX_COMPILER_ID:MSVC>: /W3>
     )
 

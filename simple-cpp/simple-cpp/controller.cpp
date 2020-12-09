@@ -1,3 +1,4 @@
+#include <math.h>
 #include "controller.h"
 #include <Qt3DCore/qtransform.h>
 
