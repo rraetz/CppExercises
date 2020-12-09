@@ -1003,6 +1003,8 @@ QObject
 -
 timer.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
+QLineEdit
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 Qt3DExtras/QDiffuseSpecularMaterial
@@ -2944,6 +2946,10 @@ qboxlayout.h
 qlabel.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlabel.h
 
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLineEdit
+qlineedit.h
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
+
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QTextEdit
 qtextedit.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h
@@ -3080,6 +3086,18 @@ QtWidgets/qsizepolicy.h
 QtCore/qrect.h
 -
 limits.h
+-
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qpushbutton.h

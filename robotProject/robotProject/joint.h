@@ -45,12 +45,14 @@ public:
 
 
     Qt3DCore::QEntity *m_parent;
+//    Qt3DCore::QEntity *m_jointEntity;
     Qt3DExtras::QCylinderMesh *m_mesh;
     Qt3DExtras::QDiffuseSpecularMaterial *m_material;
     Qt3DCore::QTransform *m_transform;
     SE3 m_T;
 
     double m_theta0;
+    double m_theta;
     double m_d;
     double m_a;
     double m_alpha;
@@ -67,6 +69,7 @@ public:
 
     void setAngle(double theta)
     {
+        m_theta = theta;
         // Eigen matrix
         m_T = SE3(theta, m_d, m_a, m_alpha);
 

@@ -511,6 +511,7 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QGraphicsTextItem
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QHBoxLayout
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLabel
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLineEdit
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QTextEdit
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractbutton.h
@@ -526,6 +527,7 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlabel.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlayout.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlayoutitem.h
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qpushbutton.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qsizepolicy.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h

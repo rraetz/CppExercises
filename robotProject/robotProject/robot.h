@@ -14,15 +14,18 @@ class Robot : public QObject
 {
 public:
     Robot(Qt3DCore::QEntity *parent)
+        : m_jointParent(parent)
+        , m_counter(0)
     {
         m_joints.push_back(Joint(1,2,3,4));
         m_joints.push_back(Joint(2,10,30,2));
-        m_joints.at(0).setParent(parent);
-        m_joints.at(1).setParent(parent);
+        m_joints.at(0).setParent(m_jointParent);
+        m_joints.at(1).setParent(m_jointParent);
 
     }
 
     // Member variables
+    Qt3DCore::QEntity *m_jointParent;
     std::vector<Joint> m_joints;
     QTimer m_timer;
     float m_counter;
@@ -57,6 +60,7 @@ public:
     }
 
 
+    // Using slots is more appropriate
 public slots:
     void updatePosition()
     {
@@ -65,6 +69,11 @@ public slots:
         float angle1 = sin(m_counter/10);
         float angle2 = cos(m_counter/20);
         setAngles(angle1, angle2);
+    }
+
+    void disable(bool enabled)
+    {
+        m_jointParent->setEnabled(enabled);
     }
 };
 

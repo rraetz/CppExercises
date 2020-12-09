@@ -510,6 +510,7 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/i
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QGraphicsTextItem
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QHBoxLayout
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLabel
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLineEdit
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QTextEdit
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractbutton.h
@@ -525,6 +526,7 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/i
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlabel.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlayout.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlayoutitem.h
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qsizepolicy.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h

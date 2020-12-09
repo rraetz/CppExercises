@@ -14,6 +14,8 @@
 
 #include "timer.h"
 
+#include <QLineEdit>
+
 
 /* class robot
  * {
@@ -29,6 +31,8 @@
  *
  * }
  */
+
+
 
 
 int main(int argc, char* argv[])
@@ -66,13 +70,24 @@ int main(int argc, char* argv[])
     // Checkbox
     QCheckBox *checkBox1 = new QCheckBox(widget);
     checkBox1->setChecked(true);
-    checkBox1->setText(QStringLiteral("This is a checkbox"));
+    checkBox1->setText(QStringLiteral("Pause on/off"));
     checkBox1->setChecked(true);
+
+    // Text
+//    QLineEdit *le = new QLineEdit();
+    QLabel *label2 = new QLabel();
+    label2->setText(QString("Enabled"));
+
+    QLabel *label3 = new QLabel();
+    label3->setText(QString("Position"));
+
 
     // Add everything to layout
     vLayout->addWidget(info);
     vLayout->addWidget(checkBox1);
     vLayout->addWidget(label);
+    vLayout->addWidget(label2);
+    vLayout->addWidget(label3);
 
 
 
@@ -87,10 +102,20 @@ int main(int argc, char* argv[])
     Robot robbie(scene);
 
     // Set and launch timer
-    QTimer myTimer;
-    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePosition);
+    QTimer myTimer(checkBox1);
     myTimer.setInterval(30);
     myTimer.start();
+
+    // Connect timer to robot and checkbox and texts with lambda function
+    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePosition);
+    QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
+                [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
+    QObject::connect(checkBox1, &QCheckBox::toggled, label2,
+                [label2] (bool checked) {if (checked) label2->setText(QString("Enabled"));
+                else label2->setText(QString("Disabled")); });
+    QObject::connect(&myTimer, &QTimer::timeout, label3,
+                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
+
 
 
     // Camera & Camera controls
