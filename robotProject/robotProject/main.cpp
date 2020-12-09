@@ -6,7 +6,13 @@
 #include "spaceTransformations.h"
 #include "utils.h"
 #include "controller.h"
+#include "joint.h"
+#include "robot.h"
 
+#include <QTimer>
+#include <QObject>
+
+#include "timer.h"
 
 
 /* class robot
@@ -23,45 +29,6 @@
  *
  * }
  */
-
-Qt3DCore::QEntity* createScene()
-{
-    // Root entity
-    Qt3DCore::QEntity *scene = new Qt3DCore::QEntity;
-
-    // Material (independend of sphere)
-    Qt3DExtras::QDiffuseSpecularMaterial *material = new Qt3DExtras::QDiffuseSpecularMaterial();
-    material->setDiffuse(QColor("cornflowerblue"));
-//    material->setDiffuse(QColor("red"));
-
-    // Spheres
-    std::vector<Qt3DCore::QEntity*> spheres;
-    std::vector<Qt3DExtras::QSphereMesh*> sphereMeshes;
-    std::vector<Controller*> sphereControllers;
-
-    for (int i=0; i < 10; ++i)
-    {
-        // Create sphere entities
-        spheres.push_back(new Qt3DCore::QEntity(scene));
-
-        // One mesh for each sphere
-        sphereMeshes.push_back(new Qt3DExtras::QSphereMesh);
-        sphereMeshes.at(i)->setRadius(i);
-
-        // One controller for each sphere
-        sphereControllers.push_back(new Controller);
-        sphereControllers.at(i)->m_radius = i*10.0f;
-        sphereControllers.at(i)->m_period = 10+i*0.2f;
-
-        // assign mesh, controller and material to each sphere
-        spheres.at(i)->addComponent(sphereMeshes.at(i));
-        spheres.at(i)->addComponent(sphereControllers.at(i));
-        spheres.at(i)->addComponent(material);
-    }
-
-
-    return scene;
-}
 
 
 int main(int argc, char* argv[])
@@ -111,8 +78,20 @@ int main(int argc, char* argv[])
 
     // ADD SCENE, CAMERA & LIGHT ///////////////////////////////
     // Scene root entity
-    Qt3DCore::QEntity *scene = createScene();
+//    Qt3DCore::QEntity *scene = createScene();
+    Qt3DCore::QEntity *scene = new Qt3DCore::QEntity();
     view->setRootEntity(scene);
+
+
+    // Create robot
+    Robot robbie(scene);
+
+    // Set and launch timer
+    QTimer myTimer;
+    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePosition);
+    myTimer.setInterval(30);
+    myTimer.start();
+
 
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();

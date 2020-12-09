@@ -65,7 +65,13 @@ class Controller : public Qt3DCore::QTransform
 public:
     // Constructor / Destructor
     Controller();
-//    virtual ~Controller();
+    virtual ~Controller()
+    {
+        qDebug() << "Controller destructed";
+    }
+
+
+
 
     // Pointer to target transform
     Qt3DCore::QTransform *m_targetTransform;

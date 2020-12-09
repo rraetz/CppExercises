@@ -32,6 +32,7 @@ add_executable(${PROJECT_NAME}
         robot.h
         utils.h
         spaceTransformations.h
+        timer.h
     )
 
 # link the qt3d libraries

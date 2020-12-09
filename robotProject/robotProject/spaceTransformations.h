@@ -1,7 +1,6 @@
 #ifndef SPACETRANSFORMATIONS_H
 #define SPACETRANSFORMATIONS_H
 
-#include <Eigen>
 #include <Geometry>
 #include <string>
 

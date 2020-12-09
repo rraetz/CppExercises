@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "robotProject::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-robotProject-Debug-15715f5556a4eea46a6d.json",
+					"jsonFile" : "target-robotProject-Debug-986f6c7de97c4a295d45.json",
 					"name" : "robotProject",
 					"projectIndex" : 0
 				},
@@ -63,6 +63,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 1
+		"minor" : 2
 	}
 }
