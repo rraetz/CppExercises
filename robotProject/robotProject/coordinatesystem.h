@@ -2,7 +2,9 @@
 #define COORDINATESYSTEM_H
 
 #include "cylinder3d.h"
+#include "utils.h"
 
+// Inherits from QEntity --> get some nice features, e.g. enable/disable
 class CoordinateSystem : public Qt3DCore::QEntity
 {
 public:
@@ -16,11 +18,11 @@ public:
         m_yAxis->m_material->setDiffuse(QColor("green"));
         m_zAxis->m_material->setDiffuse(QColor("blue"));
 
-        m_xAxis->m_transform->setRotationX(90);
-        m_yAxis->m_transform->setRotationZ(90);
-        m_xAxis->m_transform->setTranslation(QVector3D(0,0,50));
-        m_yAxis->m_transform->setTranslation(QVector3D(50,0,0));
-        m_zAxis->m_transform->setTranslation(QVector3D(0,50,0));
+        m_xOffset.translate(0,0,50);
+        m_yOffset.translate(50,0,0);
+        m_zOffset.translate(0,50,0);
+        m_xOffset.rotate(90,QVector3D(1,0,0));
+        m_yOffset.rotate(90,QVector3D(0,0,1));
 
         m_xAxis->m_mesh->setLength(100);
         m_yAxis->m_mesh->setLength(100);
@@ -29,11 +31,49 @@ public:
         m_yAxis->m_mesh->setRadius(5);
         m_zAxis->m_mesh->setRadius(5);
 
+        this->setPose(0,0,0,0,0,0);
+
+        qDebug() << "CoordSys constructed";
     }
+
+    virtual ~CoordinateSystem()
+    {
+        qDebug() << "CoordSys destructed";
+    };
 
     Cylinder3d *m_xAxis;
     Cylinder3d *m_yAxis;
     Cylinder3d *m_zAxis;
+    Qt3DCore::QTransform m_pose;
+    QMatrix4x4 m_xOffset;
+    QMatrix4x4 m_yOffset;
+    QMatrix4x4 m_zOffset;
+
+
+
+    void setPose(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
+    {
+        // QT_COORDSYS
+        QMatrix4x4 T;
+        T.setToIdentity();
+        T.translate(y,z,x);
+        T.rotate(rotZ1, QVector3D(0,1,0));
+        T.rotate(rotY, QVector3D(1,0,0));
+        T.rotate(rotZ2, QVector3D(0,1,0));
+        m_pose.setMatrix(T);
+        m_xAxis->m_transform->setMatrix(T*m_xOffset);
+        m_yAxis->m_transform->setMatrix(T*m_yOffset);
+        m_zAxis->m_transform->setMatrix(T*m_zOffset);
+    }
+
+    void setPose(QMatrix4x4 T)
+    {
+        // QT_COORDSYS
+        m_pose.setMatrix(T);
+        m_xAxis->m_transform->setMatrix(T*m_xOffset);
+        m_yAxis->m_transform->setMatrix(T*m_yOffset);
+        m_zAxis->m_transform->setMatrix(T*m_zOffset);
+    }
 };
 
 

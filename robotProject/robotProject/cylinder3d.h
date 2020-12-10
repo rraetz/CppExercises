@@ -30,21 +30,21 @@ public:
         // Some basic settings
 //        QUrl data = QUrl::fromLocalFile("/home/raphael/Documents/CppExercises/robotProject/robotProject/link0.stl");
 //        m_mesh->setSource(data);
-        m_mesh->setRadius(10);
-        m_mesh->setLength(30);
+        m_mesh->setRadius(25);
+        m_mesh->setLength(50);
         m_mesh->setRings(100);
         m_mesh->setSlices(20);
         m_material->setDiffuse(QColor("cornflowerblue"));
         m_transform->setMatrix(QMatrix4x4());
 
-        qDebug() << "Cylinder3d constructed";
+//        qDebug() << "Cylinder3d constructed";
     }
 
 
     // Destructor
     virtual ~Cylinder3d()
     {
-        qDebug() << "Cylinder3d destructed";
+//        qDebug() << "Cylinder3d destructed";
     }
 
 

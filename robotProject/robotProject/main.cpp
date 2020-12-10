@@ -18,6 +18,8 @@
 
 #include "coordinatesystem.h"
 
+#include <QSlider>
+
 
 
 /* class robot
@@ -84,6 +86,10 @@ int main(int argc, char* argv[])
     QLabel *label3 = new QLabel();
     label3->setText(QString("Position"));
 
+    // Slider
+    QSlider *slider = new QSlider(Qt::Orientation::Horizontal);
+    slider->setWindowIconText(QString("Slider text"));
+
 
     // Add everything to layout
     vLayout->addWidget(info);
@@ -91,6 +97,7 @@ int main(int argc, char* argv[])
     vLayout->addWidget(label);
     vLayout->addWidget(label2);
     vLayout->addWidget(label3);
+    vLayout->addWidget(slider);
 
 
 
@@ -103,7 +110,7 @@ int main(int argc, char* argv[])
 
     // Create robot
     Robot robbie(scene);
-    CoordinateSystem cordSys(scene);
+
 
     // Set and launch timer
     QTimer myTimer(checkBox1);
@@ -111,7 +118,7 @@ int main(int argc, char* argv[])
     myTimer.start();
 
     // Connect timer to robot and checkbox and texts with lambda function
-    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePosition);
+    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePose);
     QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
                 [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
 //    QObject::connect(checkBox1, &QCheckBox::toggled, &robbie, &Robot::disable);

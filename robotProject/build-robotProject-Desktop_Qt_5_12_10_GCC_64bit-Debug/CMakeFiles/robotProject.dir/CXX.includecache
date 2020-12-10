@@ -19,6 +19,8 @@ Qt3DCore/qtransform.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 cylinder3d.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+utils.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
 Qt3DExtras/QCylinderMesh
@@ -1029,6 +1031,8 @@ QLineEdit
 -
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
+QSlider
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 Qt3DExtras/QDiffuseSpecularMaterial
@@ -1113,6 +1117,8 @@ utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 QtMath
 -
+coordinatesystem.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 Geometry
@@ -1129,8 +1135,6 @@ QObject
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 QDebug
 -
-spaceTransformations.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 QMatrix4x4
 -
 
@@ -2990,6 +2994,10 @@ qlabel.h
 qlineedit.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
 
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QSlider
+qslider.h
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qslider.h
+
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QTextEdit
 qtextedit.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h
@@ -3012,6 +3020,12 @@ QtWidgets/qwidget.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qframe.h
+-
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractslider.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qapplication.h
@@ -3152,6 +3166,12 @@ QtWidgets/qtwidgetsglobal.h
 QtCore/qobject.h
 -
 QtCore/qalgorithms.h
+-
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qslider.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractslider.h
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h

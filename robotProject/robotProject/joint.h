@@ -14,11 +14,12 @@
 
 
 
-class Joint
+class Joint : public Qt3DCore::QEntity
 {
 public:
     Joint(Qt3DCore::QEntity *parent)
-        : m_joint(new Cylinder3d(parent))
+        : Qt3DCore::QEntity(parent)
+        , m_joint(new Cylinder3d(parent))
         , m_linkD(new Cylinder3d(parent))
         , m_linkA(new Cylinder3d(parent))
         , m_theta(0)
@@ -27,12 +28,12 @@ public:
         , m_a(0)
         , m_alpha(0)
     {
-        qDebug() << " Joint construced";
+        qDebug() << " Joint constructed";
     }
 
-    ~Joint()
+    virtual ~Joint()
     {
-        qDebug() << " Joint destruced";
+        qDebug() << " Joint destructed";
     }
 
 
@@ -58,7 +59,7 @@ public:
         if (m_a != 0)
         {
             m_linkA->m_mesh->setLength(fabs(m_a));
-            m_linkA->m_mesh->setRadius(3);
+            m_linkA->m_mesh->setRadius(10);
             m_linkA->m_material->setDiffuse(QColor("grey"));
         }
         else
@@ -70,7 +71,7 @@ public:
         if (m_d != 0)
         {
             m_linkD->m_mesh->setLength(fabs(m_d));
-            m_linkD->m_mesh->setRadius(3);
+            m_linkD->m_mesh->setRadius(10);
             m_linkD->m_material->setDiffuse(QColor("grey"));
         }
         else
@@ -83,34 +84,30 @@ public:
 
 
 
-    QMatrix4x4 computePose(QMatrix4x4 &T)
+    // Computes the pose of the graphical elements
+    void setPose(QMatrix4x4 T)
     {
-        // Eigen matrix
-//        m_T = SE3(theta, m_d, m_a, m_alpha);
-
-        QMatrix4x4 Ttmp;
-
         m_joint->m_transform->setMatrix(T);
 
-        T.rotate(qRadiansToDegrees(m_theta + m_theta0), QVector3D(0,1,0));
-        T.translate(0, m_d, 0);
-
-        Ttmp = T;
-        Ttmp.translate(0, -m_d/2, 0);
-        m_linkD->m_transform->setMatrix(Ttmp);
-
-        T.translate(0, 0, m_a);
-
-        Ttmp = T;
-        Ttmp.translate(0, 0, -m_a/2);
-        Ttmp.rotate(90, QVector3D(1,0,0));
-        m_linkA->m_transform->setMatrix(Ttmp);
-
-        T.rotate(qRadiansToDegrees(m_alpha), QVector3D(0,0,1));
-
-        return T;
+        T.rotate(m_theta + m_theta0, QVector3D(0,1,0));
+        T.translate(0, m_d/2, 0);
+        m_linkD->m_transform->setMatrix(T);
+        T.translate(0, m_d/2, 0);
+        T.translate(0, 0, m_a/2);
+        T.rotate(90, QVector3D(1,0,0));
+        m_linkA->m_transform->setMatrix(T);
     }
 
+
+    // Computes the actual pose of the joint
+    QMatrix4x4 computePose(QMatrix4x4 T)
+    {
+        T.rotate(m_theta + m_theta0, QVector3D(0,1,0));
+        T.translate(0, m_d, 0);
+        T.translate(0, 0, m_a);
+        T.rotate(m_alpha, QVector3D(0,0,1));
+        return T;
+    }
 };
 
 
