@@ -97,6 +97,7 @@ CMakeFiles/robotProject.dir/controller.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qvector4d.h
 CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Documents/CppExercises/robotProject/robotProject/controller.h
+ /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/libs/eigen-3.3.8/Eigen/Cholesky
@@ -326,6 +327,7 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/qinputaspect.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/qt3dinput_global.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QGeometryRenderer
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QMesh
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractfunctor.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractlight.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstracttexture.h

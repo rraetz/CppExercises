@@ -35,6 +35,7 @@ public:
             m_joints.push_back(new Joint(m_jointParent));
         }
 
+
         m_joints.at(0)->setDH(0,0,0,0);
         m_joints.at(1)->setDH(0,0,151.9,M_PI_2);
         m_joints.at(2)->setDH(0,-243.0,0,0);
@@ -43,10 +44,12 @@ public:
         m_joints.at(5)->setDH(0,0,85.35,-M_PI_2);
         m_joints.at(6)->setDH(0,0,81.9,0);
 
-        m_joints.at(0)->m_material->setDiffuse(QColor("red"));
+        m_joints.at(0)->m_joint->m_material->setDiffuse(QColor("red"));
 
-        this->setJointAngles(0,1,2,3,2,1);
+        this->setJointAngles(0,0,0,0,0,0);
         this->computeForwardKinematics();
+
+        m_joints.at(0)->m_joint->setEnabled(false);
     }
 
     // Member variables
@@ -81,7 +84,7 @@ public:
         {
             T = e->computePose(T);
 
-            printTransformation(T);
+//            printTransformation(T);
         }
     }
 
@@ -104,7 +107,7 @@ public slots:
 
     void disable(bool enabled)
     {
-        m_joints.at(0)->setEnabled(enabled);
+        m_joints.at(0)->m_joint->setEnabled(enabled);
     }
 };
 

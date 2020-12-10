@@ -35,6 +35,7 @@ add_executable(${PROJECT_NAME}
         timer.h
 #        graphic3dobject.h
         cylinder3d.h
+        coordinatesystem.h
     )
 
 # link the qt3d libraries

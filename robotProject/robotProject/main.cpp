@@ -16,6 +16,8 @@
 
 #include <QLineEdit>
 
+#include "coordinatesystem.h"
+
 
 
 /* class robot
@@ -33,30 +35,6 @@
  * }
  */
 
-//class CoordinateSystem
-//{
-//public:
-//    CoordinateSystem(Qt3DCore::QEntity *parent)
-//        : m_parent(parent)
-//        , m_mesh(new Qt3DExtras::QCylinderMesh)
-//        , m_material(new Qt3DExtras::QDiffuseSpecularMaterial)
-//        , m_transform(new Qt3DCore::QTransform)
-//    {
-//        m_mesh->setRadius(10);
-//        m_mesh->setLength(30);
-//        m_mesh->setRings(100);
-//        m_mesh->setSlices(20);
-
-//        // Material
-//        m_material->setDiffuse(QColor("cornflowerblue"));
-//    }
-
-//    Qt3DCore::QEntity *m_parent;
-//    std::vector<Qt3DExtras::QCylinderMesh*> m_mesh;
-//    Qt3DExtras::QDiffuseSpecularMaterial *m_material;
-//    Qt3DCore::QTransform *m_transform;
-
-//};
 
 
 
@@ -95,9 +73,8 @@ int main(int argc, char* argv[])
 
     // Checkbox
     QCheckBox *checkBox1 = new QCheckBox(widget);
-    checkBox1->setChecked(true);
+    checkBox1->setChecked(false);
     checkBox1->setText(QStringLiteral("Pause on/off"));
-    checkBox1->setChecked(true);
 
     // Text
 //    QLineEdit *le = new QLineEdit();
@@ -126,6 +103,7 @@ int main(int argc, char* argv[])
 
     // Create robot
     Robot robbie(scene);
+    CoordinateSystem cordSys(scene);
 
     // Set and launch timer
     QTimer myTimer(checkBox1);
@@ -147,9 +125,11 @@ int main(int argc, char* argv[])
 
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
-    camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 0.1f, 1000.0f);
+    camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 100.0f, 2000.0f);
+//    camera->setPosition(QVector3D(30.0f, 50.0f, 50.0f));
     camera->setPosition(QVector3D(300.0f, 500.0f, 500.0f));
     camera->setViewCenter(QVector3D(0, 0, 0));
+//    camera->setUpVector(QVector3D(0,0,1));
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
     camController->setLinearSpeed(100);

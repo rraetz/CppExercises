@@ -8,6 +8,8 @@
 #include <Qt3DCore/QTransform>
 #include <QMatrix4x4>
 
+#include <Qt3DRender/QMesh>
+
 
 class Cylinder3d : public Qt3DCore::QEntity
 {
@@ -16,6 +18,7 @@ public:
     Cylinder3d(Qt3DCore::QEntity *parent)
         : Qt3DCore::QEntity(parent)
         , m_mesh(new Qt3DExtras::QCylinderMesh)
+//        , m_mesh(new Qt3DRender::QMesh)
         , m_material(new Qt3DExtras::QDiffuseSpecularMaterial)
         , m_transform(new Qt3DCore::QTransform)
     {
@@ -25,6 +28,8 @@ public:
         this->addComponent(m_transform);
 
         // Some basic settings
+//        QUrl data = QUrl::fromLocalFile("/home/raphael/Documents/CppExercises/robotProject/robotProject/link0.stl");
+//        m_mesh->setSource(data);
         m_mesh->setRadius(10);
         m_mesh->setLength(30);
         m_mesh->setRings(100);
@@ -42,7 +47,9 @@ public:
         qDebug() << "Cylinder3d destructed";
     }
 
+
     // Member variables
+//    Qt3DRender::QMesh *m_mesh;
     Qt3DExtras::QCylinderMesh *m_mesh;
     Qt3DExtras::QDiffuseSpecularMaterial *m_material;
     Qt3DCore::QTransform *m_transform;

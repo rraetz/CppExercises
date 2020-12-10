@@ -16,6 +16,10 @@ QTimer
 Qt3DCore/qtransform.h
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
+cylinder3d.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
 Qt3DExtras/QCylinderMesh
 -
@@ -26,6 +30,8 @@ Qt3DCore/QEntity
 Qt3DCore/QTransform
 -
 QMatrix4x4
+-
+Qt3DRender/QMesh
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
@@ -1021,6 +1027,8 @@ timer.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
 QLineEdit
 -
+coordinatesystem.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 Qt3DExtras/QDiffuseSpecularMaterial
@@ -1315,6 +1323,10 @@ Qt3DCore/qt3dcore_global.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QGeometryRenderer
 qgeometryrenderer.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qgeometryrenderer.h
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QMesh
+qmesh.h
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qmesh.h
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractfunctor.h
 Qt3DRender/qt3drender_global.h
