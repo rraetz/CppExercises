@@ -16,6 +16,18 @@ QTimer
 Qt3DCore/qtransform.h
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+Qt3DExtras/QCylinderMesh
+-
+Qt3DExtras/QDiffuseSpecularMaterial
+-
+Qt3DCore/QEntity
+-
+Qt3DCore/QTransform
+-
+QMatrix4x4
+-
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 spaceTransformations.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
@@ -28,6 +40,10 @@ Qt3DCore/QEntity
 Qt3DCore/QTransform
 -
 QtMath
+-
+cylinder3d.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+Qt3DRender/QGeometryRenderer
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/libs/eigen-3.3.8/Eigen/Cholesky
@@ -1083,6 +1099,12 @@ QTimer
 -
 math.h
 -
+Qt3DCore/QTransform
+-
+utils.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
+QtMath
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 Geometry
@@ -1101,6 +1123,8 @@ QDebug
 -
 spaceTransformations.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
+QMatrix4x4
+-
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
 qentity.h
@@ -1287,6 +1311,10 @@ Qt3DCore/qabstractaspect.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/qt3dinput_global.h
 Qt3DCore/qt3dcore_global.h
 -
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QGeometryRenderer
+qgeometryrenderer.h
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qgeometryrenderer.h
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractfunctor.h
 Qt3DRender/qt3drender_global.h

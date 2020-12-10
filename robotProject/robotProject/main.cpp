@@ -17,6 +17,7 @@
 #include <QLineEdit>
 
 
+
 /* class robot
  * {
  * public:
@@ -31,6 +32,31 @@
  *
  * }
  */
+
+//class CoordinateSystem
+//{
+//public:
+//    CoordinateSystem(Qt3DCore::QEntity *parent)
+//        : m_parent(parent)
+//        , m_mesh(new Qt3DExtras::QCylinderMesh)
+//        , m_material(new Qt3DExtras::QDiffuseSpecularMaterial)
+//        , m_transform(new Qt3DCore::QTransform)
+//    {
+//        m_mesh->setRadius(10);
+//        m_mesh->setLength(30);
+//        m_mesh->setRings(100);
+//        m_mesh->setSlices(20);
+
+//        // Material
+//        m_material->setDiffuse(QColor("cornflowerblue"));
+//    }
+
+//    Qt3DCore::QEntity *m_parent;
+//    std::vector<Qt3DExtras::QCylinderMesh*> m_mesh;
+//    Qt3DExtras::QDiffuseSpecularMaterial *m_material;
+//    Qt3DCore::QTransform *m_transform;
+
+//};
 
 
 
@@ -110,21 +136,23 @@ int main(int argc, char* argv[])
     QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePosition);
     QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
                 [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
+//    QObject::connect(checkBox1, &QCheckBox::toggled, &robbie, &Robot::disable);
     QObject::connect(checkBox1, &QCheckBox::toggled, label2,
                 [label2] (bool checked) {if (checked) label2->setText(QString("Enabled"));
                 else label2->setText(QString("Disabled")); });
-    QObject::connect(&myTimer, &QTimer::timeout, label3,
-                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
+//    QObject::connect(&myTimer, &QTimer::timeout, label3,
+//                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
 
 
 
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
     camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 0.1f, 1000.0f);
-    camera->setPosition(QVector3D(-100.0f, 100.0f, 200.0f));
+    camera->setPosition(QVector3D(300.0f, 500.0f, 500.0f));
     camera->setViewCenter(QVector3D(0, 0, 0));
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
+    camController->setLinearSpeed(100);
 
     // Light
     Qt3DCore::QEntity *lightEntity = new Qt3DCore::QEntity(scene);
@@ -142,8 +170,24 @@ int main(int argc, char* argv[])
     widget->resize(1200, 800);
 
 
-    SE3 T(1,2,3,4);
-    printTransformation(T);
+//    SE3 T0(0,0,0,0);
+//    SE3 T1(0,0,151.9,PI/2);
+//    SE3 T2(0,-243.0,0,0);
+//    SE3 T3(0,-213.25,0,0);
+//    SE3 T4(0,0,112.35,PI/2);
+//    SE3 T5(0,0,85.35,-PI/2);
+//    SE3 T6(0,0,81.9,0);
+
+//    printTransformation(T0);
+//    printTransformation(T0*T1);
+//    printTransformation(T0*T1*T2);
+//    printTransformation(T0*T1*T2*T3);
+//    printTransformation(T0*T1*T2*T3*T4);
+//    printTransformation(T0*T1*T2*T3*T4*T5);
+//    printTransformation(T0*T1*T2*T3*T4*T5*T6);
+
+
+
 
     return app.exec();
 }

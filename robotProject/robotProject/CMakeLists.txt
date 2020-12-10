@@ -33,6 +33,8 @@ add_executable(${PROJECT_NAME}
         utils.h
         spaceTransformations.h
         timer.h
+#        graphic3dobject.h
+        cylinder3d.h
     )
 
 # link the qt3d libraries
