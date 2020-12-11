@@ -47,6 +47,12 @@ nlopt.hpp
 -
 QDebug
 -
+robot.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
+utils.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
+se3.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 spaceTransformations.h
@@ -1047,6 +1053,8 @@ QSlider
 -
 inversekinematics.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
+QOrbitCameraController
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 Qt3DExtras/QDiffuseSpecularMaterial
@@ -1133,14 +1141,14 @@ QtMath
 -
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
-nlopt.hpp
+
+/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
+QMatrix4x4
+-
+QDebug
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
-Geometry
--
-string
--
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
 QTimer
@@ -1266,6 +1274,10 @@ qcylindermesh.h
 qdiffusespecularmaterial.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qdiffusespecularmaterial.h
 
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QOrbitCameraController
+qorbitcameracontroller.h
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qorbitcameracontroller.h
+
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QSphereMesh
 qspheremesh.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qspheremesh.h
@@ -1302,6 +1314,10 @@ Qt3DRender/qtechniquefilter.h
 QtCore/QRectF
 -
 QtGui/QColor
+-
+
+/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qorbitcameracontroller.h
+Qt3DExtras/qabstractcameracontroller.h
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qspheremesh.h

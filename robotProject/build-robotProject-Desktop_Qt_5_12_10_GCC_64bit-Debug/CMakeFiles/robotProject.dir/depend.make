@@ -294,6 +294,7 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/rob
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
@@ -313,12 +314,14 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/i
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/qtransform.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QCylinderMesh
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QDiffuseSpecularMaterial
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QOrbitCameraController
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QSphereMesh
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qabstractcameracontroller.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qcylindermesh.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qdiffusespecularmaterial.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qfirstpersoncameracontroller.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qforwardrenderer.h
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qorbitcameracontroller.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qspheremesh.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qt3dextras_global.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qt3dwindow.h

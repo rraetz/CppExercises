@@ -96,12 +96,25 @@ public:
         T.translate(0, 0, m_a/2);
         T.rotate(90, QVector3D(1,0,0));
         m_linkA->m_transform->setMatrix(T);
+
+//        T.rotate(m_theta + m_theta0, 0,0,1);
+//        T.translate(0, 0, m_d/2);
+//        m_linkD->m_transform->setMatrix(T);
+//        T.translate(0, m_d/2, 0);
+//        T.translate(0, 0, m_a/2);
+//        T.rotate(90, QVector3D(1,0,0));
+//        m_linkA->m_transform->setMatrix(T);
     }
 
 
     // Computes the actual pose of the joint
     QMatrix4x4 computePose(QMatrix4x4 T)
     {
+
+//        T.rotate(m_theta + m_theta0, 0,0,1);
+//        T.translate(0, 0, m_d);
+//        T.translate(m_a, 0, 0);
+//        T.rotate(m_alpha, 1,0,0);
         T.rotate(m_theta + m_theta0, QVector3D(0,1,0));
         T.translate(0, m_d, 0);
         T.translate(0, 0, m_a);

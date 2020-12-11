@@ -18,11 +18,11 @@ public:
         m_yAxis->m_material->setDiffuse(QColor("green"));
         m_zAxis->m_material->setDiffuse(QColor("blue"));
 
-        m_xOffset.translate(0,0,50);
-        m_yOffset.translate(50,0,0);
-        m_zOffset.translate(0,50,0);
-        m_xOffset.rotate(90,QVector3D(1,0,0));
-        m_yOffset.rotate(90,QVector3D(0,0,1));
+        m_xOffset.translate(50,0,0);
+        m_yOffset.translate(0,50,0);
+        m_zOffset.translate(0,0,50);
+        m_xOffset.rotate(90, 0,0,1);
+        m_zOffset.rotate(90, 1,0,0);
 
         m_xAxis->m_mesh->setLength(100);
         m_yAxis->m_mesh->setLength(100);

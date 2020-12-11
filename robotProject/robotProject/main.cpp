@@ -22,6 +22,8 @@
 
 #include "inversekinematics.h"
 
+#include <QOrbitCameraController>
+
 
 
 /* class robot
@@ -111,7 +113,10 @@ int main(int argc, char* argv[])
 
 
     // Create robot
+
+
     Robot robbie(scene);
+    CoordinateSystem cordsys(scene);
 
 
     // Set and launch timer
@@ -138,10 +143,11 @@ int main(int argc, char* argv[])
 //    camera->setPosition(QVector3D(30.0f, 50.0f, 50.0f));
     camera->setPosition(QVector3D(300.0f, 500.0f, 500.0f));
     camera->setViewCenter(QVector3D(0, 0, 0));
-//    camera->setUpVector(QVector3D(0,0,1));
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
     camController->setLinearSpeed(100);
+
+
 
     // Light
     Qt3DCore::QEntity *lightEntity = new Qt3DCore::QEntity(scene);
@@ -158,24 +164,31 @@ int main(int argc, char* argv[])
     widget->show();
     widget->resize(1200, 800);
 
+//    robbie.updatePose();
 
-//    SE3 T0(0,0,0,0);
-//    SE3 T1(0,0,151.9,PI/2);
-//    SE3 T2(0,-243.0,0,0);
-//    SE3 T3(0,-213.25,0,0);
-//    SE3 T4(0,0,112.35,PI/2);
-//    SE3 T5(0,0,85.35,-PI/2);
-//    SE3 T6(0,0,81.9,0);
+//    robbie.setJointAngles(45,10,-45,45,45,45);
+//    robbie.setTargetPoseFromEulerZYZ(-310,-380,240,0,0,0);
 
-//    printTransformation(T0);
-//    printTransformation(T0*T1);
-//    printTransformation(T0*T1*T2);
-//    printTransformation(T0*T1*T2*T3);
-//    printTransformation(T0*T1*T2*T3*T4);
-//    printTransformation(T0*T1*T2*T3*T4*T5);
-//    printTransformation(T0*T1*T2*T3*T4*T5*T6);
+//    auto T = robbie.m_targetPose;
+////    auto T = robbie.computeForwardKinematics();
 
-    ik();
+//    printTransformation(T);
+
+//    for (int i=0; i<16; ++i)
+//    {
+//        qDebug() << i << ": " << T.data()[i];
+//    }
+
+
+//    ik(&robbie);
+
+//    for (int i=0; i<100; i++)
+//    {
+//        double a = i-540.3;
+//        robbie.setJointAngles(a,a,a,a,a,a);
+//        auto T = robbie.computeForwardKinematics();
+//        printTransformation(T);
+//    }
 
 
 

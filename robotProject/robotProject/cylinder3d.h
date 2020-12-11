@@ -28,8 +28,6 @@ public:
         this->addComponent(m_transform);
 
         // Some basic settings
-//        QUrl data = QUrl::fromLocalFile("/home/raphael/Documents/CppExercises/robotProject/robotProject/link0.stl");
-//        m_mesh->setSource(data);
         m_mesh->setRadius(25);
         m_mesh->setLength(50);
         m_mesh->setRings(100);

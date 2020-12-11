@@ -16,7 +16,6 @@
 
 #include "coordinatesystem.h"
 
-#include <nlopt.hpp>
 
 constexpr double J0_THETA0 = 0;
 constexpr double J0_D =      0;
@@ -70,6 +69,7 @@ public:
     CoordinateSystem m_base;
     CoordinateSystem m_endEffector;
     double m_counter;
+    QMatrix4x4 m_targetPose;
 
 
     // Methods
@@ -97,6 +97,7 @@ public:
         for (auto e:m_joints)
         {
             T = e->computePose(T);
+//            qDebug() << T.data()[0];
         }
         return T;
     }
@@ -114,21 +115,37 @@ public:
         m_endEffector.setPose(T);
     }
 
+    void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
+    {
+        // QT_COORDSYS
+        QMatrix4x4 T;
+        T.setToIdentity();
+        T.translate(y,z,x);
+        T.rotate(rotZ1, QVector3D(0,1,0));
+        T.rotate(rotY, QVector3D(1,0,0));
+        T.rotate(rotZ2, QVector3D(0,1,0));
+        m_targetPose = T;
+    }
 
-    void inverseKinematics();
+    void sayHello()
+    {
+        qDebug() << "Robot says Hello";
+    }
+
+
 
 public slots:
     void updatePose()
     {
         ++m_counter;
-        float angle1 = sin(m_counter/50)*45+90;
-        float angle2 = cos(m_counter/100)*45+90;
+        float angle1 = 180 + sin(m_counter/50)*45+90;
+        float angle2 = 180 + cos(m_counter/100)*45+90;
         this->setJointAngles(angle1, angle2, angle1, angle2, angle2, angle2);
-//        this->computeAndSetForwardKinematics();
-        auto T = this->computeForwardKinematics();
+        this->computeAndSetForwardKinematics();
+//        auto T = this->computeForwardKinematics();
 //        printTransformation(T);
 
-        if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
+//        if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
     }
 
     void disable(bool enabled)
@@ -138,9 +155,5 @@ public slots:
 };
 
 
-void Robot::inverseKinematics()
-{
-
-}
 
 #endif // ROBOT_H

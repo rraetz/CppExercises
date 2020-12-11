@@ -40,6 +40,7 @@ add_executable(${PROJECT_NAME}
         cylinder3d.h
         coordinatesystem.h
         inversekinematics.h
+        se3.h
     )
 
 # link the qt3d libraries

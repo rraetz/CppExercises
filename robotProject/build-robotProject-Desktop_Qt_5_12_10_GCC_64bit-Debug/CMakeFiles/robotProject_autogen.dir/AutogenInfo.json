@@ -141,6 +141,11 @@
 			"EWIEGA46WW/moc_robot.cpp"
 		],
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h",
+			"MU",
+			"EWIEGA46WW/moc_se3.cpp"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h",
 			"MU",
 			"EWIEGA46WW/moc_spaceTransformations.cpp"
