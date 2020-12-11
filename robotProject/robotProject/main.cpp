@@ -82,8 +82,19 @@ int main(int argc, char* argv[])
     checkBox1->setChecked(false);
     checkBox1->setText(QStringLiteral("Pause on/off"));
 
+    // Text input fields
+    QLineEdit *le1 = new QLineEdit();
+    QLineEdit *le2 = new QLineEdit();
+    QLineEdit *le3 = new QLineEdit();
+    QLineEdit *le4 = new QLineEdit();
+    QLineEdit *le5 = new QLineEdit();
+    QLineEdit *le6 = new QLineEdit();
+
+    // Button
+    QPushButton *button = new QPushButton("Set Pose");
+
+
     // Text
-//    QLineEdit *le = new QLineEdit();
     QLabel *label2 = new QLabel();
     label2->setText(QString("Enabled"));
 
@@ -101,7 +112,17 @@ int main(int argc, char* argv[])
     vLayout->addWidget(label);
     vLayout->addWidget(label2);
     vLayout->addWidget(label3);
-    vLayout->addWidget(slider);
+    vLayout->addWidget(le1);
+    vLayout->addWidget(le2);
+    vLayout->addWidget(le3);
+    vLayout->addWidget(le4);
+    vLayout->addWidget(le5);
+    vLayout->addWidget(le6);
+    vLayout->addWidget(button);
+
+
+
+
 
 
 
@@ -125,7 +146,7 @@ int main(int argc, char* argv[])
     myTimer.start();
 
     // Connect timer to robot and checkbox and texts with lambda function
-    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePose);
+//    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePose);
     QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
                 [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
 //    QObject::connect(checkBox1, &QCheckBox::toggled, &robbie, &Robot::disable);
@@ -135,7 +156,15 @@ int main(int argc, char* argv[])
 //    QObject::connect(&myTimer, &QTimer::timeout, label3,
 //                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
 
-
+    QObject::connect(button, &QPushButton::pressed,
+                     [le1, le2, le3, le4, le5, le6, &robbie] (void) {
+                        robbie.setTargetPoseFromEulerZYZ(le1->text().toDouble(),
+                                                   le2->text().toDouble(),
+                                                   le3->text().toDouble(),
+                                                   le4->text().toDouble(),
+                                                   le5->text().toDouble(),
+                                                   le6->text().toDouble());
+                        ik(&robbie);} );
 
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
@@ -167,28 +196,18 @@ int main(int argc, char* argv[])
 //    robbie.updatePose();
 
     robbie.setTargetPoseFromJointAngles(40,10,15,90,30,50);
-//    robbie.setTargetPoseFromEulerZYZ(-310,-380,240,0,0,0);
+//    robbie.setTargetPoseFromEulerZYZ(-350,-50,-240,0,0,0);
 
     auto T = robbie.m_targetPose;
 ////    auto T = robbie.computeForwardKinematics();
 
     printTransformation(T);
 
-//    for (int i=0; i<16; ++i)
-//    {
-//        qDebug() << i << ": " << T.data()[i];
-//    }
+
 
 
     ik(&robbie);
 
-//    for (int i=0; i<100; i++)
-//    {
-//        double a = i-540.3;
-//        robbie.setJointAngles(a,a,a,a,a,a);
-//        auto T = robbie.computeForwardKinematics();
-//        printTransformation(T);
-//    }
 
 
 

@@ -17,6 +17,10 @@
 
 #include <QMatrix4x4>
 
+#include <random>
+#include <chrono>
+
+
 
 typedef struct {
     double a, b;
@@ -25,54 +29,34 @@ typedef struct {
 
 double myvfunc(const std::vector<double> &x, std::vector<double> &grad, void *my_func_data)
 {
+    // Retrieve robot object
     Robot *r = static_cast<Robot *>(my_func_data);
-
-//    qDebug() << " ";
-//    for (auto e:x)
-//    {
-//        qDebug() << e;
-//    }
-
 
     r->setJointAngles(x[0], x[1], x[2], x[3], x[4], x[5]);
     auto Tfk = r->computeForwardKinematics();
-
-
     auto Tref = r->m_targetPose;
-
     auto Tres = Tfk - Tref;
-//    printTransformation(Tres);
 
+    // Get orientation
     double T11 = Tres.data()[0];
     double T12 = Tres.data()[1];
     double T13 = Tres.data()[2];
-
     double T21 = Tres.data()[4];
     double T22 = Tres.data()[5];
     double T23 = Tres.data()[6];
-
     double T31 = Tres.data()[8];
     double T32 = Tres.data()[9];
     double T33 = Tres.data()[10];
 
-
+    // Get position
     double T41 = Tres.data()[12];
     double T42 = Tres.data()[13];
     double T43 = Tres.data()[14];
 
-
-    double resOrientation = T11*T11 + T12*T12 + T13*T13 + T21*T21 + T22*T22 + T23*T23 + T31*T31 + T32*T32 + T33*T33;
-//    double resOrientation = T11*T11  + T22*T22 + T33*T33;
-    double resPosition = T41*T41 + T42*T42 + T43*T43;
-//    double res = T41*T41 + T42*T42 + T43*T43;
-
-//    qDebug() << T11*T11 << " " << T11;
-
-//    double res = 0;
-
-    return resOrientation*10000 + resPosition;
-
-//    return sqrt(x[1]);
+    // Compute cost
+    double costOrientation = T11*T11 + T12*T12 + T13*T13 + T21*T21 + T22*T22 + T23*T23 + T31*T31 + T32*T32 + T33*T33;
+    double costPosition = T41*T41 + T42*T42 + T43*T43;
+    return costOrientation*1000 + costPosition;
 }
 
 
@@ -82,6 +66,8 @@ void ik(Robot *r)
 
     int N = 6;
     nlopt::opt opt(nlopt::LN_PRAXIS, N);  // GN_CRS_LM or LN_PRAXIS seem to work..
+//    nlopt::opt opt(nlopt::GN_CRS2_LM, N);  // GN_CRS2_LM or LN_PRAXIS seem to work..
+
 
     // Set bounds
     std::vector<double> lb(N);
@@ -94,12 +80,18 @@ void ik(Robot *r)
     opt.set_lower_bounds(lb);
 
     std::vector<double> ub(N);
-    ub[0] = 180;
-    ub[1] = 180;
-    ub[2] = 180;
-    ub[3] = 180;
-    ub[4] = 180;
-    ub[5] = 180;
+//    ub[0] = 180;
+//    ub[1] = 180;
+//    ub[2] = 180;
+//    ub[3] = 180;
+//    ub[4] = 180;
+//    ub[5] = 180;
+    ub[0] = 360;
+    ub[1] = 360;
+    ub[2] = 360;
+    ub[3] = 360;
+    ub[4] = 360;
+    ub[5] = 360;
     opt.set_upper_bounds(ub);
 
     // Set objective function
@@ -124,10 +116,26 @@ void ik(Robot *r)
     x[4] = 0;
     x[5] = 0;
 
+
     double minf;
 
+    std::mt19937_64 randomNumberGenerator;
+    uint64_t timeSeed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    std::seed_seq ss{uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed>>32)};
+    randomNumberGenerator.seed(ss);
+    std::uniform_real_distribution<double> unif(0, 1);
+
     try{
-        nlopt::result result = opt.optimize(x, minf);
+        for(int i=0; i<100; ++i)
+        {
+            nlopt::result result = opt.optimize(x, minf);
+            if (minf < 0.001) break;
+
+            for (auto &e:x)
+            {
+                  e = unif(randomNumberGenerator)*180;
+            }
+        }
         qDebug() << "Found minimum at f(" << x[0] << ","
                  << x[1] << ","
                  << x[2] << ","
@@ -142,6 +150,9 @@ void ik(Robot *r)
 
 //        T = T-r->m_targetPose;
 //        printTransformation(T);
+
+        r->computeAndSetForwardKinematics();
+
 
     }
     catch(std::exception &e) {

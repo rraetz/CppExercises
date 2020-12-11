@@ -55,6 +55,10 @@ se3.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 QMatrix4x4
 -
+random
+-
+chrono
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 spaceTransformations.h

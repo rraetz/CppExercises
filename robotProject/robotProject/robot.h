@@ -17,6 +17,7 @@
 #include "coordinatesystem.h"
 
 
+
 constexpr double J0_THETA0 = 0;
 constexpr double J0_D =      0;
 constexpr double J0_A =      0;
@@ -143,6 +144,7 @@ public:
 public slots:
     void updatePose()
     {
+
         ++m_counter;
         float angle1 = 180 + sin(m_counter/50)*45+90;
         float angle2 = 180 + cos(m_counter/100)*45+90;
@@ -152,6 +154,13 @@ public slots:
 //        printTransformation(T);
 
 //        if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
+    }
+
+    void setPoseAndComputeIK(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
+    {
+        this->setTargetPoseFromEulerZYZ(x, y, z, rotZ1, rotY, rotZ2);
+//        ik(this);
+
     }
 
     void disable(bool enabled)
