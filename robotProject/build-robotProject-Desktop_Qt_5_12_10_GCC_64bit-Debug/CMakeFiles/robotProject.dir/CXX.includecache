@@ -36,6 +36,18 @@ QMatrix4x4
 Qt3DRender/QMesh
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
+iomanip
+-
+iostream
+-
+vector
+-
+nlopt.hpp
+-
+QDebug
+-
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 spaceTransformations.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
@@ -1033,6 +1045,8 @@ coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 QSlider
 -
+inversekinematics.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 Qt3DExtras/QDiffuseSpecularMaterial
@@ -1119,6 +1133,8 @@ QtMath
 -
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
+nlopt.hpp
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 Geometry

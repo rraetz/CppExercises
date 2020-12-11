@@ -98,6 +98,7 @@ CMakeFiles/robotProject.dir/controller.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gc
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/controller.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/libs/eigen-3.3.8/Eigen/Cholesky
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/libs/eigen-3.3.8/Eigen/Core

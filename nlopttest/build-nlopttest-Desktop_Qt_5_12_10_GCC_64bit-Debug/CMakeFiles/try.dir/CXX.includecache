@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raphael/Documents/CppExercises/nlopttest/nlopttest/main.cpp
+nlopt.hpp
+-
+iostream
+-
+
+/home/raphael/Documents/CppExercises/nlopttest/nlopttest/nlopt-2.6.2/build/nlopt.hpp
+nlopt.h
+/home/raphael/Documents/CppExercises/nlopttest/nlopttest/nlopt-2.6.2/build/nlopt.h
+vector
+-
+stdexcept
+-
+new
+-
+cstdlib
+-
+cstring
+-
+cmath
+-
+

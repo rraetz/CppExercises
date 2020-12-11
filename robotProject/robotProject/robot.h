@@ -16,6 +16,8 @@
 
 #include "coordinatesystem.h"
 
+#include <nlopt.hpp>
+
 constexpr double J0_THETA0 = 0;
 constexpr double J0_D =      0;
 constexpr double J0_A =      0;
@@ -113,11 +115,7 @@ public:
     }
 
 
-    void inverseKinematics()
-    {
-        ;;
-    }
-
+    void inverseKinematics();
 
 public slots:
     void updatePose()
@@ -128,7 +126,7 @@ public slots:
         this->setJointAngles(angle1, angle2, angle1, angle2, angle2, angle2);
 //        this->computeAndSetForwardKinematics();
         auto T = this->computeForwardKinematics();
-        printTransformation(T);
+//        printTransformation(T);
 
         if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
     }
@@ -138,5 +136,11 @@ public slots:
         m_joints.at(0)->m_joint->setEnabled(enabled);
     }
 };
+
+
+void Robot::inverseKinematics()
+{
+
+}
 
 #endif // ROBOT_H

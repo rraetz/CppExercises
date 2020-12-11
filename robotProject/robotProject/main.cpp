@@ -20,6 +20,8 @@
 
 #include <QSlider>
 
+#include "inversekinematics.h"
+
 
 
 /* class robot
@@ -172,6 +174,8 @@ int main(int argc, char* argv[])
 //    printTransformation(T0*T1*T2*T3*T4);
 //    printTransformation(T0*T1*T2*T3*T4*T5);
 //    printTransformation(T0*T1*T2*T3*T4*T5*T6);
+
+    ik();
 
 
 

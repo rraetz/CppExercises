@@ -5,6 +5,7 @@
 //#include "spaceTransformations.h"
 #include <QMatrix4x4>
 
+
 //void printTransformation(SE3 m)
 //{
 //    QString mat;
@@ -53,6 +54,7 @@ void printTransformation(QMatrix4x4 m)
 
 
 //    qDebug().noquote() << QString::fromStdString(T02.printString());
+
 
 
 

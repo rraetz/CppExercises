@@ -11,6 +11,9 @@ find_package(Qt5 REQUIRED COMPONENTS Core 3DCore 3DRender 3DInput 3DExtras Widge
 include_directories(libs/eigen-3.3.8/Eigen)
 # find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
+find_library(NLOPT_LIB nlopt)
+
+
 
 # Qt Flags
 # Instruct CMake to run moc automatically when needed
@@ -36,6 +39,7 @@ add_executable(${PROJECT_NAME}
 #        graphic3dobject.h
         cylinder3d.h
         coordinatesystem.h
+        inversekinematics.h
     )
 
 # link the qt3d libraries
@@ -47,6 +51,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt5::3DRender
     Qt5::3DInput
     )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE nlopt)
 
 # Link libs
 #if(UNIX)
