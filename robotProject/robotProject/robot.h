@@ -127,6 +127,12 @@ public:
         m_targetPose = T;
     }
 
+    void setTargetPoseFromJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
+    {
+        this->setJointAngles(a1, a2, a3, a4, a5, a6);
+        m_targetPose = this->computeForwardKinematics();
+    }
+
     void sayHello()
     {
         qDebug() << "Robot says Hello";

@@ -15,6 +15,8 @@
 
 #include "se3.h"
 
+#include <QMatrix4x4>
+
 
 typedef struct {
     double a, b;
@@ -68,29 +70,21 @@ double myvfunc(const std::vector<double> &x, std::vector<double> &grad, void *my
 
 //    double res = 0;
 
-    return resPosition;
+    return resOrientation*10000 + resPosition;
 
 //    return sqrt(x[1]);
-}
-
-
-double myvconstraint(const std::vector<double> &x, std::vector<double> &grad, void *data)
-{
-//    my_constraint_data *d = reinterpret_cast<my_constraint_data*>(data);
-//    double a = d->a, b = d->b;
-
-//    return ((a*x[0] + b) * (a*x[0] + b) * (a*x[0] + b) - x[1]);
-    return 0;
 }
 
 
 
 void ik(Robot *r)
 {
-    nlopt::opt opt(nlopt::LN_COBYLA, 6);
+
+    int N = 6;
+    nlopt::opt opt(nlopt::LN_PRAXIS, N);  // GN_CRS_LM or LN_PRAXIS seem to work..
 
     // Set bounds
-    std::vector<double> lb(6);
+    std::vector<double> lb(N);
     lb[0] = 0;
     lb[1] = 0;
     lb[2] = 0;
@@ -99,35 +93,37 @@ void ik(Robot *r)
     lb[5] = 0;
     opt.set_lower_bounds(lb);
 
-    std::vector<double> ub(6);
-    ub[0] = 360;
-    ub[1] = 360;
-    ub[2] = 360;
-    ub[3] = 360;
-    ub[4] = 360;
-    ub[5] = 360;
+    std::vector<double> ub(N);
+    ub[0] = 180;
+    ub[1] = 180;
+    ub[2] = 180;
+    ub[3] = 180;
+    ub[4] = 180;
+    ub[5] = 180;
     opt.set_upper_bounds(ub);
-
 
     // Set objective function
     opt.set_min_objective(myvfunc, r);
 
-    // Set constraints
-    my_constraint_data data[6] = { {2,0}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1,1} };
-//    opt.add_inequality_constraint(myvconstraint, &data[0], 1e-8);
-//    opt.add_inequality_constraint(myvconstraint, &data[1], 1e-8);
-//    opt.add_inequality_constraint(myvconstraint, &data[2], 1e-8);
-//    opt.add_inequality_constraint(myvconstraint, &data[3], 1e-8);
-//    opt.add_inequality_constraint(myvconstraint, &data[4], 1e-8);
-//    opt.add_inequality_constraint(myvconstraint, &data[5], 1e-8);
-
     // Set Tolerance
-    opt.set_xtol_rel(1e-5);
-    opt.set_maxeval(10000);
+    opt.set_xtol_rel(1e-10);
+    opt.set_maxeval(100000);
 
     // Initial values
-    std::vector<double> x(6);
-    x[0] = 90; x[1] = 90;
+    std::vector<double> x(N);
+//    x[0] = 90;
+//    x[1] = 90;
+//    x[2] = 90;
+//    x[3] = 90;
+//    x[4] = 90;
+//    x[5] = 90;
+    x[0] = 0;
+    x[1] = 0;
+    x[2] = 0;
+    x[3] = 0;
+    x[4] = 0;
+    x[5] = 0;
+
     double minf;
 
     try{

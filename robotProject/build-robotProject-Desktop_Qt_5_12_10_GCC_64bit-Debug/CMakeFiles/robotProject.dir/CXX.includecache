@@ -53,6 +53,8 @@ utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 se3.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
+QMatrix4x4
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 spaceTransformations.h

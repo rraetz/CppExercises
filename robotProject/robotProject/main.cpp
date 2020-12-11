@@ -166,13 +166,13 @@ int main(int argc, char* argv[])
 
 //    robbie.updatePose();
 
-//    robbie.setJointAngles(45,10,-45,45,45,45);
+    robbie.setTargetPoseFromJointAngles(40,10,15,90,30,50);
 //    robbie.setTargetPoseFromEulerZYZ(-310,-380,240,0,0,0);
 
-//    auto T = robbie.m_targetPose;
+    auto T = robbie.m_targetPose;
 ////    auto T = robbie.computeForwardKinematics();
 
-//    printTransformation(T);
+    printTransformation(T);
 
 //    for (int i=0; i<16; ++i)
 //    {
@@ -180,7 +180,7 @@ int main(int argc, char* argv[])
 //    }
 
 
-//    ik(&robbie);
+    ik(&robbie);
 
 //    for (int i=0; i<100; i++)
 //    {
