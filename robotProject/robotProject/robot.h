@@ -10,7 +10,7 @@
 
 #include <Qt3DCore/QTransform>
 
-#include "utils.h"
+//#include "utils.h"
 
 #include <QtMath>
 
@@ -30,34 +30,24 @@ constexpr double J0_ALPHA =  0;
 // With Qt3DCore::QEntity, we get some more nice features and it makes more sense in this context
 class Robot : public Qt3DCore::QEntity
 {
+    Q_OBJECT
 public:
     Robot(Qt3DCore::QEntity *parent)
         : Qt3DCore::QEntity(parent)
-        , m_base(parent)
-        , m_endEffector(parent)
-        , m_counter(0)
+        , m_base(new CoordinateSystem(parent))
+        , m_endEffector(new CoordinateSystem(parent))
     {
-        // Create a 6 DoF robot
-        for (int i=0; i<7; ++i)
-        {
-            m_joints.push_back(new Joint(parent));
-        }
-
-
-        m_joints.at(0)->setDH(0,0,0,0);
-        m_joints.at(1)->setDH(0,0,151.9,90);
-        m_joints.at(2)->setDH(0,-243.0,0,0);
-        m_joints.at(3)->setDH(0,-213.25,0,0);
-        m_joints.at(4)->setDH(0,0,112.35,-90);
-        m_joints.at(5)->setDH(0,0,85.35,-90);
-        m_joints.at(6)->setDH(0,0,81.9,0);
-
-        m_joints.at(0)->m_joint->m_material->setDiffuse(QColor("red"));
+        // Create a 6 DoF robot (Universal Robotics UR3)
+        m_joints.push_back(new Joint(parent, 0,0,151.9,90));
+        m_joints.push_back(new Joint(parent, 0,-243.0,0,0));
+        m_joints.push_back(new Joint(parent, 0,-213.25,0,0));
+        m_joints.push_back(new Joint(parent, 0,0,112.35,-90));
+        m_joints.push_back(new Joint(parent, 0,0,85.35,-90));
+        m_joints.push_back(new Joint(parent, 0,0,81.9,0));
 
         this->setJointAngles(0,0,0,0,0,0);
         this->computeForwardKinematics();
 
-        m_joints.at(0)->m_joint->setEnabled(false);
         qDebug() << "Robot constructed";
     }
 
@@ -69,28 +59,23 @@ public:
 
     // Member variables
     std::vector<Joint*> m_joints; // needs to be pointers because of hoq QObejects work (slots/signals and object tree structure)
-    CoordinateSystem m_base;
-    CoordinateSystem m_endEffector;
-    double m_counter;
+    CoordinateSystem *m_base;
+    CoordinateSystem *m_endEffector;
     QMatrix4x4 m_targetPose;
     TrajectoryPlanner m_trajPlanner;
 
 
     // Methods
-//    void setPoseEulerXYZ(double x, double y, double z, double rotX, double rotY, double rotZ)
-//    {
-
-//    }
 
     // Set joint angle variables in joints
     void setJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
     {
-        m_joints.at(1)->m_theta = a1;
-        m_joints.at(2)->m_theta = a2;
-        m_joints.at(3)->m_theta = a3;
-        m_joints.at(4)->m_theta = a4;
-        m_joints.at(5)->m_theta = a5;
-        m_joints.at(6)->m_theta = a6;
+        m_joints.at(0)->m_theta = a1;
+        m_joints.at(1)->m_theta = a2;
+        m_joints.at(2)->m_theta = a3;
+        m_joints.at(3)->m_theta = a4;
+        m_joints.at(4)->m_theta = a5;
+        m_joints.at(5)->m_theta = a6;
     }
 
     // Compute forward kinematics
@@ -100,11 +85,21 @@ public:
         T.setToIdentity();
         for (auto e:m_joints)
         {
-            T = e->computePose(T);
-//            qDebug() << T.data()[0];
+            T = T*e->computeTransform(e->m_theta);
         }
         return T;
     }
+
+//    QMatrix4x4 computeForwardKinematics(std::vector<double> jointAngles)
+//    {
+//        QMatrix4x4 T;
+//        T.setToIdentity();
+//        for (int i=0; i<6; ++i)
+//        {
+//            T = T * m_joints.at(i)->computeTransform(jointAngles.at(i));
+//        }
+//        return T;
+//    }
 
     // Compute forward kinematics and set graphical elements
     void computeAndSetForwardKinematics()
@@ -116,12 +111,12 @@ public:
             e->setPose(T);
             T = e->computePose(T);
         }
-        m_endEffector.setPose(T);
+        m_endEffector->setPose(T);
     }
+
 
     void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
     {
-        // QT_COORDSYS
         QMatrix4x4 T;
         T.setToIdentity();
         T.translate(y,z,x);
@@ -132,7 +127,6 @@ public:
 
         // Copy current theta to thetaSTart before optimizer starts messing around
         for (auto &e:m_joints) { e->m_thetaStart = e->m_theta;}
-
     }
 
     void setTargetPoseFromJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
@@ -141,22 +135,19 @@ public:
         m_targetPose = this->computeForwardKinematics();
     }
 
-    void sayHello()
-    {
-        qDebug() << "Robot says Hello";
-    }
 
     void initalizeMovement()
     {
         std::vector<double> start;
         std::vector<double> target;
-        for (int i=1; i<7; ++i)
+        for (int i=0; i<6; ++i)
         {
             start.push_back(m_joints.at(i)->m_thetaStart);
             target.push_back(m_joints.at(i)->m_theta);
         }
         this->m_trajPlanner.init(start, target);
     }
+
 
 public slots:
     void move()
@@ -169,28 +160,22 @@ public slots:
         }
         else
         {
-            for (int i=1; i<7; ++i)
+            for (int i=0; i<6; ++i)
             {
-                m_joints.at(i)->m_thetaTarget = angles.at(i-1);
+                m_joints.at(i)->m_thetaTarget = angles.at(i);
             }
         }
-
-//        ++m_counter;
-//        float angle1 = 180 + sin(m_counter/50)*45+90;
-//        float angle2 = 180 + cos(m_counter/100)*45+90;
-
-//        auto T = this->computeForwardKinematics();
-//        printTransformation(T);
-
-//        if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
     }
+
+
 
     void setPose(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
     {
         this->setTargetPoseFromEulerZYZ(x, y, z, rotZ1, rotY, rotZ2);
-//        ik(this);
 
     }
+
+
 
     void disable(bool enabled)
     {

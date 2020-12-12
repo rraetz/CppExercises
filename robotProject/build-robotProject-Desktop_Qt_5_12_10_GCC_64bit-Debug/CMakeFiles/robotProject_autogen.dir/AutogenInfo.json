@@ -106,11 +106,6 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/controller.h",
-			"MU",
-			"EWIEGA46WW/moc_controller.cpp"
-		],
-		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h",
 			"MU",
 			"EWIEGA46WW/moc_coordinatesystem.cpp"
@@ -144,16 +139,6 @@
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h",
 			"MU",
 			"EWIEGA46WW/moc_se3.cpp"
-		],
-		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h",
-			"MU",
-			"EWIEGA46WW/moc_spaceTransformations.cpp"
-		],
-		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h",
-			"MU",
-			"EWIEGA46WW/moc_timer.cpp"
 		],
 		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h",
@@ -191,7 +176,6 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/raphael/Documents/CppExercises/robotProject/robotProject/libs/eigen-3.3.8/Eigen",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/include",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/mkspecs/linux-g++",
@@ -237,10 +221,6 @@
 	"SETTINGS_FILE" : "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/controller.cpp",
-			"MU"
-		],
 		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp",
 			"MU"

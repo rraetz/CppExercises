@@ -155,33 +155,6 @@ robotProject_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject_autogen.dir/build.make CMakeFiles/robotProject_autogen.dir/build
 .PHONY : robotProject_autogen/fast
 
-controller.o: controller.cpp.o
-
-.PHONY : controller.o
-
-# target to build an object file
-controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/controller.cpp.o
-.PHONY : controller.cpp.o
-
-controller.i: controller.cpp.i
-
-.PHONY : controller.i
-
-# target to preprocess a source file
-controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/controller.cpp.i
-.PHONY : controller.cpp.i
-
-controller.s: controller.cpp.s
-
-.PHONY : controller.s
-
-# target to generate assembly for a file
-controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/controller.cpp.s
-.PHONY : controller.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -246,9 +219,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... robotProject_autogen"
 	@echo "... robotProject"
-	@echo "... controller.o"
-	@echo "... controller.i"
-	@echo "... controller.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

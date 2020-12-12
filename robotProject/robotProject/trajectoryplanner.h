@@ -4,7 +4,7 @@
 #include <math.h>
 #include <vector>
 #include <algorithm>
-
+#include <QObject>
 
 class TrajectoryPlanner
 {

@@ -8,7 +8,7 @@ project(robotProject VERSION 1.0.0 LANGUAGES CXX)
 find_package(Qt5 REQUIRED COMPONENTS Core 3DCore 3DRender 3DInput 3DExtras Widgets)
 
 # Find package Eigen
-include_directories(libs/eigen-3.3.8/Eigen)
+#include_directories(libs/eigen-3.3.8/Eigen)
 # find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
 find_library(NLOPT_LIB nlopt)
@@ -29,13 +29,13 @@ set(CMAKE_WARN_DEPRECATED FALSE)
 add_executable(${PROJECT_NAME}
         main.cpp
         main.h
-        controller.cpp
-        controller.h
+#        controller.cpp
+#        controller.h
         joint.h
         robot.h
         utils.h
-        spaceTransformations.h
-        timer.h
+#        spaceTransformations.h
+#        timer.h
 #        graphic3dobject.h
         cylinder3d.h
         coordinatesystem.h

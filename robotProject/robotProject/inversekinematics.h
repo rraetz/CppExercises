@@ -128,7 +128,7 @@ void ik(Robot *r)
     try{
         for(int i=0; i<100; ++i)
         {
-            nlopt::result result = opt.optimize(x, minf);
+            opt.optimize(x, minf);
             if (minf < 0.001) break;
 
             for (auto &e:x)
@@ -144,16 +144,8 @@ void ik(Robot *r)
                  << x[5] << ") = "
                  << minf;
 
-//        r->setJointAngles(x[0], x[1], x[2], x[3], x[4], x[5]);
         auto T = r->computeForwardKinematics();
         printTransformation(T);
-
-//        T = T-r->m_targetPose;
-//        printTransformation(T);
-
-//        r->computeAndSetForwardKinematics();
-
-
     }
     catch(std::exception &e) {
         qDebug() << "nlopt failed: " << e.what();
