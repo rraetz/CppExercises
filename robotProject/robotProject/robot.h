@@ -15,6 +15,8 @@
 #include <QtMath>
 
 #include "coordinatesystem.h"
+#include "trajectoryplanner.h"
+#include <algorithm>
 
 
 
@@ -71,6 +73,7 @@ public:
     CoordinateSystem m_endEffector;
     double m_counter;
     QMatrix4x4 m_targetPose;
+    TrajectoryPlanner m_trajPlanner;
 
 
     // Methods
@@ -126,6 +129,10 @@ public:
         T.rotate(rotY, QVector3D(1,0,0));
         T.rotate(rotZ2, QVector3D(0,1,0));
         m_targetPose = T;
+
+        // Copy current theta to thetaSTart before optimizer starts messing around
+        for (auto &e:m_joints) { e->m_thetaStart = e->m_theta;}
+
     }
 
     void setTargetPoseFromJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
@@ -139,24 +146,46 @@ public:
         qDebug() << "Robot says Hello";
     }
 
-
+    void initalizeMovement()
+    {
+        std::vector<double> start;
+        std::vector<double> target;
+        for (int i=1; i<7; ++i)
+        {
+            start.push_back(m_joints.at(i)->m_thetaStart);
+            target.push_back(m_joints.at(i)->m_theta);
+        }
+        this->m_trajPlanner.init(start, target);
+    }
 
 public slots:
-    void updatePose()
+    void move()
     {
+        auto angles = this->m_trajPlanner.update();
+        if (this->m_trajPlanner.m_isMoving)
+        {
+            this->setJointAngles(angles.at(0), angles.at(1), angles.at(2), angles.at(3), angles.at(4), angles.at(5));
+            this->computeAndSetForwardKinematics();
+        }
+        else
+        {
+            for (int i=1; i<7; ++i)
+            {
+                m_joints.at(i)->m_thetaTarget = angles.at(i-1);
+            }
+        }
 
-        ++m_counter;
-        float angle1 = 180 + sin(m_counter/50)*45+90;
-        float angle2 = 180 + cos(m_counter/100)*45+90;
-        this->setJointAngles(angle1, angle2, angle1, angle2, angle2, angle2);
-        this->computeAndSetForwardKinematics();
+//        ++m_counter;
+//        float angle1 = 180 + sin(m_counter/50)*45+90;
+//        float angle2 = 180 + cos(m_counter/100)*45+90;
+
 //        auto T = this->computeForwardKinematics();
 //        printTransformation(T);
 
 //        if (fmod(m_counter, 10) == 0) this->computeAndSetForwardKinematics();
     }
 
-    void setPoseAndComputeIK(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
+    void setPose(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
     {
         this->setTargetPoseFromEulerZYZ(x, y, z, rotZ1, rotY, rotZ2);
 //        ik(this);

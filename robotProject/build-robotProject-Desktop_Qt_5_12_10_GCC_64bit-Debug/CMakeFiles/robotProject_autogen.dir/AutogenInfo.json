@@ -156,6 +156,11 @@
 			"EWIEGA46WW/moc_timer.cpp"
 		],
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h",
+			"MU",
+			"EWIEGA46WW/moc_trajectoryplanner.cpp"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h",
 			"MU",
 			"EWIEGA46WW/moc_utils.cpp"

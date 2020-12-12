@@ -143,10 +143,10 @@ int main(int argc, char* argv[])
     // Set and launch timer
     QTimer myTimer(checkBox1);
     myTimer.setInterval(30);
-    myTimer.start();
+//    myTimer.start();
 
     // Connect timer to robot and checkbox and texts with lambda function
-//    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::updatePose);
+    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::move);
     QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
                 [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
 //    QObject::connect(checkBox1, &QCheckBox::toggled, &robbie, &Robot::disable);
@@ -157,14 +157,17 @@ int main(int argc, char* argv[])
 //                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
 
     QObject::connect(button, &QPushButton::pressed,
-                     [le1, le2, le3, le4, le5, le6, &robbie] (void) {
+                     [le1, le2, le3, le4, le5, le6, &robbie, &myTimer] (void) {
                         robbie.setTargetPoseFromEulerZYZ(le1->text().toDouble(),
                                                    le2->text().toDouble(),
                                                    le3->text().toDouble(),
                                                    le4->text().toDouble(),
                                                    le5->text().toDouble(),
                                                    le6->text().toDouble());
-                        ik(&robbie);} );
+                        ik(&robbie);
+                        robbie.initalizeMovement();
+                        myTimer.start();} );
+
 
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
@@ -195,13 +198,13 @@ int main(int argc, char* argv[])
 
 //    robbie.updatePose();
 
-    robbie.setTargetPoseFromJointAngles(40,10,15,90,30,50);
+//    robbie.setTargetPoseFromJointAngles(40,10,15,90,30,50);
 //    robbie.setTargetPoseFromEulerZYZ(-350,-50,-240,0,0,0);
 
-    auto T = robbie.m_targetPose;
+//    auto T = robbie.m_targetPose;
 ////    auto T = robbie.computeForwardKinematics();
 
-    printTransformation(T);
+//    printTransformation(T);
 
 
 

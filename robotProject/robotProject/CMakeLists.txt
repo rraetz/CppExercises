@@ -41,6 +41,7 @@ add_executable(${PROJECT_NAME}
         coordinatesystem.h
         inversekinematics.h
         se3.h
+        trajectoryplanner.h
     )
 
 # link the qt3d libraries

@@ -47,6 +47,8 @@ public:
     double m_d;
     double m_a;
     double m_alpha;
+    double m_thetaStart;
+    double m_thetaTarget;
 
     // Methods
     void setDH(double theta0, double a, double d, double alpha)

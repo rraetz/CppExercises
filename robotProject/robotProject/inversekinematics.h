@@ -151,7 +151,7 @@ void ik(Robot *r)
 //        T = T-r->m_targetPose;
 //        printTransformation(T);
 
-        r->computeAndSetForwardKinematics();
+//        r->computeAndSetForwardKinematics();
 
 
     }

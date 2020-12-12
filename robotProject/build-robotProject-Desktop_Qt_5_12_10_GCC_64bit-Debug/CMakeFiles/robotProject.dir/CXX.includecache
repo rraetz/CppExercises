@@ -1147,6 +1147,10 @@ QtMath
 -
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
+trajectoryplanner.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
+algorithm
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 QMatrix4x4
@@ -1160,6 +1164,14 @@ QDebug
 QTimer
 -
 QObject
+-
+
+/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
+math.h
+-
+vector
+-
+algorithm
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h

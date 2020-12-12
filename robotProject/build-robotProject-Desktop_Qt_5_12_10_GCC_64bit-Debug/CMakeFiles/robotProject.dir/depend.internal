@@ -298,6 +298,7 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
+ /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QTransform

@@ -33,19 +33,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 47,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 56,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 70,
+				"line" : 71,
 				"parent" : 0
 			},
 			{
@@ -306,7 +306,8 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14
 			]
 		}
 	],
@@ -384,6 +385,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "se3.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "trajectoryplanner.h",
 			"sourceGroupIndex" : 1
 		}
 	],
