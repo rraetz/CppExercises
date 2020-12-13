@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Robot_t {
-    QByteArrayData data[12];
-    char stringdata0[59];
+    QByteArrayData data[3];
+    char stringdata0[12];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,20 +33,10 @@ static const qt_meta_stringdata_Robot_t qt_meta_stringdata_Robot = {
     {
 QT_MOC_LITERAL(0, 0, 5), // "Robot"
 QT_MOC_LITERAL(1, 6, 4), // "move"
-QT_MOC_LITERAL(2, 11, 0), // ""
-QT_MOC_LITERAL(3, 12, 7), // "setPose"
-QT_MOC_LITERAL(4, 20, 1), // "x"
-QT_MOC_LITERAL(5, 22, 1), // "y"
-QT_MOC_LITERAL(6, 24, 1), // "z"
-QT_MOC_LITERAL(7, 26, 5), // "rotZ1"
-QT_MOC_LITERAL(8, 32, 4), // "rotY"
-QT_MOC_LITERAL(9, 37, 5), // "rotZ2"
-QT_MOC_LITERAL(10, 43, 7), // "disable"
-QT_MOC_LITERAL(11, 51, 7) // "enabled"
+QT_MOC_LITERAL(2, 11, 0) // ""
 
     },
-    "Robot\0move\0\0setPose\0x\0y\0z\0rotZ1\0rotY\0"
-    "rotZ2\0disable\0enabled"
+    "Robot\0move\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +46,7 @@ static const uint qt_meta_data_Robot[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,14 +54,10 @@ static const uint qt_meta_data_Robot[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x0a /* Public */,
-       3,    6,   30,    2, 0x0a /* Public */,
-      10,    1,   43,    2, 0x0a /* Public */,
+       1,    0,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    4,    5,    6,    7,    8,    9,
-    QMetaType::Void, QMetaType::Bool,   11,
 
        0        // eod
 };
@@ -83,11 +69,10 @@ void Robot::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->move(); break;
-        case 1: _t->setPose((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
-        case 2: _t->disable((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject Robot::staticMetaObject = { {
@@ -119,13 +104,13 @@ int Robot::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 1)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 1;
     }
     return _id;
 }

@@ -2,21 +2,17 @@
 #define ROBOT_H
 
 #include <vector>
-#include "joint.h"
-#include "spaceTransformations.h"
-#include <Qt3DCore/QEntity>
-#include <QTimer>
+#include <algorithm>
 #include <math.h>
 
+#include <Qt3DCore/QEntity>
 #include <Qt3DCore/QTransform>
 
-#include <QtMath>
-
+#include "joint.h"
 #include "coordinatesystem.h"
 #include "trajectoryplanner.h"
-#include <algorithm>
 
-#include "utils.h"
+
 
 
 constexpr double J0_THETA0 = 0;
@@ -44,17 +40,15 @@ public:
         m_joints.push_back(new Joint(parent, 0,0,85.35,-90));
         m_joints.push_back(new Joint(parent, 0,0,81.9,0));
 
-//        this->setJointAngles(std::vector<double>(m_joints.size(),0));
-        this->computeForwardKinematics();
+        // Set initial Pose
+        std::vector<double> initialAngles(m_joints.size(), 270);
+        displayRobot(initialAngles);
 
-        qDebug() << "Robot constructed";
     }
 
     // Destructor
-    virtual ~Robot()
-    {
-        qDebug() << "Robot destructed";
-    }
+    virtual ~Robot(){}
+
 
     // Member variables
     std::vector<Joint*> m_joints; // needs to be pointers because of hoq QObejects work (slots/signals and object tree structure)
@@ -69,47 +63,34 @@ public:
     // Set joint angle variables in joints
     void setJointAngles(const std::vector<double> &jointAngles)
     {
-        for (size_t i=0; i<m_joints.size(); ++i)
-        {
-            m_joints.at(i)->m_theta = jointAngles.at(i);
-        }
+        auto it = jointAngles.begin();
+        std::for_each(m_joints.begin(), m_joints.end(), [&it] (Joint *J){J->m_theta = *it; ++it; });
+
     }
 
-    // Compute forward kinematics
-    QMatrix4x4 computeForwardKinematics()
+
+    QMatrix4x4 endEffectorForwardKinematics(const std::vector<double> &jointAngles)
     {
         QMatrix4x4 T;
-        T.setToIdentity();
-        for (auto e:m_joints)
+        auto it = jointAngles.begin();
+        std::for_each(m_joints.begin(), m_joints.end(), [&T, &it] (Joint *J) {T = T*J->computeTransform(*it); ++it; });
+        return T;
+    }
+
+
+
+    std::vector<QMatrix4x4> jointsForwardKinematics(const std::vector<double> &jointAngles)
+    {
+        std::vector<QMatrix4x4> T;
+        QMatrix4x4 Ttmp;
+        for (size_t i=0; i<m_joints.size(); ++i)
         {
-            T = T*e->computeTransform(e->m_theta);
+            T.push_back(Ttmp);
+            Ttmp = Ttmp * m_joints.at(i)->computeTransform(jointAngles.at(i));
         }
         return T;
     }
 
-//    QMatrix4x4 computeForwardKinematics(std::vector<double> jointAngles)
-//    {
-//        QMatrix4x4 T;
-//        T.setToIdentity();
-//        for (int i=0; i<6; ++i)
-//        {
-//            T = T * m_joints.at(i)->computeTransform(jointAngles.at(i));
-//        }
-//        return T;
-//    }
-
-    // Compute forward kinematics and set graphical elements
-    void computeAndSetForwardKinematics()
-    {
-        QMatrix4x4 T;
-        T.setToIdentity();
-        for (auto e:m_joints)
-        {
-            e->setPose(T);
-            T = e->computePose(T);
-        }
-        m_endEffector->setPose(T);
-    }
 
 
     void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
@@ -121,57 +102,45 @@ public:
         T.rotate(rotY, 1,0,0);
         T.rotate(rotZ2, 0,1,0);
         m_targetPose = T;
-
-        // Copy current theta to thetaSTart before optimizer starts messing around
-        std::for_each(m_joints.begin(), m_joints.end(), [](Joint *J){J->m_thetaStart = J->m_theta;});
     }
 
 
-    void initalizeMovement()
+
+    void initalizeMovement(std::vector<double> targetJointAngles)
     {
-        std::vector<double> start;
-        std::vector<double> target;
-        for (size_t i=0; i<m_joints.size(); ++i)
-        {
-            start.push_back(m_joints.at(i)->m_thetaStart);
-            target.push_back(m_joints.at(i)->m_theta);
-        }
-        this->m_trajPlanner.init(start, target);
+        auto start = this->jointAngles();
+        this->m_trajPlanner.init(start, targetJointAngles);
     }
+
+
+
+    std::vector<double> jointAngles()
+    {
+        std::vector<double> angles;
+        std::for_each(m_joints.begin(), m_joints.end(), [&angles](Joint *J){std::back_inserter(angles) = J->m_theta;});
+        return angles;
+    }
+
+
+
+    void displayRobot(std::vector<double> jointAngles)
+    {
+        this->setJointAngles(jointAngles);
+        auto T = this->jointsForwardKinematics(jointAngles);
+        auto it = T.begin();
+        std::for_each(m_joints.begin(), m_joints.end(), [&it] (Joint *J) {J->setPose(*it); ++it; });
+        m_endEffector->setPose(this->endEffectorForwardKinematics(jointAngles));
+    }
+
 
 
 public slots:
     void move()
     {
-        auto angles = this->m_trajPlanner.update();
-        if (this->m_trajPlanner.m_isMoving)
-        {
-            this->setJointAngles(angles);
-            this->computeAndSetForwardKinematics();
-        }
-        else
-        {
-            for (size_t i=0; i<m_joints.size(); ++i)
-            {
-                m_joints.at(i)->m_thetaTarget = angles.at(i);
-            }
-        }
+        auto jointAngles = this->m_trajPlanner.update();
+        if (this->m_trajPlanner.m_isMoving) {displayRobot(jointAngles);}
     }
 
-
-
-    void setPose(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
-    {
-        this->setTargetPoseFromEulerZYZ(x, y, z, rotZ1, rotY, rotZ2);
-
-    }
-
-
-
-    void disable(bool enabled)
-    {
-        m_joints.at(0)->m_joint->setEnabled(enabled);
-    }
 };
 
 

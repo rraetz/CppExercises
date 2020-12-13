@@ -8,8 +8,6 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/rob
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
-CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
-CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
@@ -89,7 +87,6 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/i
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QUrl
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QVariant
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QVector
-CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QtMath
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qalgorithms.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qarraydata.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic.h
@@ -127,7 +124,6 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/i
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlogging.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmap.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmargins.h
-CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmath.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmetatype.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmutex.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnamespace.h
@@ -267,9 +263,7 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QTransform
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/qcomponent.h
@@ -298,10 +292,8 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QMetaType
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QObject
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QSharedPointer
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QTimer
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QUrl
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QVariant
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QtMath
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qalgorithms.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qarraydata.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic.h
@@ -309,7 +301,6 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_cxx11.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_msvc.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbasicatomic.h
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbasictimer.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearray.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearraylist.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qchar.h
@@ -334,7 +325,6 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlogging.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmap.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmargins.h
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmath.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmetatype.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmutex.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnamespace.h
@@ -366,7 +356,6 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsystemdetection.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtcore-config.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtextstream.h
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtimer.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtypeinfo.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurl.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurlquery.h
@@ -375,7 +364,6 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/r
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvector.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qversiontagging.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QColor
-CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QMatrix4x4
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcolor.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qgenericmatrix.h
 CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix4x4.h

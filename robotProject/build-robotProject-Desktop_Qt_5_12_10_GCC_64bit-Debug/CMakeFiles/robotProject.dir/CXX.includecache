@@ -6,48 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_coordinatesystem.cpp
-../../../robotProject/coordinatesystem.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_cylinder3d.cpp
-../../../robotProject/cylinder3d.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_joint.cpp
-../../../robotProject/joint.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_robot.cpp
-../../../robotProject/robot.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/mocs_compilation.cpp
-EWIEGA46WW/moc_coordinatesystem.cpp
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_coordinatesystem.cpp
-EWIEGA46WW/moc_cylinder3d.cpp
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_cylinder3d.cpp
-EWIEGA46WW/moc_joint.cpp
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_joint.cpp
-EWIEGA46WW/moc_robot.cpp
-/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_robot.cpp
-
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 cylinder3d.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
@@ -79,8 +37,6 @@ robot.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
 utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
-se3.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 QMatrix4x4
 -
 random
@@ -88,6 +44,10 @@ random
 chrono
 -
 algorithm
+-
+numeric
+-
+iterator
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
@@ -195,36 +155,20 @@ Qt3DExtras/qfirstpersoncameracontroller.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
 vector
 -
-joint.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
-spaceTransformations.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
-Qt3DCore/QEntity
--
-QTimer
+algorithm
 -
 math.h
 -
+Qt3DCore/QEntity
+-
 Qt3DCore/QTransform
 -
-QtMath
--
+joint.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 trajectoryplanner.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
-algorithm
--
-utils.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
-
-/home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
-QMatrix4x4
--
-QDebug
--
-
-/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 math.h
@@ -724,10 +668,6 @@ qvariant.h
 qvector.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvector.h
 
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QtMath
-qmath.h
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmath.h
-
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qalgorithms.h
 QtCore/qglobal.h
 -
@@ -1080,14 +1020,6 @@ initializer_list
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmargins.h
 QtCore/qnamespace.h
--
-
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmath.h
-QtCore/qglobal.h
--
-QtCore/qalgorithms.h
--
-cmath
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmetatype.h

@@ -127,10 +127,10 @@ int main(int argc, char* argv[])
                                                    le3->text().toDouble(),
                                                    le4->text().toDouble(),
                                                    le5->text().toDouble(),
-                                                   le6->text().toDouble());
-                        ik(&robbie);
-                        robbie.initalizeMovement();
+                                                   le6->text().toDouble());                       
+                        robbie.initalizeMovement(ik(&robbie));
                         myTimer.start();} );
+
 
 
     // Camera & Camera controls
