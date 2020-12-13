@@ -60,7 +60,7 @@ public:
 
     // Methods
 
-    // Set and initialize DH parameters
+//    // Set and initialize DH parameters
 //    void setDH(double theta0, double a, double d, double alpha)
 //    {
 //        // Copy to member variables

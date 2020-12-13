@@ -1,47 +1,18 @@
 #include <QDebug>
-//#include <Geometry>
 
 #include "main.h"
 #include <vector>
-#include "spaceTransformations.h"
 #include "utils.h"
-#include "controller.h"
 #include "joint.h"
 #include "robot.h"
 
 #include <QTimer>
 #include <QObject>
-
-#include "timer.h"
-
 #include <QLineEdit>
-
 #include "coordinatesystem.h"
-
 #include <QSlider>
-
 #include "inversekinematics.h"
-
 #include <QOrbitCameraController>
-
-
-
-/* class robot
- * {
- * public:
- *      std::vector<Joint> m_joints
- *
- *      setTargetPose (set for trajectory planner)
- *      void setPose(theta1, theta2, theta3,...)
- *
- *      void forwardKinematics
- *      void inverseKinematics
- *      void updateTrajectory
- *
- * }
- */
-
-
 
 
 
@@ -123,21 +94,14 @@ int main(int argc, char* argv[])
 
 
 
-
-
-
     // ADD SCENE, CAMERA & LIGHT ///////////////////////////////
     // Scene root entity
-//    Qt3DCore::QEntity *scene = createScene();
     Qt3DCore::QEntity *scene = new Qt3DCore::QEntity();
     view->setRootEntity(scene);
 
 
     // Create robot
-
-
     Robot robbie(scene);
-    CoordinateSystem cordsys(scene);
 
 
     // Set and launch timer
@@ -172,13 +136,11 @@ int main(int argc, char* argv[])
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
     camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 100.0f, 2000.0f);
-//    camera->setPosition(QVector3D(30.0f, 50.0f, 50.0f));
-    camera->setPosition(QVector3D(300.0f, 500.0f, 500.0f));
-    camera->setViewCenter(QVector3D(0, 0, 0));
+    camera->setPosition(QVector3D(1000.0f, 500.0f, 500.0f));
+    camera->setViewCenter(QVector3D(0, 200, 0));
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
     camController->setLinearSpeed(100);
-
 
 
     // Light
@@ -195,24 +157,6 @@ int main(int argc, char* argv[])
     // Show window
     widget->show();
     widget->resize(1200, 800);
-
-//    robbie.updatePose();
-
-//    robbie.setTargetPoseFromJointAngles(40,10,15,90,30,50);
-//    robbie.setTargetPoseFromEulerZYZ(-350,-50,-240,0,0,0);
-
-//    auto T = robbie.m_targetPose;
-////    auto T = robbie.computeForwardKinematics();
-
-//    printTransformation(T);
-
-
-
-
-    ik(&robbie);
-
-
-
 
 
     return app.exec();

@@ -10,14 +10,13 @@
 
 #include <Qt3DCore/QTransform>
 
-//#include "utils.h"
-
 #include <QtMath>
 
 #include "coordinatesystem.h"
 #include "trajectoryplanner.h"
 #include <algorithm>
 
+#include "utils.h"
 
 
 constexpr double J0_THETA0 = 0;
@@ -45,7 +44,7 @@ public:
         m_joints.push_back(new Joint(parent, 0,0,85.35,-90));
         m_joints.push_back(new Joint(parent, 0,0,81.9,0));
 
-        this->setJointAngles(0,0,0,0,0,0);
+//        this->setJointAngles(std::vector<double>(m_joints.size(),0));
         this->computeForwardKinematics();
 
         qDebug() << "Robot constructed";
@@ -68,14 +67,12 @@ public:
     // Methods
 
     // Set joint angle variables in joints
-    void setJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
+    void setJointAngles(const std::vector<double> &jointAngles)
     {
-        m_joints.at(0)->m_theta = a1;
-        m_joints.at(1)->m_theta = a2;
-        m_joints.at(2)->m_theta = a3;
-        m_joints.at(3)->m_theta = a4;
-        m_joints.at(4)->m_theta = a5;
-        m_joints.at(5)->m_theta = a6;
+        for (size_t i=0; i<m_joints.size(); ++i)
+        {
+            m_joints.at(i)->m_theta = jointAngles.at(i);
+        }
     }
 
     // Compute forward kinematics
@@ -120,19 +117,13 @@ public:
         QMatrix4x4 T;
         T.setToIdentity();
         T.translate(y,z,x);
-        T.rotate(rotZ1, QVector3D(0,1,0));
-        T.rotate(rotY, QVector3D(1,0,0));
-        T.rotate(rotZ2, QVector3D(0,1,0));
+        T.rotate(rotZ1, 0,1,0);
+        T.rotate(rotY, 1,0,0);
+        T.rotate(rotZ2, 0,1,0);
         m_targetPose = T;
 
         // Copy current theta to thetaSTart before optimizer starts messing around
-        for (auto &e:m_joints) { e->m_thetaStart = e->m_theta;}
-    }
-
-    void setTargetPoseFromJointAngles(double a1, double a2, double a3, double a4, double a5, double a6)
-    {
-        this->setJointAngles(a1, a2, a3, a4, a5, a6);
-        m_targetPose = this->computeForwardKinematics();
+        std::for_each(m_joints.begin(), m_joints.end(), [](Joint *J){J->m_thetaStart = J->m_theta;});
     }
 
 
@@ -140,7 +131,7 @@ public:
     {
         std::vector<double> start;
         std::vector<double> target;
-        for (int i=0; i<6; ++i)
+        for (size_t i=0; i<m_joints.size(); ++i)
         {
             start.push_back(m_joints.at(i)->m_thetaStart);
             target.push_back(m_joints.at(i)->m_theta);
@@ -155,12 +146,12 @@ public slots:
         auto angles = this->m_trajPlanner.update();
         if (this->m_trajPlanner.m_isMoving)
         {
-            this->setJointAngles(angles.at(0), angles.at(1), angles.at(2), angles.at(3), angles.at(4), angles.at(5));
+            this->setJointAngles(angles);
             this->computeAndSetForwardKinematics();
         }
         else
         {
-            for (int i=0; i<6; ++i)
+            for (size_t i=0; i<m_joints.size(); ++i)
             {
                 m_joints.at(i)->m_thetaTarget = angles.at(i);
             }

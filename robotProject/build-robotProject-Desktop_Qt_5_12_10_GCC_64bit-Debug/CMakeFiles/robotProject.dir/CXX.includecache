@@ -6,15 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/raphael/Documents/CppExercises/robotProject/robotProject/controller.h
-QMatrix4x4
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_coordinatesystem.cpp
+../../../robotProject/coordinatesystem.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
+QtCore/qbytearray.h
 -
-QDebug
+QtCore/qmetatype.h
 -
-QTimer
+
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_cylinder3d.cpp
+../../../robotProject/cylinder3d.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+QtCore/qbytearray.h
 -
-Qt3DCore/qtransform.h
+QtCore/qmetatype.h
 -
+
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_joint.cpp
+../../../robotProject/joint.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_robot.cpp
+../../../robotProject/robot.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_coordinatesystem.cpp
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_coordinatesystem.cpp
+EWIEGA46WW/moc_cylinder3d.cpp
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_cylinder3d.cpp
+EWIEGA46WW/moc_joint.cpp
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_joint.cpp
+EWIEGA46WW/moc_robot.cpp
+/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/EWIEGA46WW/moc_robot.cpp
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 cylinder3d.h
@@ -55,6 +87,8 @@ random
 -
 chrono
 -
+algorithm
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 cylinder3d.h
@@ -73,12 +107,8 @@ main.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 vector
 -
-spaceTransformations.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
 utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
-controller.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/controller.h
 joint.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 robot.h
@@ -87,8 +117,6 @@ QTimer
 -
 QObject
 -
-timer.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
 QLineEdit
 -
 coordinatesystem.h
@@ -187,6 +215,8 @@ trajectoryplanner.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 algorithm
 -
+utils.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/se3.h
 QMatrix4x4
@@ -195,12 +225,6 @@ QDebug
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/spaceTransformations.h
-
-/home/raphael/Documents/CppExercises/robotProject/robotProject/timer.h
-QTimer
--
-QObject
--
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 math.h

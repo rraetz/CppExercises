@@ -2,7 +2,6 @@
 #define UTILS_H
 
 #include <QDebug>
-//#include "spaceTransformations.h"
 #include <QMatrix4x4>
 
 
@@ -22,7 +21,8 @@
 //}
 
 
-void printTransformation(QMatrix4x4 m)
+// print a QMatrix4x4, must be inline for use in QObjects // or declare in in source file
+inline void printTransformation(QMatrix4x4 m)
 {
     QString mat;
     for (int i = 0; i<4; ++i)

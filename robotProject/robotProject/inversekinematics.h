@@ -20,6 +20,8 @@
 #include <random>
 #include <chrono>
 
+#include <algorithm>
+
 
 
 typedef struct {
@@ -32,7 +34,7 @@ double myvfunc(const std::vector<double> &x, std::vector<double> &grad, void *my
     // Retrieve robot object
     Robot *r = static_cast<Robot *>(my_func_data);
 
-    r->setJointAngles(x[0], x[1], x[2], x[3], x[4], x[5]);
+    r->setJointAngles(x);
     auto Tfk = r->computeForwardKinematics();
     auto Tref = r->m_targetPose;
     auto Tres = Tfk - Tref;
@@ -41,9 +43,11 @@ double myvfunc(const std::vector<double> &x, std::vector<double> &grad, void *my
     double T11 = Tres.data()[0];
     double T12 = Tres.data()[1];
     double T13 = Tres.data()[2];
+
     double T21 = Tres.data()[4];
     double T22 = Tres.data()[5];
     double T23 = Tres.data()[6];
+
     double T31 = Tres.data()[8];
     double T32 = Tres.data()[9];
     double T33 = Tres.data()[10];
@@ -70,29 +74,12 @@ void ik(Robot *r)
 
 
     // Set bounds
-    std::vector<double> lb(N);
-    lb[0] = 0;
-    lb[1] = 0;
-    lb[2] = 0;
-    lb[3] = 0;
-    lb[4] = 0;
-    lb[5] = 0;
-    opt.set_lower_bounds(lb);
-
-    std::vector<double> ub(N);
-//    ub[0] = 180;
-//    ub[1] = 180;
-//    ub[2] = 180;
-//    ub[3] = 180;
-//    ub[4] = 180;
-//    ub[5] = 180;
-    ub[0] = 360;
-    ub[1] = 360;
-    ub[2] = 360;
-    ub[3] = 360;
-    ub[4] = 360;
-    ub[5] = 360;
-    opt.set_upper_bounds(ub);
+    std::vector<double> lowerBound(N);
+    std::vector<double> upperBound(N);
+    std::fill(lowerBound.begin(), lowerBound.end(), 0);
+    std::fill(upperBound.begin(), upperBound.end(), 360);
+    opt.set_lower_bounds(lowerBound);
+    opt.set_upper_bounds(upperBound);
 
     // Set objective function
     opt.set_min_objective(myvfunc, r);
@@ -101,41 +88,28 @@ void ik(Robot *r)
     opt.set_xtol_rel(1e-10);
     opt.set_maxeval(100000);
 
-    // Initial values
+    // Optimization variables and cost function value
     std::vector<double> x(N);
-//    x[0] = 90;
-//    x[1] = 90;
-//    x[2] = 90;
-//    x[3] = 90;
-//    x[4] = 90;
-//    x[5] = 90;
-    x[0] = 0;
-    x[1] = 0;
-    x[2] = 0;
-    x[3] = 0;
-    x[4] = 0;
-    x[5] = 0;
-
-
     double minf;
 
-    std::mt19937_64 randomNumberGenerator;
+    // Random number generator
+    std::mt19937_64 randGenerator;
     uint64_t timeSeed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
-    std::seed_seq ss{uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed>>32)};
-    randomNumberGenerator.seed(ss);
-    std::uniform_real_distribution<double> unif(0, 1);
+    std::seed_seq seedSequence{uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed>>32)};
+    randGenerator.seed(seedSequence);
+    std::uniform_real_distribution<double> unif(0, 360);
 
     try{
         for(int i=0; i<100; ++i)
         {
+            // Random initialization of optimization variables
+            std::generate(x.begin(), x.end(), [&randGenerator, &unif] {return unif(randGenerator); });
+
+            // Optimize
             opt.optimize(x, minf);
             if (minf < 0.001) break;
-
-            for (auto &e:x)
-            {
-                  e = unif(randomNumberGenerator)*180;
-            }
         }
+
         qDebug() << "Found minimum at f(" << x[0] << ","
                  << x[1] << ","
                  << x[2] << ","

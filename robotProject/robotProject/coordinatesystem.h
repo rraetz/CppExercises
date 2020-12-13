@@ -37,13 +37,9 @@ public:
         // Initialise pose
         this->setPose(0,0,0,0,0,0);
 
-        qDebug() << "CoordSys constructed";
     }
 
-    virtual ~CoordinateSystem()
-    {
-        qDebug() << "CoordSys destructed";
-    };
+    virtual ~CoordinateSystem(){};
 
     Cylinder3d *m_xAxis;
     Cylinder3d *m_yAxis;
