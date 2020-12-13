@@ -92,36 +92,12 @@ public:
     }
 
 
-
-//    void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
-//    {
-//        QMatrix4x4 T;
-//        T.setToIdentity();
-//        T.translate(y,z,x);
-//        T.rotate(rotZ1, 0,1,0);
-//        T.rotate(rotY, 1,0,0);
-//        T.rotate(rotZ2, 0,1,0);
-//        m_targetPose = T;
-//    }
-
-
-
-
-    void initalizeMovement(std::vector<double> targetJointAngles)
-    {
-        auto start = this->jointAngles();
-        this->m_trajPlanner.init(start, targetJointAngles);
-    }
-
-
-
     std::vector<double> jointAngles()
     {
         std::vector<double> angles;
         std::for_each(m_joints.begin(), m_joints.end(), [&angles](Joint *J){std::back_inserter(angles) = J->m_theta;});
         return angles;
     }
-
 
 
     void displayRobot(std::vector<double> jointAngles)
@@ -135,7 +111,14 @@ public:
 
 
 
+// It would be possible to connect to "normal" member functions, but slots illustrate the intent.
 public slots:
+    void initalizeMovement(std::vector<double> targetJointAngles)
+    {
+        auto start = this->jointAngles();
+        this->m_trajPlanner.init(start, targetJointAngles);
+    }
+
     void move()
     {
         auto jointAngles = this->m_trajPlanner.update();

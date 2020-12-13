@@ -131,6 +131,11 @@
 			"EWIEGA46WW/moc_joint.cpp"
 		],
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h",
+			"MU",
+			"EWIEGA46WW/moc_jointdisplay.cpp"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/main.h",
 			"MU",
 			"EWIEGA46WW/moc_main.cpp"

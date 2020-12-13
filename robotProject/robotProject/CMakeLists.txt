@@ -36,6 +36,7 @@ add_executable(${PROJECT_NAME}
         inversekinematics.h
         trajectoryplanner.h
         eulerinput.h
+        jointdisplay.h
     )
 
 

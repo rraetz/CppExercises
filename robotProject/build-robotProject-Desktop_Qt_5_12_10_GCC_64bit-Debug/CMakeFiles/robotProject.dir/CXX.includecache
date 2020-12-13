@@ -70,6 +70,16 @@ Qt3DCore/QTransform
 math.h
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h
+algorithm
+-
+QWidget
+-
+QLabel
+-
+QGridLayout
+-
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
 QDebug
 -
@@ -115,6 +125,8 @@ inversekinematics.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
 eulerinput.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
+jointdisplay.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 QTextEdit

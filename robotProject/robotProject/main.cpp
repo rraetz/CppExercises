@@ -21,6 +21,8 @@
 #include "coordinatesystem.h"
 #include "inversekinematics.h"
 #include "eulerinput.h"
+#include "jointdisplay.h"
+
 
 
 
@@ -50,32 +52,33 @@ int main(int argc, char* argv[])
 
     // INFOS & BUTTONS ////////////////////////////////////////
     QLabel *info = new QLabel();
-    info->setText(QString("Hello there \nThis is a testasdf sadfa asdfa er asferasdf"));
+    info->setText(QString("Please enter a 3D pose according to the Euler ZYZ convention "
+                          "and press the button below. An optimization-based inverse kinematics solver "
+                          "will find the corresponding joint angles and the robot will move to the indicated pose."));
+    info->setWordWrap(true);
 
     // Button
     QPushButton *button = new QPushButton("Compute Joint Angles");
 
-
-    // Text
-    QLabel *label2 = new QLabel();
-    label2->setText(QString("Enabled"));
-
-    QLabel *label3 = new QLabel();
-    label3->setText(QString("Position"));
-
+//    // Text
+//    QLabel *label2 = new QLabel();
+//    label2->setText(QString("Enabled"));
+//    QLabel *label3 = new QLabel();
+//    label3->setText(QString("Position"));
     // Slider
 //    QSlider *slider = new QSlider(Qt::Orientation::Horizontal);
 //    slider->setWindowIconText(QString("Slider text"));
 
-    // Euler angles input
+    // Euler angles input and joint angle display
     EulerInput *eulerInputs = new EulerInput();
+    JointDisplay *jointAngles = new JointDisplay(6);
 
 
-    // Add everything to layout
+    // Add everything to vertical layout
     vLayout->addWidget(info);
     vLayout->addWidget(eulerInputs);
     vLayout->addWidget(button);
-
+    vLayout->addWidget(jointAngles);
 
 
 
@@ -97,7 +100,11 @@ int main(int argc, char* argv[])
                         robbie.m_targetPose = eulerInputs->eulerPose();
                         robbie.initalizeMovement(ik(&robbie));
                         myTimer.start();} );
+
     QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::move);
+
+    QObject::connect(&myTimer, &QTimer::timeout,
+                     [&jointAngles, &robbie] (void) {jointAngles->update(robbie.jointAngles()); });
 
 
 

@@ -60,6 +60,8 @@ public:
         setLayout(grid);
     }
 
+
+public slots:
     // Compute transformation matrix from inputs
     QMatrix4x4 eulerPose()
     {
