@@ -121,11 +121,6 @@
 			"EWIEGA46WW/moc_eulerinput.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h",
-			"MU",
-			"EWIEGA46WW/moc_inversekinematics.cpp"
-		],
-		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h",
 			"MU",
 			"EWIEGA46WW/moc_joint.cpp"

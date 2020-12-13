@@ -33,7 +33,6 @@ add_executable(${PROJECT_NAME}
         utils.h
         cylinder3d.h
         coordinatesystem.h
-        inversekinematics.h
         trajectoryplanner.h
         eulerinput.h
         jointdisplay.h

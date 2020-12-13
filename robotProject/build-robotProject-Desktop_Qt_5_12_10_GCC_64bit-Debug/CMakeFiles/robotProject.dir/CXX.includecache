@@ -32,34 +32,6 @@ QLineEdit
 QMatrix4x4
 -
 
-/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
-iomanip
--
-iostream
--
-vector
--
-nlopt.hpp
--
-QDebug
--
-robot.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
-utils.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
-QMatrix4x4
--
-random
--
-chrono
--
-algorithm
--
-numeric
--
-iterator
--
-
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 cylinder3d.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
@@ -121,8 +93,6 @@ robot.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
 coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
-inversekinematics.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
 eulerinput.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
 jointdisplay.h
@@ -187,6 +157,14 @@ coordinatesystem.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
 trajectoryplanner.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
+random
+-
+chrono
+-
+utils.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
+nlopt.hpp
+/home/raphael/Documents/CppExercises/robotProject/robotProject/nlopt.hpp
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 math.h
@@ -194,8 +172,6 @@ math.h
 vector
 -
 algorithm
--
-QObject
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h

@@ -23,4 +23,12 @@ inline void printTransformation(QMatrix4x4 m)
 
 
 
+inline double wrapAngle360(double angle)
+{
+    if (angle >= 360) return angle - 360;
+    else return angle;
+}
+
+
+
 #endif // UTILS_H

@@ -34,7 +34,7 @@ public:
     }
 
 public slots:
-    void update(std::vector<double> jointAngles)
+    void update(const std::vector<double> &jointAngles)
     {
         auto it = jointAngles.begin();
         std::for_each(m_angleLabel.begin(), m_angleLabel.end(),

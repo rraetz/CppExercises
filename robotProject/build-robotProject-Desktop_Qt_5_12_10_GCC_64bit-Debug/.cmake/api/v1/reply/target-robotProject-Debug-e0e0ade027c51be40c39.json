@@ -32,19 +32,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 44,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 53,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 67,
+				"line" : 66,
 				"parent" : 0
 			}
 		]
@@ -290,8 +290,7 @@
 				6,
 				7,
 				8,
-				9,
-				10
+				9
 			]
 		}
 	],
@@ -333,11 +332,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "coordinatesystem.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "inversekinematics.h",
 			"sourceGroupIndex" : 1
 		},
 		{

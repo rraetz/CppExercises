@@ -4,7 +4,6 @@
 #include <math.h>
 #include <vector>
 #include <algorithm>
-#include <QObject>
 
 class TrajectoryPlanner
 {
@@ -25,7 +24,7 @@ public:
 
 
     // Prepares the trajectory planner for the next movement
-    void init(std::vector<double> startPosition, std::vector<double> & targetPosition)
+    void init(const std::vector<double> &startPosition, const std::vector<double> &targetPosition)
     {
         // Reset member variables
         m_startPosition = startPosition;
@@ -34,25 +33,29 @@ public:
         m_counter = 0;
         m_positionScaler.clear();
 
-        // Compute position differences and set positionScaler accordingly
+        // Compute position differences, wrap angles and set positionScaler accordingly
+        auto diffLambda ([](double start, double end)
+        {
+            if (end-start > 180) {return end-start-360;}
+            else if(end-start < -180) {return 360-start+end;}
+            else {return end-start;}
+        });
         std::transform(m_startPosition.begin(), m_startPosition.end(),
-                       m_targetPosition.begin(),
-                       std::back_inserter(m_positionScaler),
-                       [](double start, double end) {return end-start; });
+                       m_targetPosition.begin(), std::back_inserter(m_positionScaler), diffLambda);
     }
 
 
     // Returns vector with updated positions
     std::vector<double> update()
     {
-        m_isMoving = m_counter/(double)m_updateRateScaler <= 1;
+        m_isMoving = static_cast<double>(m_counter)/m_updateRateScaler <= 1;
         if (m_isMoving)
         {
             ++m_counter;
             for (size_t i=0; i<m_position.size(); ++i)
             {
                 m_position.at(i) = m_startPosition.at(i)  +
-                        0.5*(1 + std::sin(M_PI*m_counter/(double)m_updateRateScaler  - M_PI_2))*m_positionScaler.at(i);
+                        0.5*(1.0 + std::sin(M_PI*static_cast<double>(m_counter)/m_updateRateScaler - M_PI_2))*m_positionScaler.at(i);
             }
         }
         return m_position;

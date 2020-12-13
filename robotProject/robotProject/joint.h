@@ -16,10 +16,10 @@ public:
     // Constructor
     Joint(Qt3DCore::QEntity *parent, double theta0, double a, double d, double alpha)
         : Qt3DCore::QEntity(parent)
+        , m_theta(0)
         , m_joint(new Cylinder3d(parent))
         , m_linkD(new Cylinder3d(parent))
         , m_linkA(new Cylinder3d(parent))
-        , m_theta(0)
         , m_theta0(theta0)
         , m_d(d)
         , m_a(a)
@@ -43,20 +43,21 @@ public:
         else { m_linkD->setEnabled(false); }
     }
 
-
-    // Member variables
-    Cylinder3d *m_joint;
-    Cylinder3d *m_linkD;
-    Cylinder3d *m_linkA;
-
+    // Public member variables
     double m_theta;
-    double m_theta0;
-    double m_d;
-    double m_a;
-    double m_alpha;
 
 
     // Methods
+    // Wrap theta between [0, 360]
+    void setTheta(double angle)
+    {
+        if (angle >= 360) {m_theta = angle - 360;}
+        else if (angle < 0) {m_theta = angle + 360;}
+        else {m_theta = angle;}
+    }
+
+
+
     // Compute and set the pose of the graphical elements with m_theta
     void setPose(QMatrix4x4 T)
     {
@@ -81,6 +82,17 @@ public:
         T.rotate(m_alpha, 0,0,1);
         return T;
     }
+
+
+private:
+    // Private member variables
+    Cylinder3d *m_joint;
+    Cylinder3d *m_linkD;
+    Cylinder3d *m_linkA;
+    double m_theta0;
+    double m_d;
+    double m_a;
+    double m_alpha;
 };
 
 

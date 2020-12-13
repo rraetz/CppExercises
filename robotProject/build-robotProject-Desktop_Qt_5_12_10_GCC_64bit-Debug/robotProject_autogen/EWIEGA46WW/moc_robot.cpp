@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Robot_t {
-    QByteArrayData data[6];
-    char stringdata0[68];
+    QByteArrayData data[5];
+    char stringdata0[32];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,13 +34,11 @@ static const qt_meta_stringdata_Robot_t qt_meta_stringdata_Robot = {
 QT_MOC_LITERAL(0, 0, 5), // "Robot"
 QT_MOC_LITERAL(1, 6, 17), // "initalizeMovement"
 QT_MOC_LITERAL(2, 24, 0), // ""
-QT_MOC_LITERAL(3, 25, 19), // "std::vector<double>"
-QT_MOC_LITERAL(4, 45, 17), // "targetJointAngles"
-QT_MOC_LITERAL(5, 63, 4) // "move"
+QT_MOC_LITERAL(3, 25, 1), // "T"
+QT_MOC_LITERAL(4, 27, 4) // "move"
 
     },
-    "Robot\0initalizeMovement\0\0std::vector<double>\0"
-    "targetJointAngles\0move"
+    "Robot\0initalizeMovement\0\0T\0move"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,10 +57,10 @@ static const uint qt_meta_data_Robot[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    1,   24,    2, 0x0a /* Public */,
-       5,    0,   27,    2, 0x0a /* Public */,
+       4,    0,   27,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, QMetaType::QMatrix4x4,    3,
     QMetaType::Void,
 
        0        // eod
@@ -74,7 +72,7 @@ void Robot::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         auto *_t = static_cast<Robot *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->initalizeMovement((*reinterpret_cast< std::vector<double>(*)>(_a[1]))); break;
+        case 0: _t->initalizeMovement((*reinterpret_cast< const QMatrix4x4(*)>(_a[1]))); break;
         case 1: _t->move(); break;
         default: ;
         }

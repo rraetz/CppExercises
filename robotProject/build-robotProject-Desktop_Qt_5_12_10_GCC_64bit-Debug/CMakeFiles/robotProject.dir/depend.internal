@@ -5,7 +5,6 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
- /home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
@@ -237,6 +236,7 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o
  /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
+ /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QTransform
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/qcomponent.h
@@ -337,6 +337,7 @@ CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvector.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qversiontagging.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QColor
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QMatrix4x4
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcolor.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qgenericmatrix.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix4x4.h
