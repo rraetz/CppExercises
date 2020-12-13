@@ -4,6 +4,7 @@
 CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
+ /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
  /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
@@ -28,29 +29,22 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QCylinderMesh
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QDiffuseSpecularMaterial
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QOrbitCameraController
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/QSphereMesh
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qabstractcameracontroller.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qcylindermesh.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qdiffusespecularmaterial.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qfirstpersoncameracontroller.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qforwardrenderer.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qorbitcameracontroller.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qspheremesh.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qt3dextras_global.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qt3dwindow.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DExtras/qtorusmesh.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/QInputAspect
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/qinputaspect.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DInput/qt3dinput_global.h
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QCamera
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QMesh
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractfunctor.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractlight.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstracttexture.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstracttextureimage.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qcamera.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qcameralens.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qeffect.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qfilterkey.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qframegraphnode.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qgeometry.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qgeometryrenderer.h
@@ -58,21 +52,11 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qmesh.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qpointlight.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qrenderaspect.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qrenderpass.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qrenderstate.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qsceneloader.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qshaderprogram.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qt3drender_global.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtechnique.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtechniquefilter.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtexture.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtextureimage.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtextureimagedata.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtextureimagedatagenerator.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qtexturewrapmode.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QDebug
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QEvent
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QHash
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QHashFunctions
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QList
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QMargins
@@ -80,7 +64,6 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QObject
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QRect
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QRectF
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QScopedPointer
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QSharedPointer
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QSize
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QSizeF
@@ -154,7 +137,6 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringview.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsysinfo.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsystemdetection.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qt_windows.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtcore-config.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtextstream.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtimer.h
@@ -167,9 +149,7 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qversiontagging.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QColor
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QGuiApplication
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QImage
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QMatrix4x4
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QOpenGLTexture
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QQuaternion
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QScreen
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/QTransform
@@ -190,10 +170,6 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qkeysequence.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix4x4.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qopengl.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qopengles2ext.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qopenglext.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qopengltexture.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpaintdevice.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpainterpath.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpalette.h
@@ -224,24 +200,20 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qwindowdefs_win.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QApplication
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QCheckBox
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QCommandLinkButton
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QGraphicsTextItem
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QGridLayout
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QHBoxLayout
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLabel
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLineEdit
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QSlider
+ /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QPushButton
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QTextEdit
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractbutton.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractscrollarea.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractslider.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qapplication.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qboxlayout.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qcheckbox.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qcommandlinkbutton.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdesktopwidget.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qframe.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qgraphicsitem.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qgridlayout.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlabel.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlayout.h
@@ -249,7 +221,6 @@ CMakeFiles/robotProject.dir/main.cpp.o
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlineedit.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qpushbutton.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qsizepolicy.h
- /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qslider.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgets-config.h
  /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgetsglobal.h

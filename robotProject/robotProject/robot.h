@@ -93,16 +93,17 @@ public:
 
 
 
-    void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
-    {
-        QMatrix4x4 T;
-        T.setToIdentity();
-        T.translate(y,z,x);
-        T.rotate(rotZ1, 0,1,0);
-        T.rotate(rotY, 1,0,0);
-        T.rotate(rotZ2, 0,1,0);
-        m_targetPose = T;
-    }
+//    void setTargetPoseFromEulerZYZ(double x, double y, double z, double rotZ1, double rotY, double rotZ2)
+//    {
+//        QMatrix4x4 T;
+//        T.setToIdentity();
+//        T.translate(y,z,x);
+//        T.rotate(rotZ1, 0,1,0);
+//        T.rotate(rotY, 1,0,0);
+//        T.rotate(rotZ2, 0,1,0);
+//        m_targetPose = T;
+//    }
+
 
 
 

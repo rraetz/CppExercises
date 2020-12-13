@@ -116,6 +116,11 @@
 			"EWIEGA46WW/moc_cylinder3d.cpp"
 		],
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h",
+			"MU",
+			"EWIEGA46WW/moc_eulerinput.cpp"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/inversekinematics.h",
 			"MU",
 			"EWIEGA46WW/moc_inversekinematics.cpp"

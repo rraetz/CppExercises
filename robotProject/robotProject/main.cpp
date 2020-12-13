@@ -1,18 +1,26 @@
 #include <QDebug>
+#include <QGuiApplication>
+#include <QtWidgets/QApplication>
+#include <Qt3DCore/QEntity>
+#include <QtWidgets/QWidget>
+#include <QObject>
+#include <QtWidgets/QHBoxLayout>
+#include <QTimer>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
+#include <QTextEdit>
+#include <Qt3DRender/QCamera>
+#include <QOrbitCameraController>
 
 #include "main.h"
 #include <vector>
 #include "utils.h"
 #include "joint.h"
 #include "robot.h"
-
-#include <QTimer>
-#include <QObject>
-#include <QLineEdit>
 #include "coordinatesystem.h"
-#include <QSlider>
 #include "inversekinematics.h"
-#include <QOrbitCameraController>
+#include "eulerinput.h"
 
 
 
@@ -27,42 +35,25 @@ int main(int argc, char* argv[])
     // Main widgets
     QWidget *container = QWidget::createWindowContainer(view);
     QWidget *widget = new QWidget;
-    widget->setWindowTitle(QStringLiteral("My robot"));
+    widget->setWindowTitle(QStringLiteral("Robot Demo"));
 
-    // Box Layouts
+    // Layouts and side bar
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
-    QVBoxLayout *vLayout = new QVBoxLayout();
+    QWidget *sideBar = new QWidget;
+    QVBoxLayout *vLayout = new QVBoxLayout(sideBar);
     vLayout->setAlignment(Qt::AlignTop);
+    sideBar->setMaximumWidth(250);
     hLayout->addWidget(container, 1);
-    hLayout->addLayout(vLayout);
+    hLayout->addWidget(sideBar);
 
 
 
     // INFOS & BUTTONS ////////////////////////////////////////
-    // Info Panel
-    QCommandLinkButton *info = new QCommandLinkButton();
-    info->setIconSize(QSize(0,0));
-    info->setText(QStringLiteral("Qt3D ready-made meshes"));
-    info->setDescription(QString::fromLatin1("Qt3D provides several ready-made meshes, like torus, cylinder, cone, "
-                                             "cube, plane and sphere."));
-    QLabel *label = new QLabel();
-    label->setText(QString("Hello there \nThis is a test"));
-
-    // Checkbox
-    QCheckBox *checkBox1 = new QCheckBox(widget);
-    checkBox1->setChecked(false);
-    checkBox1->setText(QStringLiteral("Pause on/off"));
-
-    // Text input fields
-    QLineEdit *le1 = new QLineEdit();
-    QLineEdit *le2 = new QLineEdit();
-    QLineEdit *le3 = new QLineEdit();
-    QLineEdit *le4 = new QLineEdit();
-    QLineEdit *le5 = new QLineEdit();
-    QLineEdit *le6 = new QLineEdit();
+    QLabel *info = new QLabel();
+    info->setText(QString("Hello there \nThis is a testasdf sadfa asdfa er asferasdf"));
 
     // Button
-    QPushButton *button = new QPushButton("Set Pose");
+    QPushButton *button = new QPushButton("Compute Joint Angles");
 
 
     // Text
@@ -73,22 +64,16 @@ int main(int argc, char* argv[])
     label3->setText(QString("Position"));
 
     // Slider
-    QSlider *slider = new QSlider(Qt::Orientation::Horizontal);
-    slider->setWindowIconText(QString("Slider text"));
+//    QSlider *slider = new QSlider(Qt::Orientation::Horizontal);
+//    slider->setWindowIconText(QString("Slider text"));
+
+    // Euler angles input
+    EulerInput *eulerInputs = new EulerInput();
 
 
     // Add everything to layout
     vLayout->addWidget(info);
-    vLayout->addWidget(checkBox1);
-    vLayout->addWidget(label);
-    vLayout->addWidget(label2);
-    vLayout->addWidget(label3);
-    vLayout->addWidget(le1);
-    vLayout->addWidget(le2);
-    vLayout->addWidget(le3);
-    vLayout->addWidget(le4);
-    vLayout->addWidget(le5);
-    vLayout->addWidget(le6);
+    vLayout->addWidget(eulerInputs);
     vLayout->addWidget(button);
 
 
@@ -99,37 +84,20 @@ int main(int argc, char* argv[])
     Qt3DCore::QEntity *scene = new Qt3DCore::QEntity();
     view->setRootEntity(scene);
 
-
     // Create robot
     Robot robbie(scene);
 
-
-    // Set and launch timer
-    QTimer myTimer(checkBox1);
+    // Setup of timer
+    QTimer myTimer;
     myTimer.setInterval(30);
-//    myTimer.start();
 
-    // Connect timer to robot and checkbox and texts with lambda function
-    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::move);
-    QObject::connect(checkBox1, &QCheckBox::toggled, &myTimer,
-                [&myTimer] (bool checked) {if (checked) myTimer.start(); else myTimer.stop(); });
-//    QObject::connect(checkBox1, &QCheckBox::toggled, &robbie, &Robot::disable);
-    QObject::connect(checkBox1, &QCheckBox::toggled, label2,
-                [label2] (bool checked) {if (checked) label2->setText(QString("Enabled"));
-                else label2->setText(QString("Disabled")); });
-//    QObject::connect(&myTimer, &QTimer::timeout, label3,
-//                     [label3, &robbie] {label3->setText(QString::number(robbie.m_joints.at(0).m_theta));} );
-
+    // Connect timer to robot
     QObject::connect(button, &QPushButton::pressed,
-                     [le1, le2, le3, le4, le5, le6, &robbie, &myTimer] (void) {
-                        robbie.setTargetPoseFromEulerZYZ(le1->text().toDouble(),
-                                                   le2->text().toDouble(),
-                                                   le3->text().toDouble(),
-                                                   le4->text().toDouble(),
-                                                   le5->text().toDouble(),
-                                                   le6->text().toDouble());                       
+                     [&eulerInputs, &robbie, &myTimer] (void) {
+                        robbie.m_targetPose = eulerInputs->eulerPose();
                         robbie.initalizeMovement(ik(&robbie));
                         myTimer.start();} );
+    QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::move);
 
 
 
@@ -157,7 +125,6 @@ int main(int argc, char* argv[])
     // Show window
     widget->show();
     widget->resize(1200, 800);
-
 
     return app.exec();
 }

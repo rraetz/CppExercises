@@ -28,21 +28,16 @@ set(CMAKE_WARN_DEPRECATED FALSE)
 # Add target with sources
 add_executable(${PROJECT_NAME}
         main.cpp
-        main.h
-#        controller.cpp
-#        controller.h
         joint.h
         robot.h
         utils.h
-#        spaceTransformations.h
-#        timer.h
-#        graphic3dobject.h
         cylinder3d.h
         coordinatesystem.h
         inversekinematics.h
-#        se3.h
         trajectoryplanner.h
+        eulerinput.h
     )
+
 
 # link the qt3d libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE

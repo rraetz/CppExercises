@@ -32,19 +32,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 48,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 57,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 71,
+				"line" : 66,
 				"parent" : 0
 			}
 		]
@@ -311,11 +311,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "main.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
 			"path" : "joint.h",
 			"sourceGroupIndex" : 1
 		},
@@ -347,6 +342,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "trajectoryplanner.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "eulerinput.h",
 			"sourceGroupIndex" : 1
 		}
 	],
