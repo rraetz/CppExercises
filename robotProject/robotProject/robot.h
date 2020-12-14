@@ -17,6 +17,9 @@
 #include "utils.h"
 #include "nlopt.hpp"
 
+#include <thread>
+#include <functional>
+#include <future>
 
 
 
@@ -45,12 +48,15 @@ public:
         m_joints.push_back(new Joint(parent, 0,0,85.35,-90));
         m_joints.push_back(new Joint(parent, 0,0,81.9,0));
 
+
+
+
         // Set initial Pose
         std::vector<double> initialAngles(m_joints.size(), 270);
         this->displayRobot(initialAngles);
 
         // Initialize IK solver
-        this->initializeInverseKinematicsSolver();
+//        this->initializeInverseKinematicsSolver();
     }
 
 
@@ -65,6 +71,7 @@ public:
     QMatrix4x4 m_targetPose;
     TrajectoryPlanner m_trajPlanner;
     nlopt::opt m_optimizer;
+    std::vector<std::thread> m_threads;
 
 
 
@@ -128,6 +135,23 @@ public:
 public slots:
     void initalizeMovement(const QMatrix4x4 &T)
     {
+
+//        std::future<std::vector<double>> fu = std::async(&Robot::solveInverseKinematics, this, std::ref(T));
+
+//        std::future<std::vector<double>> fu2 = std::async(&Robot::solveInverseKinematics, this, std::ref(T));
+
+//        auto targetJointAngles = fu.get();
+//        auto targetJointAngles2 = fu2.get();
+
+//        qDebug() << targetJointAngles;
+//        qDebug() << targetJointAngles2;
+
+
+
+//        std::thread th1(&Robot::solveInverseKinematics, this, std::ref(T));
+
+//        th1.join();
+
         auto targetJointAngles = this->solveInverseKinematics(T);
         auto start = this->jointAngles();
         this->m_trajPlanner.init(start, targetJointAngles);
@@ -189,6 +213,7 @@ private:
     // Initialization of IK solver
     void initializeInverseKinematicsSolver()
     {
+
         // Initialize optimizer
         size_t N = m_joints.size();
         m_optimizer = nlopt::opt(nlopt::LN_PRAXIS, N);
@@ -205,62 +230,116 @@ private:
         m_optimizer.set_min_objective(IKcostFunctionWrapper, this);
         m_optimizer.set_xtol_rel(1e-10);
         m_optimizer.set_maxeval(100000);
+
+
     }
 
 
     // Solve inverse kinematics
     std::vector<double> solveInverseKinematics(const QMatrix4x4 &T)
     {
+        // Initialize optimizer
+        size_t N = m_joints.size();
+        size_t M = 4;
+        std::vector<nlopt::opt> optims(M, nlopt::opt(nlopt::LN_PRAXIS, N));
+
+
+        // Set bounds
+        std::vector<double> lowerBound(N);
+        std::vector<double> upperBound(N);
+        std::fill(lowerBound.begin(), lowerBound.end(), 0);
+        std::fill(upperBound.begin(), upperBound.end(), 360);
+        for_each(optims.begin(), optims.end(), [&lowerBound](nlopt::opt &o){o.set_lower_bounds(lowerBound); });
+        for_each(optims.begin(), optims.end(), [&upperBound](nlopt::opt &o){o.set_upper_bounds(upperBound); });
+
+
+        // Set objective function, tolerance & max iterations
+        for_each(optims.begin(), optims.end(), [this] (nlopt::opt &o) {o.set_min_objective(this->IKcostFunctionWrapper, this); });
+        for_each(optims.begin(), optims.end(), [](nlopt::opt &o){o.set_xtol_rel(1e-10); });
+        for_each(optims.begin(), optims.end(), [](nlopt::opt &o){o.set_maxeval(100000); });
+
+
         // Set target pose
         m_targetPose = T;
 
-        // Random number generator
-        std::random_device randomDevice;
-        std::mt19937 randGenerator(randomDevice());
-        std::uniform_real_distribution<double> uniformDist(0, 360);
 
         // Optimization variables and cost function value
-        std::vector<double> x(6);
-        double minCost;
-        auto prevJointAngles = this->jointAngles();
+        auto lambda ([this] (nlopt::opt o) {
 
-        try{
-            for(size_t i=0; i<100; ++i)
-            {
-                // Random initialization of optimization variables
-                std::generate(x.begin(), x.end(), [&randGenerator, &uniformDist] {return uniformDist(randGenerator); });
+            // Random number generator
+            std::random_device randomDevice;
+            std::mt19937 randGenerator(randomDevice());
+            std::uniform_real_distribution<double> uniformDist(0, 360);
 
-                // Optimize
-                m_optimizer.optimize(x, minCost);
-                if (minCost < 0.001)
+            std::vector<double> x(m_joints.size());
+            double minCost;
+            auto prevJointAngles = this->jointAngles();
+
+            try{
+                for(size_t i=0; i<100; ++i)
                 {
-                    this->statusMessage("Solution found");
-                    break;
+                    // Random initialization of optimization variables
+                    std::generate(x.begin(), x.end(), [&randGenerator, &uniformDist] {return uniformDist(randGenerator); });
+
+                    // Optimize
+                    o.optimize(x, minCost);
+                    if (minCost < 0.001)
+                    {
+                        this->statusMessage("Solution found");
+                        break;
+                    }
                 }
+
+                if ( minCost >= 0.001)
+                {
+                    this->statusMessage("Not feasible");
+                    x = prevJointAngles;
+                }
+
+                qDebug() << "Found minimum at f(" << x[0] << ","
+                         << x[1] << ","
+                         << x[2] << ","
+                         << x[3] << ","
+                         << x[4] << ","
+                         << x[5] << ") = "
+                         << minCost;
+
+                auto T = this->endEffectorForwardKinematics(x);
+                printTransformation(T);
+            }
+            catch(std::exception &e) {
+                qDebug() << "nlopt failed: " << e.what();
             }
 
-            if ( minCost >= 0.001)
-            {
-                this->statusMessage("Not feasible");
-                x = prevJointAngles;
-            }
+            x.push_back(minCost);
+            return x;
+        });
 
-            qDebug() << "Found minimum at f(" << x[0] << ","
-                     << x[1] << ","
-                     << x[2] << ","
-                     << x[3] << ","
-                     << x[4] << ","
-                     << x[5] << ") = "
-                     << minCost;
 
-            auto T = this->endEffectorForwardKinematics(x);
-            printTransformation(T);
+
+        std::vector< std::future<std::vector<double>> > fus;
+
+        for (size_t i=0; i<M; ++i)
+        {
+            fus.push_back(std::async(lambda, optims.at(i)));
         }
-        catch(std::exception &e) {
-            qDebug() << "nlopt failed: " << e.what();
+
+
+        std::vector<double> sol;
+        double costPrev = 1000;
+        for (auto &e:fus)
+        {
+            auto x = e.get();
+            auto cost = x.back();
+            x.pop_back();
+            qDebug() <<"Solution: " << x << " Cost: " << cost;
+            if (cost < costPrev) {sol = x; qDebug() << "Final cost: " << cost;}
+            costPrev = cost;
         }
-        return x;
+        return sol;
+
     }
+
 
 
 };

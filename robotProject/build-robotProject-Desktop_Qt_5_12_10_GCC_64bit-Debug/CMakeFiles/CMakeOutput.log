@@ -223,3 +223,31 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6a156/fast && /usr/bin/make  -f CMakeFiles/cmTC_6a156.dir/build.make CMakeFiles/cmTC_6a156.dir/build
+make[1]: Entering directory '/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6a156.dir/CheckIncludeFile.cxx.o
+/usr/bin/g++    -o CMakeFiles/cmTC_6a156.dir/CheckIncludeFile.cxx.o -c /home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTC_6a156
+/snap/cmake/715/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a156.dir/link.txt --verbose=1
+/usr/bin/g++ -rdynamic CMakeFiles/cmTC_6a156.dir/CheckIncludeFile.cxx.o -o cmTC_6a156 
+make[1]: Leaving directory '/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_85201/fast && /usr/bin/make  -f CMakeFiles/cmTC_85201.dir/build.make CMakeFiles/cmTC_85201.dir/build
+make[1]: Entering directory '/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_85201.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_85201.dir/CheckFunctionExists.cxx.o -c /home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_85201
+/snap/cmake/715/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85201.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_85201.dir/CheckFunctionExists.cxx.o -o cmTC_85201  -lpthread 
+make[1]: Leaving directory '/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CMakeTmp'
+
+
+

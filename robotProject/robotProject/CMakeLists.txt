@@ -6,6 +6,7 @@ project(robotProject VERSION 1.0.0 LANGUAGES CXX)
 
 # Declare dependencies
 find_package(Qt5 REQUIRED COMPONENTS Core 3DCore 3DRender 3DInput 3DExtras Widgets)
+find_package(Threads REQUIRED)
 
 # Find package Eigen
 #include_directories(libs/eigen-3.3.8/Eigen)
@@ -49,6 +50,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt5::3DRender
     Qt5::3DInput
     )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE nlopt)
 

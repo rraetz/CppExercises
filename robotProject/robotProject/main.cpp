@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
     camera->setViewCenter(QVector3D(0, 200, 0));
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
-    camController->setLinearSpeed(100);
+    camController->setLinearSpeed(300);
 
     // Light
     Qt3DCore::QEntity *lightEntity = new Qt3DCore::QEntity(scene);
