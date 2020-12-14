@@ -140,6 +140,12 @@ public slots:
     }
 
 
+
+signals:
+    void statusMessage(QString message);
+
+
+
 private:
     double IKcostFunction (const std::vector<double> &x)
     {
@@ -226,11 +232,16 @@ private:
 
                 // Optimize
                 m_optimizer.optimize(x, minCost);
-                if (minCost < 0.001) break;
+                if (minCost < 0.001)
+                {
+                    this->statusMessage("Solution found");
+                    break;
+                }
             }
 
             if ( minCost >= 0.001)
             {
+                this->statusMessage("Not feasible");
                 x = prevJointAngles;
             }
 

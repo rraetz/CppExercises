@@ -83,8 +83,6 @@ QOrbitCameraController
 -
 main.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
-vector
--
 utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 joint.h
@@ -97,6 +95,8 @@ eulerinput.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
 jointdisplay.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h
+statusmessage.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 QTextEdit
@@ -165,6 +165,14 @@ utils.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 nlopt.hpp
 /home/raphael/Documents/CppExercises/robotProject/robotProject/nlopt.hpp
+
+/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h
+QWidget
+-
+QLabel
+-
+QGridLayout
+-
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 math.h

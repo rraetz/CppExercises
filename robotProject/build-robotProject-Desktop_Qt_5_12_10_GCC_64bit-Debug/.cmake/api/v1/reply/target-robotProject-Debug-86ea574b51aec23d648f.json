@@ -32,19 +32,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 52,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 66,
+				"line" : 67,
 				"parent" : 0
 			}
 		]
@@ -290,7 +290,8 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10
 			]
 		}
 	],
@@ -347,6 +348,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "jointdisplay.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "statusmessage.h",
 			"sourceGroupIndex" : 1
 		}
 	],

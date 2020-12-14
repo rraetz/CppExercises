@@ -141,6 +141,11 @@
 			"EWIEGA46WW/moc_robot.cpp"
 		],
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h",
+			"MU",
+			"EWIEGA46WW/moc_statusmessage.cpp"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h",
 			"MU",
 			"EWIEGA46WW/moc_trajectoryplanner.cpp"

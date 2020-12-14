@@ -36,6 +36,7 @@ add_executable(${PROJECT_NAME}
         trajectoryplanner.h
         eulerinput.h
         jointdisplay.h
+        statusmessage.h
     )
 
 

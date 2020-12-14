@@ -14,14 +14,14 @@
 #include <QOrbitCameraController>
 
 #include "main.h"
-#include <vector>
 #include "utils.h"
 #include "joint.h"
 #include "robot.h"
 #include "coordinatesystem.h"
-//#include "inversekinematics.h"
 #include "eulerinput.h"
 #include "jointdisplay.h"
+#include "statusmessage.h"
+
 
 
 
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     QWidget *widget = new QWidget;
     widget->setWindowTitle(QStringLiteral("Robot Demo"));
 
-    // Layouts and side bar
+    // Layouts and side panel
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
     QWidget *sideBar = new QWidget;
     QVBoxLayout *vLayout = new QVBoxLayout(sideBar);
@@ -49,9 +49,16 @@ int main(int argc, char* argv[])
     hLayout->addWidget(container, 1);
     hLayout->addWidget(sideBar);
 
+    // Scene root entity
+    Qt3DCore::QEntity *scene = new Qt3DCore::QEntity();
+    view->setRootEntity(scene);
+
+    // Create robot
+    Robot robbie(scene);
 
 
-    // INFOS & BUTTONS ////////////////////////////////////////
+
+    // SIDE PANEL ////////////////////////////////////////
     QLabel *info = new QLabel();
     info->setText(QString("Please enter a 3D pose according to the Euler ZYZ convention "
                           "and press the button below. An optimization-based inverse kinematics solver "
@@ -60,22 +67,15 @@ int main(int argc, char* argv[])
     QLabel *axes = new QLabel();
     axes->setText(QString("X-axis: Red \nY-axis: Green \nZ-axis: Blue"));
 
+    // Euler angles input and joint angle display
+    EulerInput *eulerInputs = new EulerInput();
+    JointDisplay *jointAngles = new JointDisplay(robbie.jointAngles().size());
+
     // Button
     QPushButton *button = new QPushButton("Compute Joint Angles");
 
-//    // Text
-//    QLabel *label2 = new QLabel();
-//    label2->setText(QString("Enabled"));
-//    QLabel *label3 = new QLabel();
-//    label3->setText(QString("Position"));
-    // Slider
-//    QSlider *slider = new QSlider(Qt::Orientation::Horizontal);
-//    slider->setWindowIconText(QString("Slider text"));
-
-    // Euler angles input and joint angle display
-    EulerInput *eulerInputs = new EulerInput();
-    JointDisplay *jointAngles = new JointDisplay(6);
-
+    // Status message
+    StatusMessage *status = new StatusMessage();
 
     // Add everything to vertical layout
     vLayout->addWidget(info);
@@ -83,17 +83,11 @@ int main(int argc, char* argv[])
     vLayout->addWidget(eulerInputs);
     vLayout->addWidget(button);
     vLayout->addWidget(jointAngles);
+    vLayout->addWidget(status);
 
 
 
-    // ADD SCENE, CAMERA & LIGHT ///////////////////////////////
-    // Scene root entity
-    Qt3DCore::QEntity *scene = new Qt3DCore::QEntity();
-    view->setRootEntity(scene);
-
-    // Create robot
-    Robot robbie(scene);
-
+    // CONNECT SIGNALS & SLOTs ///////////////////////////////
     // Setup of timer
     QTimer myTimer;
     myTimer.setInterval(30);
@@ -106,8 +100,12 @@ int main(int argc, char* argv[])
     QObject::connect(&myTimer, &QTimer::timeout,
                      [&jointAngles, &robbie] (void) {jointAngles->update(robbie.jointAngles()); });
 
+    QObject::connect(&robbie, &Robot::statusMessage, status, &StatusMessage::update);
 
 
+
+
+    // CAMERA & LIGHT ///////////////////////////////////////
     // Camera & Camera controls
     Qt3DRender::QCamera *camera = view->camera();
     camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 100.0f, 2000.0f);
@@ -116,7 +114,6 @@ int main(int argc, char* argv[])
     Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
     camController->setCamera(camera);
     camController->setLinearSpeed(100);
-
 
     // Light
     Qt3DCore::QEntity *lightEntity = new Qt3DCore::QEntity(scene);

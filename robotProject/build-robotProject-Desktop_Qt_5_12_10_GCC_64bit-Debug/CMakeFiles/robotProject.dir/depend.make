@@ -9,6 +9,7 @@ CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/rob
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
+CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 CMakeFiles/robotProject.dir/main.cpp.o: /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
