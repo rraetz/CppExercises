@@ -4,8 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/coordinatesystem.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/cylinder3d.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/eulerinput.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/joint.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/jointdisplay.cpp.o"
   "/home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/main.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/robot.cpp.o"
   "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/robotProject_autogen/mocs_compilation.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/statusmessage.cpp.o"
+  "/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp" "/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

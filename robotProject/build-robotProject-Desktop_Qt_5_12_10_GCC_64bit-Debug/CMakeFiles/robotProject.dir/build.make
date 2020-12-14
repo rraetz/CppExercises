@@ -102,16 +102,136 @@ CMakeFiles/robotProject.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp -o CMakeFiles/robotProject.dir/main.cpp.s
 
+CMakeFiles/robotProject.dir/joint.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/joint.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/robotProject.dir/joint.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/joint.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp
+
+CMakeFiles/robotProject.dir/joint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/joint.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp > CMakeFiles/robotProject.dir/joint.cpp.i
+
+CMakeFiles/robotProject.dir/joint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/joint.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp -o CMakeFiles/robotProject.dir/joint.cpp.s
+
+CMakeFiles/robotProject.dir/robot.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/robot.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/robotProject.dir/robot.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/robot.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp
+
+CMakeFiles/robotProject.dir/robot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/robot.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp > CMakeFiles/robotProject.dir/robot.cpp.i
+
+CMakeFiles/robotProject.dir/robot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/robot.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp -o CMakeFiles/robotProject.dir/robot.cpp.s
+
+CMakeFiles/robotProject.dir/cylinder3d.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/cylinder3d.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/robotProject.dir/cylinder3d.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/cylinder3d.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp
+
+CMakeFiles/robotProject.dir/cylinder3d.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/cylinder3d.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp > CMakeFiles/robotProject.dir/cylinder3d.cpp.i
+
+CMakeFiles/robotProject.dir/cylinder3d.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/cylinder3d.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp -o CMakeFiles/robotProject.dir/cylinder3d.cpp.s
+
+CMakeFiles/robotProject.dir/coordinatesystem.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/coordinatesystem.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/robotProject.dir/coordinatesystem.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/coordinatesystem.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp
+
+CMakeFiles/robotProject.dir/coordinatesystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/coordinatesystem.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp > CMakeFiles/robotProject.dir/coordinatesystem.cpp.i
+
+CMakeFiles/robotProject.dir/coordinatesystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/coordinatesystem.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp -o CMakeFiles/robotProject.dir/coordinatesystem.cpp.s
+
+CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp
+
+CMakeFiles/robotProject.dir/trajectoryplanner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/trajectoryplanner.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp > CMakeFiles/robotProject.dir/trajectoryplanner.cpp.i
+
+CMakeFiles/robotProject.dir/trajectoryplanner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/trajectoryplanner.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp -o CMakeFiles/robotProject.dir/trajectoryplanner.cpp.s
+
+CMakeFiles/robotProject.dir/eulerinput.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/eulerinput.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/robotProject.dir/eulerinput.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/eulerinput.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp
+
+CMakeFiles/robotProject.dir/eulerinput.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/eulerinput.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp > CMakeFiles/robotProject.dir/eulerinput.cpp.i
+
+CMakeFiles/robotProject.dir/eulerinput.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/eulerinput.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp -o CMakeFiles/robotProject.dir/eulerinput.cpp.s
+
+CMakeFiles/robotProject.dir/jointdisplay.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/jointdisplay.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/robotProject.dir/jointdisplay.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/jointdisplay.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp
+
+CMakeFiles/robotProject.dir/jointdisplay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/jointdisplay.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp > CMakeFiles/robotProject.dir/jointdisplay.cpp.i
+
+CMakeFiles/robotProject.dir/jointdisplay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/jointdisplay.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp -o CMakeFiles/robotProject.dir/jointdisplay.cpp.s
+
+CMakeFiles/robotProject.dir/statusmessage.cpp.o: CMakeFiles/robotProject.dir/flags.make
+CMakeFiles/robotProject.dir/statusmessage.cpp.o: /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/robotProject.dir/statusmessage.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotProject.dir/statusmessage.cpp.o -c /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp
+
+CMakeFiles/robotProject.dir/statusmessage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotProject.dir/statusmessage.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp > CMakeFiles/robotProject.dir/statusmessage.cpp.i
+
+CMakeFiles/robotProject.dir/statusmessage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotProject.dir/statusmessage.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp -o CMakeFiles/robotProject.dir/statusmessage.cpp.s
+
 # Object files for target robotProject
 robotProject_OBJECTS = \
 "CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/robotProject.dir/main.cpp.o"
+"CMakeFiles/robotProject.dir/main.cpp.o" \
+"CMakeFiles/robotProject.dir/joint.cpp.o" \
+"CMakeFiles/robotProject.dir/robot.cpp.o" \
+"CMakeFiles/robotProject.dir/cylinder3d.cpp.o" \
+"CMakeFiles/robotProject.dir/coordinatesystem.cpp.o" \
+"CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o" \
+"CMakeFiles/robotProject.dir/eulerinput.cpp.o" \
+"CMakeFiles/robotProject.dir/jointdisplay.cpp.o" \
+"CMakeFiles/robotProject.dir/statusmessage.cpp.o"
 
 # External object files for target robotProject
 robotProject_EXTERNAL_OBJECTS =
 
 robotProject: CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.o
 robotProject: CMakeFiles/robotProject.dir/main.cpp.o
+robotProject: CMakeFiles/robotProject.dir/joint.cpp.o
+robotProject: CMakeFiles/robotProject.dir/robot.cpp.o
+robotProject: CMakeFiles/robotProject.dir/cylinder3d.cpp.o
+robotProject: CMakeFiles/robotProject.dir/coordinatesystem.cpp.o
+robotProject: CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o
+robotProject: CMakeFiles/robotProject.dir/eulerinput.cpp.o
+robotProject: CMakeFiles/robotProject.dir/jointdisplay.cpp.o
+robotProject: CMakeFiles/robotProject.dir/statusmessage.cpp.o
 robotProject: CMakeFiles/robotProject.dir/build.make
 robotProject: /home/raphael/Qt5.12.10/5.12.10/gcc_64/lib/libQt5Widgets.so.5.12.10
 robotProject: /home/raphael/Qt5.12.10/5.12.10/gcc_64/lib/libQt53DExtras.so.5.12.10
@@ -124,7 +244,7 @@ robotProject: /home/raphael/Qt5.12.10/5.12.10/gcc_64/lib/libQt5Network.so.5.12.1
 robotProject: /home/raphael/Qt5.12.10/5.12.10/gcc_64/lib/libQt5Gui.so.5.12.10
 robotProject: /home/raphael/Qt5.12.10/5.12.10/gcc_64/lib/libQt5Core.so.5.12.10
 robotProject: CMakeFiles/robotProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable robotProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable robotProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robotProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

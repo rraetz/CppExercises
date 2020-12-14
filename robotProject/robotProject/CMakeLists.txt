@@ -30,14 +30,22 @@ set(CMAKE_WARN_DEPRECATED FALSE)
 add_executable(${PROJECT_NAME}
         main.cpp
         joint.h
+        joint.cpp
         robot.h
-        utils.h
+        robot.cpp
         cylinder3d.h
+        cylinder3d.cpp
         coordinatesystem.h
+        coordinatesystem.cpp
         trajectoryplanner.h
+        trajectoryplanner.cpp
         eulerinput.h
+        eulerinput.cpp
         jointdisplay.h
+        jointdisplay.cpp
         statusmessage.h
+        statusmessage.cpp
+#        utils.h
     )
 
 

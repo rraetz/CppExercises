@@ -104,11 +104,6 @@
 		"/snap/cmake/715/share/cmake-3.19/Modules/CheckIncludeFileCXX.cmake",
 		"/snap/cmake/715/share/cmake-3.19/Modules/CheckCXXSourceCompiles.cmake",
 		"/snap/cmake/715/share/cmake-3.19/Modules/Internal/CheckSourceCompiles.cmake",
-		"/snap/cmake/715/share/cmake-3.19/Modules/CheckIncludeFile.cxx.in",
-		"/snap/cmake/715/share/cmake-3.19/Modules/CheckFunctionExists.c",
-		"/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx",
-		"/snap/cmake/715/share/cmake-3.19/Modules/CheckFunctionExists.c",
-		"/home/raphael/Documents/CppExercises/robotProject/build-robotProject-Desktop_Qt_5_12_10_GCC_64bit-Debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx",
 		"/snap/cmake/715/share/cmake-3.19/Modules/FindPackageHandleStandardArgs.cmake",
 		"/snap/cmake/715/share/cmake-3.19/Modules/FindPackageMessage.cmake"
 	],
@@ -161,11 +156,6 @@
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h",
 			"MU",
 			"EWIEGA46WW/moc_trajectoryplanner.cpp"
-		],
-		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h",
-			"MU",
-			"EWIEGA46WW/moc_utils.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -239,7 +229,39 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp",
+			"MU"
+		],
+		[
 			"/home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp",
+			"MU"
+		],
+		[
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp",
 			"MU"
 		]
 	],

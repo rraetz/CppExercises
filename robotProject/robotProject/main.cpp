@@ -14,15 +14,12 @@
 #include <QOrbitCameraController>
 
 #include "main.h"
-#include "utils.h"
 #include "joint.h"
 #include "robot.h"
 #include "coordinatesystem.h"
 #include "eulerinput.h"
 #include "jointdisplay.h"
 #include "statusmessage.h"
-
-
 
 
 

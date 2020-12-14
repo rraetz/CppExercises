@@ -61,8 +61,6 @@ Qt3DCore/QEntity
 -
 Qt3DCore/QTransform
 -
-Qt3DRender/QMesh
--
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h
 QLabel
@@ -74,6 +72,12 @@ QLineEdit
 QMatrix4x4
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp
+joint.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
+math.h
+-
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 cylinder3d.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h
@@ -81,12 +85,8 @@ Qt3DCore/QEntity
 -
 Qt3DCore/QTransform
 -
-math.h
--
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h
-algorithm
--
 QWidget
 -
 QLabel
@@ -125,8 +125,6 @@ QOrbitCameraController
 -
 main.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/main.h
-utils.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 joint.h
 /home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h
 robot.h
@@ -182,6 +180,10 @@ Qt3DExtras/qt3dwindow.h
 Qt3DExtras/qfirstpersoncameracontroller.h
 -
 
+/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp
+robot.h
+/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
+
 /home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h
 vector
 -
@@ -203,15 +205,13 @@ random
 -
 chrono
 -
-utils.h
-/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
 nlopt.hpp
 /home/raphael/Documents/CppExercises/robotProject/robotProject/nlopt.hpp
 thread
 -
-functional
--
 future
+-
+limits
 -
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h
@@ -219,21 +219,11 @@ QWidget
 -
 QLabel
 -
-QGridLayout
--
 
 /home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h
-math.h
--
 vector
 -
 algorithm
--
-
-/home/raphael/Documents/CppExercises/robotProject/robotProject/utils.h
-QDebug
--
-QMatrix4x4
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DCore/QEntity
@@ -418,10 +408,6 @@ Qt3DCore/qt3dcore_global.h
 qcamera.h
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qcamera.h
 
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/QMesh
-qmesh.h
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qmesh.h
-
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qabstractlight.h
 Qt3DRender/qt3drender_global.h
 -
@@ -486,14 +472,6 @@ QtCore/QVariant
 Qt3DCore/qcomponent.h
 -
 Qt3DRender/qt3drender_global.h
--
-
-/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qmesh.h
-Qt3DRender/qt3drender_global.h
--
-Qt3DRender/qgeometryrenderer.h
--
-QtCore/QUrl
 -
 
 /home/raphael/Qt5.12.10/5.12.10/gcc_64/include/Qt3DRender/qpointlight.h
