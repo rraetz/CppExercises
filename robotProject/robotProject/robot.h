@@ -93,7 +93,6 @@ signals:
 
 
 private:   
-    // Initialization of IK solver
     void initializeInverseKinematicsSolver();
     double IKcostFunction (const std::vector<double> &x);
     static double IKcostFunctionWrapper(const std::vector<double> &x, std::vector<double> &grad, void *data);

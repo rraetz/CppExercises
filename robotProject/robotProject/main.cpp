@@ -21,7 +21,7 @@
 #include "jointdisplay.h"
 #include "statusmessage.h"
 
-
+const double UPDATE_RATE = 30;
 
 int main(int argc, char* argv[])
 {
@@ -84,20 +84,27 @@ int main(int argc, char* argv[])
 
 
 
+
     // CONNECT SIGNALS & SLOTs ///////////////////////////////
     // Setup of timer
     QTimer myTimer;
-    myTimer.setInterval(30);
+    myTimer.setInterval(UPDATE_RATE);
 
     // Connect timer and button to robot
     QObject::connect(button, &QPushButton::pressed,
                      [&eulerInputs, &robbie, &myTimer] (void)
                         {robbie.initalizeMovement(eulerInputs->eulerPose()); myTimer.start();} );
+
+    // Connect trajectory planner to timer
     QObject::connect(&myTimer, &QTimer::timeout, &robbie, &Robot::move);
+
+    // Update joint angles display while moving
     QObject::connect(&myTimer, &QTimer::timeout,
                      [&jointAngles, &robbie] (void) {jointAngles->update(robbie.jointAngles()); });
 
+    // Update status message
     QObject::connect(&robbie, &Robot::statusMessage, status, &StatusMessage::update);
+
 
 
 

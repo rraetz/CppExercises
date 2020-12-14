@@ -193,11 +193,13 @@ std::vector<double> Robot::solveInverseKinematics(const QMatrix4x4 &T)
         return x;
     });
 
+
     // Create threads
     std::vector<std::future<std::vector<double>>> threadFutures;
     std::transform(m_optimizers.begin(), m_optimizers.end(),
                    std::back_inserter(threadFutures),
                    [optimize](nlopt::opt o){ return std::async(optimize, o); });
+
 
     // Call solvers and retrieve best solution
     std::vector<double> solution;
