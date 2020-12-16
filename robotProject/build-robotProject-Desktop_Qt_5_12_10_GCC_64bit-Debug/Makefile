@@ -155,195 +155,6 @@ robotProject_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject_autogen.dir/build.make CMakeFiles/robotProject_autogen.dir/build
 .PHONY : robotProject_autogen/fast
 
-coordinatesystem.o: coordinatesystem.cpp.o
-
-.PHONY : coordinatesystem.o
-
-# target to build an object file
-coordinatesystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/coordinatesystem.cpp.o
-.PHONY : coordinatesystem.cpp.o
-
-coordinatesystem.i: coordinatesystem.cpp.i
-
-.PHONY : coordinatesystem.i
-
-# target to preprocess a source file
-coordinatesystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/coordinatesystem.cpp.i
-.PHONY : coordinatesystem.cpp.i
-
-coordinatesystem.s: coordinatesystem.cpp.s
-
-.PHONY : coordinatesystem.s
-
-# target to generate assembly for a file
-coordinatesystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/coordinatesystem.cpp.s
-.PHONY : coordinatesystem.cpp.s
-
-cylinder3d.o: cylinder3d.cpp.o
-
-.PHONY : cylinder3d.o
-
-# target to build an object file
-cylinder3d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/cylinder3d.cpp.o
-.PHONY : cylinder3d.cpp.o
-
-cylinder3d.i: cylinder3d.cpp.i
-
-.PHONY : cylinder3d.i
-
-# target to preprocess a source file
-cylinder3d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/cylinder3d.cpp.i
-.PHONY : cylinder3d.cpp.i
-
-cylinder3d.s: cylinder3d.cpp.s
-
-.PHONY : cylinder3d.s
-
-# target to generate assembly for a file
-cylinder3d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/cylinder3d.cpp.s
-.PHONY : cylinder3d.cpp.s
-
-eulerinput.o: eulerinput.cpp.o
-
-.PHONY : eulerinput.o
-
-# target to build an object file
-eulerinput.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/eulerinput.cpp.o
-.PHONY : eulerinput.cpp.o
-
-eulerinput.i: eulerinput.cpp.i
-
-.PHONY : eulerinput.i
-
-# target to preprocess a source file
-eulerinput.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/eulerinput.cpp.i
-.PHONY : eulerinput.cpp.i
-
-eulerinput.s: eulerinput.cpp.s
-
-.PHONY : eulerinput.s
-
-# target to generate assembly for a file
-eulerinput.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/eulerinput.cpp.s
-.PHONY : eulerinput.cpp.s
-
-joint.o: joint.cpp.o
-
-.PHONY : joint.o
-
-# target to build an object file
-joint.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/joint.cpp.o
-.PHONY : joint.cpp.o
-
-joint.i: joint.cpp.i
-
-.PHONY : joint.i
-
-# target to preprocess a source file
-joint.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/joint.cpp.i
-.PHONY : joint.cpp.i
-
-joint.s: joint.cpp.s
-
-.PHONY : joint.s
-
-# target to generate assembly for a file
-joint.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/joint.cpp.s
-.PHONY : joint.cpp.s
-
-jointdisplay.o: jointdisplay.cpp.o
-
-.PHONY : jointdisplay.o
-
-# target to build an object file
-jointdisplay.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/jointdisplay.cpp.o
-.PHONY : jointdisplay.cpp.o
-
-jointdisplay.i: jointdisplay.cpp.i
-
-.PHONY : jointdisplay.i
-
-# target to preprocess a source file
-jointdisplay.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/jointdisplay.cpp.i
-.PHONY : jointdisplay.cpp.i
-
-jointdisplay.s: jointdisplay.cpp.s
-
-.PHONY : jointdisplay.s
-
-# target to generate assembly for a file
-jointdisplay.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/jointdisplay.cpp.s
-.PHONY : jointdisplay.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-robot.o: robot.cpp.o
-
-.PHONY : robot.o
-
-# target to build an object file
-robot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/robot.cpp.o
-.PHONY : robot.cpp.o
-
-robot.i: robot.cpp.i
-
-.PHONY : robot.i
-
-# target to preprocess a source file
-robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/robot.cpp.i
-.PHONY : robot.cpp.i
-
-robot.s: robot.cpp.s
-
-.PHONY : robot.s
-
-# target to generate assembly for a file
-robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/robot.cpp.s
-.PHONY : robot.cpp.s
-
 robotProject_autogen/mocs_compilation.o: robotProject_autogen/mocs_compilation.cpp.o
 
 .PHONY : robotProject_autogen/mocs_compilation.o
@@ -371,59 +182,248 @@ robotProject_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/robotProject_autogen/mocs_compilation.cpp.s
 .PHONY : robotProject_autogen/mocs_compilation.cpp.s
 
-statusmessage.o: statusmessage.cpp.o
+src/gui/eulerinput.o: src/gui/eulerinput.cpp.o
 
-.PHONY : statusmessage.o
-
-# target to build an object file
-statusmessage.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/statusmessage.cpp.o
-.PHONY : statusmessage.cpp.o
-
-statusmessage.i: statusmessage.cpp.i
-
-.PHONY : statusmessage.i
-
-# target to preprocess a source file
-statusmessage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/statusmessage.cpp.i
-.PHONY : statusmessage.cpp.i
-
-statusmessage.s: statusmessage.cpp.s
-
-.PHONY : statusmessage.s
-
-# target to generate assembly for a file
-statusmessage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/statusmessage.cpp.s
-.PHONY : statusmessage.cpp.s
-
-trajectoryplanner.o: trajectoryplanner.cpp.o
-
-.PHONY : trajectoryplanner.o
+.PHONY : src/gui/eulerinput.o
 
 # target to build an object file
-trajectoryplanner.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/trajectoryplanner.cpp.o
-.PHONY : trajectoryplanner.cpp.o
+src/gui/eulerinput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/eulerinput.cpp.o
+.PHONY : src/gui/eulerinput.cpp.o
 
-trajectoryplanner.i: trajectoryplanner.cpp.i
+src/gui/eulerinput.i: src/gui/eulerinput.cpp.i
 
-.PHONY : trajectoryplanner.i
+.PHONY : src/gui/eulerinput.i
 
 # target to preprocess a source file
-trajectoryplanner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/trajectoryplanner.cpp.i
-.PHONY : trajectoryplanner.cpp.i
+src/gui/eulerinput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/eulerinput.cpp.i
+.PHONY : src/gui/eulerinput.cpp.i
 
-trajectoryplanner.s: trajectoryplanner.cpp.s
+src/gui/eulerinput.s: src/gui/eulerinput.cpp.s
 
-.PHONY : trajectoryplanner.s
+.PHONY : src/gui/eulerinput.s
 
 # target to generate assembly for a file
-trajectoryplanner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/trajectoryplanner.cpp.s
-.PHONY : trajectoryplanner.cpp.s
+src/gui/eulerinput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/eulerinput.cpp.s
+.PHONY : src/gui/eulerinput.cpp.s
+
+src/gui/jointdisplay.o: src/gui/jointdisplay.cpp.o
+
+.PHONY : src/gui/jointdisplay.o
+
+# target to build an object file
+src/gui/jointdisplay.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/jointdisplay.cpp.o
+.PHONY : src/gui/jointdisplay.cpp.o
+
+src/gui/jointdisplay.i: src/gui/jointdisplay.cpp.i
+
+.PHONY : src/gui/jointdisplay.i
+
+# target to preprocess a source file
+src/gui/jointdisplay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/jointdisplay.cpp.i
+.PHONY : src/gui/jointdisplay.cpp.i
+
+src/gui/jointdisplay.s: src/gui/jointdisplay.cpp.s
+
+.PHONY : src/gui/jointdisplay.s
+
+# target to generate assembly for a file
+src/gui/jointdisplay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/jointdisplay.cpp.s
+.PHONY : src/gui/jointdisplay.cpp.s
+
+src/gui/statusmessage.o: src/gui/statusmessage.cpp.o
+
+.PHONY : src/gui/statusmessage.o
+
+# target to build an object file
+src/gui/statusmessage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/statusmessage.cpp.o
+.PHONY : src/gui/statusmessage.cpp.o
+
+src/gui/statusmessage.i: src/gui/statusmessage.cpp.i
+
+.PHONY : src/gui/statusmessage.i
+
+# target to preprocess a source file
+src/gui/statusmessage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/statusmessage.cpp.i
+.PHONY : src/gui/statusmessage.cpp.i
+
+src/gui/statusmessage.s: src/gui/statusmessage.cpp.s
+
+.PHONY : src/gui/statusmessage.s
+
+# target to generate assembly for a file
+src/gui/statusmessage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/gui/statusmessage.cpp.s
+.PHONY : src/gui/statusmessage.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/robotics/coordinatesystem.o: src/robotics/coordinatesystem.cpp.o
+
+.PHONY : src/robotics/coordinatesystem.o
+
+# target to build an object file
+src/robotics/coordinatesystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/coordinatesystem.cpp.o
+.PHONY : src/robotics/coordinatesystem.cpp.o
+
+src/robotics/coordinatesystem.i: src/robotics/coordinatesystem.cpp.i
+
+.PHONY : src/robotics/coordinatesystem.i
+
+# target to preprocess a source file
+src/robotics/coordinatesystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/coordinatesystem.cpp.i
+.PHONY : src/robotics/coordinatesystem.cpp.i
+
+src/robotics/coordinatesystem.s: src/robotics/coordinatesystem.cpp.s
+
+.PHONY : src/robotics/coordinatesystem.s
+
+# target to generate assembly for a file
+src/robotics/coordinatesystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/coordinatesystem.cpp.s
+.PHONY : src/robotics/coordinatesystem.cpp.s
+
+src/robotics/cylinder3d.o: src/robotics/cylinder3d.cpp.o
+
+.PHONY : src/robotics/cylinder3d.o
+
+# target to build an object file
+src/robotics/cylinder3d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/cylinder3d.cpp.o
+.PHONY : src/robotics/cylinder3d.cpp.o
+
+src/robotics/cylinder3d.i: src/robotics/cylinder3d.cpp.i
+
+.PHONY : src/robotics/cylinder3d.i
+
+# target to preprocess a source file
+src/robotics/cylinder3d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/cylinder3d.cpp.i
+.PHONY : src/robotics/cylinder3d.cpp.i
+
+src/robotics/cylinder3d.s: src/robotics/cylinder3d.cpp.s
+
+.PHONY : src/robotics/cylinder3d.s
+
+# target to generate assembly for a file
+src/robotics/cylinder3d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/cylinder3d.cpp.s
+.PHONY : src/robotics/cylinder3d.cpp.s
+
+src/robotics/joint.o: src/robotics/joint.cpp.o
+
+.PHONY : src/robotics/joint.o
+
+# target to build an object file
+src/robotics/joint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/joint.cpp.o
+.PHONY : src/robotics/joint.cpp.o
+
+src/robotics/joint.i: src/robotics/joint.cpp.i
+
+.PHONY : src/robotics/joint.i
+
+# target to preprocess a source file
+src/robotics/joint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/joint.cpp.i
+.PHONY : src/robotics/joint.cpp.i
+
+src/robotics/joint.s: src/robotics/joint.cpp.s
+
+.PHONY : src/robotics/joint.s
+
+# target to generate assembly for a file
+src/robotics/joint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/joint.cpp.s
+.PHONY : src/robotics/joint.cpp.s
+
+src/robotics/robot.o: src/robotics/robot.cpp.o
+
+.PHONY : src/robotics/robot.o
+
+# target to build an object file
+src/robotics/robot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/robot.cpp.o
+.PHONY : src/robotics/robot.cpp.o
+
+src/robotics/robot.i: src/robotics/robot.cpp.i
+
+.PHONY : src/robotics/robot.i
+
+# target to preprocess a source file
+src/robotics/robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/robot.cpp.i
+.PHONY : src/robotics/robot.cpp.i
+
+src/robotics/robot.s: src/robotics/robot.cpp.s
+
+.PHONY : src/robotics/robot.s
+
+# target to generate assembly for a file
+src/robotics/robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/robot.cpp.s
+.PHONY : src/robotics/robot.cpp.s
+
+src/robotics/trajectoryplanner.o: src/robotics/trajectoryplanner.cpp.o
+
+.PHONY : src/robotics/trajectoryplanner.o
+
+# target to build an object file
+src/robotics/trajectoryplanner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/trajectoryplanner.cpp.o
+.PHONY : src/robotics/trajectoryplanner.cpp.o
+
+src/robotics/trajectoryplanner.i: src/robotics/trajectoryplanner.cpp.i
+
+.PHONY : src/robotics/trajectoryplanner.i
+
+# target to preprocess a source file
+src/robotics/trajectoryplanner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/trajectoryplanner.cpp.i
+.PHONY : src/robotics/trajectoryplanner.cpp.i
+
+src/robotics/trajectoryplanner.s: src/robotics/trajectoryplanner.cpp.s
+
+.PHONY : src/robotics/trajectoryplanner.s
+
+# target to generate assembly for a file
+src/robotics/trajectoryplanner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotProject.dir/build.make CMakeFiles/robotProject.dir/src/robotics/trajectoryplanner.cpp.s
+.PHONY : src/robotics/trajectoryplanner.cpp.s
 
 # Help Target
 help:
@@ -435,36 +435,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... robotProject_autogen"
 	@echo "... robotProject"
-	@echo "... coordinatesystem.o"
-	@echo "... coordinatesystem.i"
-	@echo "... coordinatesystem.s"
-	@echo "... cylinder3d.o"
-	@echo "... cylinder3d.i"
-	@echo "... cylinder3d.s"
-	@echo "... eulerinput.o"
-	@echo "... eulerinput.i"
-	@echo "... eulerinput.s"
-	@echo "... joint.o"
-	@echo "... joint.i"
-	@echo "... joint.s"
-	@echo "... jointdisplay.o"
-	@echo "... jointdisplay.i"
-	@echo "... jointdisplay.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... robot.o"
-	@echo "... robot.i"
-	@echo "... robot.s"
 	@echo "... robotProject_autogen/mocs_compilation.o"
 	@echo "... robotProject_autogen/mocs_compilation.i"
 	@echo "... robotProject_autogen/mocs_compilation.s"
-	@echo "... statusmessage.o"
-	@echo "... statusmessage.i"
-	@echo "... statusmessage.s"
-	@echo "... trajectoryplanner.o"
-	@echo "... trajectoryplanner.i"
-	@echo "... trajectoryplanner.s"
+	@echo "... src/gui/eulerinput.o"
+	@echo "... src/gui/eulerinput.i"
+	@echo "... src/gui/eulerinput.s"
+	@echo "... src/gui/jointdisplay.o"
+	@echo "... src/gui/jointdisplay.i"
+	@echo "... src/gui/jointdisplay.s"
+	@echo "... src/gui/statusmessage.o"
+	@echo "... src/gui/statusmessage.i"
+	@echo "... src/gui/statusmessage.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/robotics/coordinatesystem.o"
+	@echo "... src/robotics/coordinatesystem.i"
+	@echo "... src/robotics/coordinatesystem.s"
+	@echo "... src/robotics/cylinder3d.o"
+	@echo "... src/robotics/cylinder3d.i"
+	@echo "... src/robotics/cylinder3d.s"
+	@echo "... src/robotics/joint.o"
+	@echo "... src/robotics/joint.i"
+	@echo "... src/robotics/joint.s"
+	@echo "... src/robotics/robot.o"
+	@echo "... src/robotics/robot.i"
+	@echo "... src/robotics/robot.s"
+	@echo "... src/robotics/trajectoryplanner.o"
+	@echo "... src/robotics/trajectoryplanner.i"
+	@echo "... src/robotics/trajectoryplanner.s"
 .PHONY : help
 
 

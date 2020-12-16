@@ -113,49 +113,44 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/eulerinput.h",
 			"MU",
-			"EWIEGA46WW/moc_coordinatesystem.cpp"
+			"MXUWEOXILK/moc_eulerinput.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/jointdisplay.h",
 			"MU",
-			"EWIEGA46WW/moc_cylinder3d.cpp"
+			"MXUWEOXILK/moc_jointdisplay.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/statusmessage.h",
 			"MU",
-			"EWIEGA46WW/moc_eulerinput.cpp"
+			"MXUWEOXILK/moc_statusmessage.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/coordinatesystem.h",
 			"MU",
-			"EWIEGA46WW/moc_joint.cpp"
+			"AEPA3XL4CW/moc_coordinatesystem.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/cylinder3d.h",
 			"MU",
-			"EWIEGA46WW/moc_jointdisplay.cpp"
+			"AEPA3XL4CW/moc_cylinder3d.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/main.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/joint.h",
 			"MU",
-			"EWIEGA46WW/moc_main.cpp"
+			"AEPA3XL4CW/moc_joint.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/robot.h",
 			"MU",
-			"EWIEGA46WW/moc_robot.cpp"
+			"AEPA3XL4CW/moc_robot.cpp"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.h",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/trajectoryplanner.h",
 			"MU",
-			"EWIEGA46WW/moc_statusmessage.cpp"
-		],
-		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.h",
-			"MU",
-			"EWIEGA46WW/moc_trajectoryplanner.cpp"
+			"AEPA3XL4CW/moc_trajectoryplanner.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -183,6 +178,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/home/raphael/Documents/CppExercises/robotProject/robotProject/src",
+		"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics",
+		"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/include",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/include/QtCore",
 		"/home/raphael/Qt5.12.10/5.12.10/gcc_64/mkspecs/linux-g++",
@@ -229,39 +227,39 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/coordinatesystem.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/eulerinput.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/cylinder3d.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/jointdisplay.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/eulerinput.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/gui/statusmessage.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/joint.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/main.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/jointdisplay.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/coordinatesystem.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/main.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/cylinder3d.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/robot.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/joint.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/statusmessage.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/robot.cpp",
 			"MU"
 		],
 		[
-			"/home/raphael/Documents/CppExercises/robotProject/robotProject/trajectoryplanner.cpp",
+			"/home/raphael/Documents/CppExercises/robotProject/robotProject/src/robotics/trajectoryplanner.cpp",
 			"MU"
 		]
 	],
