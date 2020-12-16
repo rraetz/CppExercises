@@ -223,16 +223,17 @@ std::vector<double> Robot::solveInverseKinematics(const QMatrix4x4 &T)
         if (costNew < cost) {solution = x; }
         cost = costNew;
     }
-    qDebug() << "Best solution: " << solution ;
 
     // Check feasibility
     if (cost < m_COST_THRESHOLD)
     {
         statusMessage("Solution found");
+        qDebug() << "Best solution: " << solution << "\n";
     }
     else
     {
         statusMessage("Not feasible");
+        qDebug() << "No feasible solution found \n";
         solution = jointAngles();
     }
     return solution;
